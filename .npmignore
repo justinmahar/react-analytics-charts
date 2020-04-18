@@ -1,0 +1,15 @@
+# Dirs
+.docz
+.github
+.storybook
+node_modules
+src
+storybook-static
+# Files
+.eslintignore
+.eslintrc
+.gitattributes
+doczrc.js
+jest.config.js
+netlify.toml
+tsconfig.json
