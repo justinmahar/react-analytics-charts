@@ -10,8 +10,9 @@ import { Playground } from 'docz';
 
 import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
 import { TRACKING_ID } from '../__docz__/analytics-config';
-import CreatedBy from '../__docz__/components/CreatedBy';
+import { CreatedBy } from '../__docz__/components/CreatedBy';
 import githubSvg from '../__docz__/images/github.svg';
+import dashPng from '../__docz__/images/dash.png';
 
 <GoogleAnalytics trackingId={TRACKING_ID} />
 
@@ -20,49 +21,118 @@ import githubSvg from '../__docz__/images/github.svg';
 	alignItems: 'center',
 }}>
   <div>
-    <h1>React Library Starter</h1>
+    <h1>React Analytics Charts</h1>
   </div>
   <div>
-    <a href="https://github.com/devboldly/react-library-starter/" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/devboldly/react-analytics-charts/" target="_blank" rel="noopener noreferrer">
       <img src={githubSvg} width="28" style={{ margin: '0 0 0 20px' }}/>
     </a>
   </div>
 </div>
 
 <strong>
-  This header will contain a brief description of the project.
+  React components to easily embed Google Analytics charts on your React site. Uses the <a href="https://react-use-analytics-api.netlify.app/">Google Analytics Embed API</a>.
 </strong>
+
+<br/><br/>
+
+<img src={dashPng} />
+
+#### [👁️ Live Demo](/AnalyticsDashboard#example)
 
 ## Overview
 
-This section will contain an overview so people can have a high-level understanding of the project.
+Easily embed Google Analytics charts on your React site using this component library, which leverages the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/).
+
+Choose from [10+ commonly used drop-in chart components](/charts#common-charts), or build your own [custom charts](/charts#custom-charts) and render them as [bar charts](/BarChart), 
+[column charts](/ColumnChart), [geo charts](/GeoChart), [line charts](/LineChart), [pie charts](/PieChart), and [tables](/TableChart).
+
+See the [AnalyticsDashboard](/AnalyticsDashboard) documentation for a **[full live demo](/AnalyticsDashboard#example)**, or reference any of the available [charts](/charts) for individual live demo examples.
 
 ### Features include:
 
-- **🚀 List your features, use fun [emojis](https://emojipedia.org/search/?q=rocket)**
-  - Give a little more info on each feature or mention benefits.
+- **🙌 Simple and quick**
+  - Drop Google Analytics [charts](/charts) onto your React site within minutes.
+- **🎁 Pre-made drop-in charts**
+  - Choose from [10+ pre-made commonly used charts](/charts) that you can use right away.
+- **⚒️ Easy to build custom charts**
+  - Building [your own charts](/charts) is easy, too!
+- **💼 Handles overhead for you**
+  - [Dashboard](/AnalyticsDashboard) handles embed API access, sign-in, sign-out, and view selection for you. Just focus on the [charts](/charts) you want.
+- **✨ Live examples and rich documentation**
+  - Quickly refer to docs on queries and charts, all from one place, with plenty of live examples.
 
 ## Installation
 
 ```
-npm i @devboldly/react-library-starter
+npm i @devboldly/react-analytics-charts
 ```
 
 ## Quick Start
 
-This section will contain a copy/paste example so people can get started quickly.
+First, you will need an [OAuth Client ID](/google-oauth-client-id) from Google to access the Analytics API. See [How To Get An OAuth Client ID From Google](/google-oauth-client-id) to make this as easy and painless as possible.
 
-### ExampleComponent
+You can also use an [access token](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/). See the [`auth` Options docs](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for more information.
+
+### Analytics Dashboard
+
+The [AnalyticsDashboard](/AnalyticsDashboard) component handles loading the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/), sign-in and sign-out, and view selection for you. See the [live demo](/AnalyticsDashboard#example).
+
+The following example embeds an analytics dashboard with two charts.
+
+Be sure to **change the [`authOptions`](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options)** to use your [**clientId**](/google-oauth-client-id) or [**serverAuth.access_token**](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/).
+
+From there, you can experiment with [other drop-in charts](/charts#common-charts) or [try creating your own](/charts#custom-charts).
 
 ```jsx
-  <ExampleComponent text="Example Component"/>
+import { AnalyticsDashboard } from '@devboldly/react-analytics-charts';
+// Over ten different commonly used charts are available
+import { SessionsByDateChart, SessionsGeoChart } from '@devboldly/react-analytics-charts';
 ```
-
-### useExample Hook
 
 ```jsx
-const [value, setValue] = useExample("Example value");
+<AnalyticsDashboard
+  authOptions={{ clientId: "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com" }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <div>
+        <SessionsByDateChart
+          gapi={gapi}
+          viewId={viewId}
+          showPageViews
+          showUsers
+        />
+        <SessionsGeoChart 
+          gapi={gapi} 
+          viewId={viewId} 
+          showPageViews 
+        />
+        ... More charts here ...
+      </div>
+    );
+  }}
+/>
 ```
+
+See the [Charts Overview](/charts) for more charts, and [AnalyticsDashboard](/AnalyticsDashboard) for more information on the dashboard itself.
+
+### Standalone Charts
+
+All of the charts in this library can be used standalone.
+
+If you have the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) (`gapi`) loaded and ready, and you know [which view ID](/ViewSelector#example) to query, you can pick any of the [available charts](/charts) and drop them right onto your site as [standalone charts](/custom-dashboards-standalone-charts#standalone-charts).
+
+For example, if your view ID is `ga:123456789`:
+
+```jsx
+import { SessionsByDateChart } from '@devboldly/react-analytics-charts';
+```
+
+```jsx
+<SessionsByDateChart gapi={gapi} viewId="ga:123456789" />
+```
+
+You must be authorized. You can use the [ViewSelector demo](/ViewSelector#example) to determine your view ID, and the [useAnalyticsApi](https://react-use-analytics-api.netlify.com/useAnalyticsApi) hook to easily load the `gapi` API and authorize. If you use the [AnalyticsDashboard](/AnalyticsDashboard), this will all be handled for you.
 
 ## TypeScript
 
@@ -76,8 +146,8 @@ Feel free to submit a pull request for bugs or additions, and make sure to updat
 
 For major changes, open an issue first to discuss what you'd like to change.
 
-## ⭐ Found It Helpful? Star It!
+## ⭐ Found It Helpful? [Star It!](https://github.com/devboldly/react-analytics-charts/stargazers)
 
-More stars means more development love. So if you found this project helpful, [star it](https://github.com/devboldly/react-library-starter)! [👉⭐](https://github.com/devboldly/react-library-starter)
+More stars means more development love. So if you found this project helpful, [star it](https://github.com/devboldly/react-analytics-charts/stargazers)! [👉⭐](https://github.com/devboldly/react-analytics-charts/stargazers)
 
 <CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

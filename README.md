@@ -1,183 +1,130 @@
 <h2 align="center">
-  <a href="https://github.com/devboldly/react-library-starter">
-    react-library-starter
-  </a>
+  React Analytics Charts
+  <br/>
+  <small><a href="https://github.com/devboldly/react-analytics-charts">
+    @devboldly/react-analytics-charts
+  </a></small>
 </h2>
 <h3 align="center">
-  A template to build, test, and share React components and hooks easily.<br/>Uses Storybook, Jest, and more.
+  React components to easily embed Google Analytics charts on your React site.<br/>Uses the <a href="https://react-use-analytics-api.netlify.com/">Google Analytics Embed API</a>.
 </h3>
 <p align="center">
-  <a href="https://github.com/devboldly/react-library-starter/generate">
-    <img src="https://img.shields.io/badge/GitHub-Use%20this%20template-brightgreen"/>
+  <a href="https://badge.fury.io/js/%40devboldly%2Freact-analytics-charts">
+    <img src="https://badge.fury.io/js/%40devboldly%2Freact-analytics-charts.svg" alt="npm Version"/>
   </a>
-  <a href="https://github.com/devboldly/react-library-starter/actions">
-    <img src="https://github.com/devboldly/react-library-starter/workflows/Node.js%20CI/badge.svg" alt="Build Status"/>
+  <a href="https://github.com/devboldly/react-analytics-charts/actions">
+    <img src="https://github.com/devboldly/react-analytics-charts/workflows/Node.js%20CI/badge.svg" alt="Build Status"/>
+  </a>
+  <a href="https://app.netlify.com/sites/react-analytics-charts/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/90022dfa-e333-4a6f-bf79-08536034f221/deploy-status" alt="Netlify Status"/>
   </a>
 </p>
 
+## Documentation
+
+Read the **[official documentation](https://react-analytics-charts.netlify.com/)**.
+
+[![Analytics Dashboard Example](./src/__docz__/images/dash.png "Analytics Dashboard Example")](https://react-analytics-charts.netlify.com/)
+
+#### [👁️ Live Demo](https://react-analytics-charts.netlify.com/AnalyticsDashboard#example)
+
 ## Overview
 
-This project was created as a starter for [React](https://reactjs.org/) component and [hook](https://reactjs.org/docs/hooks-intro.html) libraries. Think of this template as a scaffold for all of your React goodies you want to build and possibly share via [npm](https://www.npmjs.com/).
+Easily embed Google Analytics charts on your React site using this component library, which leverages the <a href="https://react-use-analytics-api.netlify.app/">Google Analytics Embed API</a>.
+
+Choose from [10+ commonly used drop-in chart components](https://react-analytics-charts.netlify.com/charts#common-charts), or build your own [custom charts](https://react-analytics-charts.netlify.com/charts#custom-charts) and render them as [bar charts](https://react-analytics-charts.netlify.com/BarChart), 
+[column charts](https://react-analytics-charts.netlify.com/ColumnChart), [geo charts](https://react-analytics-charts.netlify.com/GeoChart), [line charts](https://react-analytics-charts.netlify.com/LineChart), [pie charts](https://react-analytics-charts.netlify.com/PieChart), and [tables](https://react-analytics-charts.netlify.com/TableChart).
+
+See the [AnalyticsDashboard](https://react-analytics-charts.netlify.com/AnalyticsDashboard) documentation for a **[full live demo](https://react-analytics-charts.netlify.com/AnalyticsDashboard#example)**, or reference any of the available [charts](https://react-analytics-charts.netlify.com/charts) for individual live demo examples.
 
 ### Features include:
 
-- **🚀 Starter component and hook**
-  - A jumping-off point to speed up your development.
-- **🧪 [Jest](https://jestjs.io/) tests**
-  - Includes [react-testing-library](https://testing-library.com/react) and [react-hooks-testing-library](https://react-hooks-testing-library.com) examples to build from.
-- **✨ [TypeScript](https://www.typescriptlang.org/) support**
-  - For optional type checking and safety. Don't know TS? Just use JS until you [learn](https://www.typescriptlang.org/).
-- **📋 [ESLint](https://eslint.org/) rules**
-  - Use best practices, catch mistakes, and autoformat your code.
-- **📖 [Storybook](https://storybook.js.org/) stories**
-  - Example stories for a component and a hook. Visualize as you build.
-- **👷 Zero-config [GitHub CI](https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/about-continuous-integration)**
-  - GitHub will build and run your tests on every push, for free. It just works!
-- **👓 [README template](https://github.com/devboldly/react-library-starter/blob/master/README.template.md)**
-  - Just fill it out. Includes [npm version badge](https://badge.fury.io/for/js) and CI badges for street cred.
-- **📜 [Docz](https://www.docz.site/) documentation**
-  - Easily document and showcase your components and hooks. See the [included example](https://react-library-starter.netlify.com/).
-- **🌎 [Netlify](https://netlify.com/) pre-configuration**
-  - Deploy your documentation site to Netlify with just a few clicks. For free.
-- **📦 Easy [npm publish](https://docs.npmjs.com/cli/publish)**
-  - Build, version, and publish to [npm](https://www.npmjs.com/) with one command: `npm run deploy`
-- And more!
+- **🙌 Simple and quick**
+  - Drop Google Analytics [charts](https://react-analytics-charts.netlify.com/charts) onto your React site within minutes.
+- **🎁 Pre-made drop-in charts**
+  - Choose from [10+ pre-made commonly used charts](https://react-analytics-charts.netlify.com/charts) that you can use right away.
+- **⚒️ Easy to build custom charts**
+  - Building [your own charts](https://react-analytics-charts.netlify.com/charts) is easy, too!
+- **💼 Handles overhead for you**
+  - [Dashboard](https://react-analytics-charts.netlify.com/AnalyticsDashboard) handles embed API access, sign-in, sign-out, and view selection for you. Just focus on the [charts](https://react-analytics-charts.netlify.com/charts) you want.
+- **✨ Live examples and rich documentation**
+  - Quickly refer to docs on queries and charts, all from one place, with plenty of live examples.
+
+## Installation
+
+```
+npm i @devboldly/react-analytics-charts
+```
 
 ## Quick Start
 
-### Click the button below to use this template:
+First, you will need an [OAuth Client ID](https://react-analytics-charts.netlify.com/google-oauth-client-id) from Google to access the Analytics API. See [How To Get An OAuth Client ID From Google](https://react-analytics-charts.netlify.com/google-oauth-client-id) to make this as easy and painless as possible.
 
-<a href="https://github.com/devboldly/react-library-starter/generate"><img src="https://img.shields.io/badge/GitHub-Use%20this%20template-brightgreen"/></a>
+You can also use an [access token](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/). See the [`auth` Options docs](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for more information.
 
-You will be prompted for a repo name and description, and GitHub will do the rest.
+### Analytics Dashboard
 
-**Note:** This approach is recommended over cloning or forking because [repositories created from a template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) start with a single commit and are not treated as forks, but instead as an entirely new project.
+The [AnalyticsDashboard](https://react-analytics-charts.netlify.com/AnalyticsDashboard) component handles loading the Google Analytics Embed API, sign-in and sign-out, and view selection for you. See the [live demo](https://react-analytics-charts.netlify.com/AnalyticsDashboard#example).
 
-### Install dependencies
+The following example embeds an analytics dashboard with two charts.
 
-```
-npm i
-```
+Be sure to **change the [`authOptions`](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options)** to use your [**clientId**](https://react-analytics-charts.netlify.com/google-oauth-client-id) or [**serverAuth.access_token**](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/).
 
-### Start project
+From there, you can experiment with [other drop-in charts](https://react-analytics-charts.netlify.com/charts#common-charts) or [try creating your own](https://react-analytics-charts.netlify.com/charts#custom-charts).
 
-```
-npm start
-```
-
-This will run the Storybook server so you can develop. 
-
-Go to [localhost:6006](http://localhost:6006/) to see the example hook and component stories. You're ready to start developing!
-
-## Start Developing
-
-### Update `package.json`
-
-First thing's first. Open `package.json` and update all fields including the name, description, and author.
-
-By default the package is scoped to an npm account (e.g. `@devboldly/react-library-starter`).
-
-### Replace the README
-
-This project includes a README template called `README.template.md`. [View it here](https://github.com/devboldly/react-library-starter/blob/master/README.template.md).
-
-If you'd like to use the template:
-  - Replace `README.md` with `README.template.md`
-  - Replace `devboldly` with your username and `react-library-starter` with the name of your package.
-  - Fill the rest out when you're ready.
-
-If not, then just delete `README.template.md` and create your own `README.md`.
-
-### Use Storybook to develop your components and hooks
-
-[Storybook](https://storybook.js.org/) lets you develop your React components and hooks in isolation. Each "storybook" is a file that contains "stories", which are just the different visual states of your component or hook.
-
-You can run Storybook using:
-
-```
-npm start
+```jsx
+import { AnalyticsDashboard } from '@devboldly/react-analytics-charts';
+// Over ten different commonly used charts are available
+import { SessionsByDateChart, SessionsGeoChart } from '@devboldly/react-analytics-charts';
 ```
 
-Your browser will automatically open to [localhost:6006](http://localhost:6006/).
-
-In `src/__stories__`, a story is provided for both the example component and hook. Use these as a starting point for your own components and hooks.
-
-You will see your changes in Storybook immediately since it uses Webpack's hot module reloading.
-
-### Write tests
-
-The directory `src/__tests__` contains two example test files, one for a component and one for a hook. 
-
-There are [react-testing-library](https://testing-library.com/react) and [react-hooks-testing-library](https://react-hooks-testing-library.com) examples provided to build off of. 
-
-There is a single test to ensure your component or hook doesn't crash. Add more tests as you see fit.
-
-You can run tests by running: 
-
-```
-npm test
-```
-
-You can run tests in watch mode by running: 
-
-```
-npm test:watch
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId: "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com" }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <div>
+        <SessionsByDateChart
+          gapi={gapi}
+          viewId={viewId}
+          showPageViews
+          showUsers
+        />
+        <SessionsGeoChart 
+          gapi={gapi} 
+          viewId={viewId} 
+          showPageViews 
+        />
+        ... More charts here ...
+      </div>
+    );
+  }}
+/>
 ```
 
-### Export modules from `index.tsx`
+See the [Charts Overview](https://react-analytics-charts.netlify.com/charts) for more charts, and [AnalyticsDashboard](https://react-analytics-charts.netlify.com/AnalyticsDashboard) for more information on the dashboard itself.
 
-Export anything you'd like to make available to the outside world in `index.tsx`.
+### Standalone Charts
 
-These will be the modules that can be imported from your npm package after it's installed.
+All of the charts in this library can be used standalone.
 
-### Document with Docz
+If you have the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) (`gapi`) loaded and ready, and you know [which view ID](https://react-analytics-charts.netlify.com/ViewSelector#example) to query, you can pick any of the [available charts](https://react-analytics-charts.netlify.com/charts) and drop them right onto your site as [standalone charts](https://react-analytics-charts.netlify.com/custom-dashboards-standalone-charts#standalone-charts).
 
-This starter includes [Docz](https://www.docz.site/), the easiest way to create React documentation.
+For example, if your view ID is `ga:123456789`:
 
-Just add [MDX files](https://mdxjs.com/) next to your components and [Docz](https://www.docz.site/) will automatically find them and add them to your documentation site. Example MDX files are already present for the example component and hook in this template repository. Use those as a starting point.
-
-Edit the MDX files in `src/__docz__` to change the Home doc page and license page.
-
-Just run the following to start the Docz dev server:
-
-```bash
-npm run docz:dev
+```jsx
+import { SessionsByDateChart } from '@devboldly/react-analytics-charts';
 ```
 
-### Deploy to Netlify
-
-With just a few clicks, you can deploy this project's documentation to [Netlify](https://netlify.com/) for free.
-
-Netlify has already been configured (in `netlify.toml`), so you can add and deploy immediately with zero config. Netlify will build and serve up your Docz static site.
-
-Once you deploy and the documentation site is live, be sure to update the README (if you used the provided template):
-
-- Update the Netlify build status badge (at the top)
-- Update the link to the documentation site (first section)
-
-### Publish to npm
-
-When you're finished developing, you can easily deploy to npm with one command.
-
-If you haven't already, log into npm:
-
-```
-npm login
+```jsx
+<SessionsByDateChart gapi={gapi} viewId="ga:123456789" />
 ```
 
-Then deploy with a single command:
+You must be authorized. You can use the [ViewSelector demo](https://react-analytics-charts.netlify.com/ViewSelector#example) to determine your view ID, and the [useAnalyticsApi](https://react-use-analytics-api.netlify.com/useAnalyticsApi) hook to easily load the `gapi` API and authorize. If you use the [AnalyticsDashboard](https://react-analytics-charts.netlify.com/AnalyticsDashboard), this will all be handled for you.
 
-```
-npm run deploy
-```
+## TypeScript
 
-This command will build your project, add/commit the freshly built `dist` directory, push to GitHub, increment the package version, and publish to npm.
-
-If you have any unsaved changes, this script will fail until your working directory is clean.
-
-### Celebrate!
-
-You've done it! Your project is ready for the world.
+Type definitions have been included for [TypeScript](https://www.typescriptlang.org/) support.
 
 ## Contributing
 
@@ -187,9 +134,9 @@ Feel free to submit a pull request for bugs or additions, and make sure to updat
 
 For major changes, open an issue first to discuss what you'd like to change.
 
-## ⭐ Found It Helpful? [Star It!](https://github.com/devboldly/react-library-starter/stargazers)
+## ⭐ Found It Helpful? [Star It!](https://github.com/devboldly/react-analytics-charts/stargazers)
 
-More stars means more development love. So if you found this project helpful, [star it](https://github.com/devboldly/react-library-starter/stargazers)! [👉⭐](https://github.com/devboldly/react-library-starter/stargazers)
+More stars means more development love. So if you found this project helpful, [star it](https://github.com/devboldly/react-analytics-charts/stargazers)! [👉⭐](https://github.com/devboldly/react-analytics-charts/stargazers)
 
 ## License
 

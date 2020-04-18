@@ -37,8 +37,17 @@ const docsConfig = {
   // /** This is the config that you can use to customize your theme. */
   // themeConfig: {},
   // /** Use this option to specify the order of your documents in the menu. */
-  menu: ['Home', { name: 'Components' }, { name: 'Hooks' }, 'License'],
-  /** Specify an array of plugins that you want to use. */
+  menu: [
+    'Home',
+    { name: 'Core Components' },
+    'Charts Overview',
+    { name: 'Common Charts' },
+    { name: 'Custom Charts' },
+    'Custom Dashboards and Standalone Charts',
+    'How To Get An OAuth Client ID From Google',
+    'License',
+  ],
+  // /** Specify an array of plugins that you want to use. */
   // plugins: [],
   // /** Array of remark plugins to manipulate the MDXAST */
   // mdPlugins: [],

@@ -1,0 +1,96 @@
+---
+name: LineChart
+menu: Custom Charts
+route: /LineChart
+---
+
+import { Playground, Props } from 'docz';
+import GoogleAnalytics from '../../__docz__/components/GoogleAnalytics';
+import { TRACKING_ID } from '../../__docz__/analytics-config';
+import { CreatedBy } from '../../__docz__/components/CreatedBy';
+import clientId from '../../__docz__/client-id-config';
+import { AnalyticsDashboard } from '../AnalyticsDashboard'
+import { LineChart } from './LineChart';
+
+<GoogleAnalytics trackingId={TRACKING_ID} />
+
+<h1>LineChart</h1>
+
+## Description
+
+A line chart shows data as points connected by lines. Similar visual presentation to a [column chart](/ColumnChart).
+
+You can use this to create a custom chart by providing your own data query (see [DataChart](/DataChart) for more info on queries) and, 
+optionally, [line chart options](https://developers.google.com/chart/interactive/docs/gallery/linechart#configuration-options) for the chart.
+
+Refer to the [Charts Overview](/charts) for a list of all charts available.
+
+## Usage
+
+<Playground>
+  <AnalyticsDashboard
+    authOptions={{ clientId }}
+    renderCharts={(gapi, viewId) => {
+      return (
+        <LineChart
+          gapi={gapi}
+          query={{
+            ids: viewId,
+            'start-date': '14daysAgo',
+            'end-date': 'today',
+            metrics: 'ga:sessions',
+            dimensions: 'ga:date',
+          }}
+          container="sessions-by-date-chart"
+          options={{
+            title: `Sessions (14 Days)`,
+          }}
+        />
+      );
+    }}
+  />
+</Playground>
+
+<br/>
+
+<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+
+## Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) |
+| container | `string` | **Required.** Provide an ID for the `div` that will contain the chart. |
+| query | [`Query`](/DataChart#query-prop)  | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart). |
+| options | [`LineChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/linechart#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [line charts](https://developers.google.com/chart/interactive/docs/gallery/linechart#configuration-options). |
+
+This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
+
+If you have more than one of this chart on the page, be sure to specify a unique `container` ID.
+
+### Query
+
+Refer to [DataChart Query Prop](/DataChart#query-prop) to build your own data `query`.
+
+### Chart Options
+
+There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/linechart#configuration-options) available for 
+line charts, allowing you to customize the appearance. Provide these via the `options` prop.
+
+Below are a few of the notable ones:
+
+| Option | Type | Description |
+|------|------|-------------|
+| title | `string` | Text to display above the chart. |
+| width | `number` &#124; `string` | Width of the chart, in pixels. Also supports a percentage string. Default: `100%` |
+| height | `number` &#124; `string` | Height of the chart, in pixels. |
+| lineWidth | `number` | Data line width in pixels. Use zero to hide all lines and show only the points. You can override values for individual series using the series property. Default: `2` |
+| pointShape | `string` | The shape of individual data elements: `'circle'`, `'triangle'`, `'square'`, `'diamond'`, `'star'`, or `'polygon'`. See the [points documentation](https://developers.google.com/chart/interactive/docs/points) for examples. Default: `'circle'` |
+| pointSize | `string` | Diameter of displayed points in pixels. |
+| pointsVisible | `boolean` | Determines whether points will be displayed. Set to false to hide all points. Default: `true` |
+
+The containing element is rendered as a `div` and you can size and style it as you see fit using CSS.
+
+See all [chart options](https://developers.google.com/chart/interactive/docs/gallery/linechart#configuration-options).
+
+<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

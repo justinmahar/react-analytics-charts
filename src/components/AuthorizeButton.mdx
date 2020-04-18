@@ -1,0 +1,110 @@
+---
+name: AuthorizeButton
+menu: Core Components
+route: /AuthorizeButton
+---
+
+import { Playground, Props } from 'docz';
+import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
+import { TRACKING_ID } from '../__docz__/analytics-config';
+import { CreatedBy } from '../__docz__/components/CreatedBy';
+import { AuthExample } from '../__docz__/components/AuthExample';
+import { AuthorizeButton } from './AuthorizeButton';
+
+<GoogleAnalytics trackingId={TRACKING_ID} />
+
+<h1>AuthorizeButton</h1>
+
+## Description
+
+Renders a Google Analytics sign-in button allowing the user to sign in with their Google account.
+
+This component is rendered by the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) into a container on the page.
+
+After signing in, the `onSignIn` handler is called. This handler can be used to update the view once signed in. The handler is not called if already signed in. 
+
+To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://react-use-analytics-api.netlify.app/useAnalyticsApi) hook. A full example is available below.
+
+The [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) will only render the sign-in button once per page load. A refresh button will be shown when the original button's container is disposed of by React. Clicking that button reloads the current page.
+
+This component wraps the [`useAuthorize`](https://react-use-analytics-api.netlify.app/useAuthorize) hook from [react-use-analytics-api](https://react-use-analytics-api.netlify.com/).
+
+See related [SignOutButton](/SignOutButton).
+
+## Usage
+
+```jsx
+<AuthorizeButton
+  gapi={gapi}
+  authOptions={{
+    clientId: '123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com',
+  }}
+  onSignIn={signInHandler}
+/>
+```
+
+## Props
+
+<Props of={AuthorizeButton} />
+
+<small>Note: Expand each prop for more information.</small>
+
+## Styling
+
+This component renders as either one or two divs, depending on if a refresh page button is visible.
+
+- The authorize button is in a `div` with the class name `gapi-authorize-container`. Inspect the DOM to see what Google renders there.
+
+  ```css
+  .gapi-authorize-container {
+    /* Custom styles */
+  }
+  ```
+
+- The refresh `button` is in a `div` with the class name `analytics-refresh-button-container`. This contains the `button` element for refreshing the page.
+
+  ```css
+  .analytics-refresh-button-container button {
+    /* Custom styles */
+  }
+  ```
+
+## Example
+
+Below is a live example showing the full authorization flow from signed out to signed in, and vice versa. 
+
+Although not necessary if using an [AnalyticsDashboard](/AnalyticsDashboard), if you want, you can use the [`useAnalyticsApi`](https://react-use-analytics-api.netlify.app/useAnalyticsApi) hook to check if the user is authorized.
+
+<div style={{ border: 'solid 2px #67788a', padding: '20px' }}>
+  <AuthExample />
+</div>
+
+```jsx
+import * as React from 'react';
+import { useAnalyticsApi } from '@devboldly/react-use-google-analytics-embed-api';
+import { AuthorizeButton, SignOutButton } from '@devboldly/react-analytics-charts';
+
+export function AuthExample() {
+  const { gapi, authorized } = useAnalyticsApi();
+  return (
+    <div>
+      {!authorized && (
+        <div>
+          Not authorized. Sign in here:{' '}
+          <AuthorizeButton
+            gapi={gapi}
+            authOptions={{ clientId: '123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com' }}
+          />
+        </div>
+      )}
+      {authorized && (
+        <div>
+          We're authorized! <SignOutButton gapi={gapi} />
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

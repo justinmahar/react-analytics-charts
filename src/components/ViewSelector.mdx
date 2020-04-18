@@ -1,0 +1,101 @@
+---
+name: ViewSelector
+menu: Core Components
+route: /ViewSelector
+---
+
+import { Playground, Props } from 'docz';
+import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
+import { TRACKING_ID } from '../__docz__/analytics-config';
+import { CreatedBy } from '../__docz__/components/CreatedBy';
+import { ViewSelectorExample } from '../__docz__/components/ViewSelectorExample';
+import clientId from '../__docz__/client-id-config';
+import { ViewSelector } from './ViewSelector';
+
+<GoogleAnalytics trackingId={TRACKING_ID} />
+
+<h1>ViewSelector</h1>
+
+## Description
+
+The ViewSelector component allows you to choose your account, property, and view via dropdown menus.
+
+This component is rendered by the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) into a container on the page.
+
+This component wraps the [`useViewSelector`](https://react-use-analytics-api.netlify.app/useViewSelector) hook from [react-use-analytics-api](https://react-use-analytics-api.netlify.com/).
+
+## Usage
+
+```jsx
+import { ViewSelector } from '@devboldly/react-analytics-charts';
+```
+
+```jsx
+const viewSelectionHandler = viewId => console.log(viewId);
+...
+<ViewSelector gapi={gapi} onChange={viewSelectionHandler} />
+```
+
+## Props
+
+<Props of={ViewSelector} />
+
+<small>Note: Expand each prop for more information.</small>
+
+## Styling
+
+The view selector `div` has the class name `gapi-view-selector-container`. Inspect the DOM to see what Google renders there.
+
+```css
+.gapi-view-selector-container {
+  /* Custom styles */
+}
+```
+
+## Example
+
+The following live example shows standalone use of a ViewSelector, including full authorization flow.
+
+You can also use this example to quickly determine the `viewId` you'd like to provide to a chart or an [AnalyticsDashboard](/AnalyticsDashboard).
+
+<div style={{ border: 'solid 2px #67788a', padding: '20px' }}>
+  <ViewSelectorExample />
+</div>
+
+```jsx
+import { useAnalyticsApi } from '@devboldly/react-use-google-analytics-embed-api';
+import * as React from 'react';
+import { AuthorizeButton, SignOutButton, ViewSelector } from '@devboldly/react-analytics-charts';
+
+export function ViewSelectorExample() {
+  const [viewId, setViewId] = React.useState('');
+  const { gapi, authorized } = useAnalyticsApi();
+
+  const viewIdStyles = { border: 'solid 2px orange', margin: '10px', padding: '5px' };
+
+  return (
+    <div>
+      {!authorized && (
+        <AuthorizeButton
+          gapi={gapi}
+          authOptions={{ clientId: '123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com' }}
+        />
+      )}
+      {authorized && (
+        <div>
+          <h2>
+            Selected view ID:
+            <code style={viewIdStyles}>{viewId}</code>
+          </h2>
+          <p>
+            <SignOutButton gapi={gapi} />
+          </p>
+          <ViewSelector gapi={gapi} onChange={viewId => setViewId(viewId)} />
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

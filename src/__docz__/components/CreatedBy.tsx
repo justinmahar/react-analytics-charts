@@ -7,13 +7,13 @@ export interface CreatedByProps {
   emojiLabel?: string;
 }
 
-export default function CreatedBy(props: CreatedByProps): JSX.Element {
+export function CreatedBy(props: CreatedByProps): JSX.Element {
   const anchorProps = { target: '_blank', rel: 'noopener noreferrer' };
   return (
     <div>
       <br />
-      <div style={{ textAlign: 'right' }}>
-        <hr />
+      <div style={{ textAlign: 'right', fontSize: '80%' }}>
+        <hr style={{ borderBottom: '0', borderLeft: '0', borderRight: '0', borderTop: 'solid 2px #67788a' }} />
         Created{' '}
         {props.emoji && (
           <>

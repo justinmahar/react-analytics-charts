@@ -1,0 +1,138 @@
+---
+name: SessionsGeoChart
+menu: Common Charts
+route: /SessionsGeoChart
+---
+
+import { Playground, Props } from 'docz';
+import GoogleAnalytics from '../../../__docz__/components/GoogleAnalytics';
+import { TRACKING_ID } from '../../../__docz__/analytics-config';
+import { CreatedBy } from '../../../__docz__/components/CreatedBy';
+import clientId from '../../../__docz__/client-id-config';
+import { AnalyticsDashboard } from '../../AnalyticsDashboard'
+import { SessionsGeoChart } from './SessionsGeoChart';
+
+<GoogleAnalytics trackingId={TRACKING_ID} />
+
+<h1>SessionsGeoChart</h1>
+
+## Description
+
+This [GeoChart](/GeoChart) shows on a map of the world the number of sessions, and optionally pageviews, for each country, in the date range specified (number of days ago, until today).
+
+Useful for quickly visualizing where in the world your visitors are coming from.
+
+Refer to the [Charts Overview](/charts) for a list of all charts available.
+
+## Usage
+
+<Playground>
+  <AnalyticsDashboard
+    authOptions={{ clientId }}
+    renderCharts={(gapi, viewId) => {
+      return (
+        <SessionsGeoChart
+          gapi={gapi}
+          viewId={viewId}
+          days={28}
+          showPageViews
+        />
+      )
+    }}
+  />
+</Playground>
+
+<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+
+## Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) |
+| viewId | `string` | **Required.** View ID for the view the chart pertains to. See [ViewSelector](/ViewSelector) for more information. |
+| days | `number` &#124; `undefined` | Optional. Number of days the chart shows data for. Defaults to `28`. |
+| container | `string` &#124; `undefined` | Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) renders. One will be created if no value is provided. |
+| showPageViews | `boolean` &#124; `undefined` | Optional. Set to `true` to show the page view count on the chart. Defaults to `false`. |
+| options | [GeoChartOptions](/GeoChart#chart-options) | Optional. The options for this chart have been preconfigured, but you can add or override any [GeoChartOptions](/GeoChart#chart-options) you'd like here, such as the `width`, `region`, or `resolution`. |
+| query | [`Query`](/DataChart#query-prop) | Optional. The [query](/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](/DataChart#query-prop) you'd like here. |
+
+This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
+
+If you have more than one of this chart on the page, be sure to specify a unique `container` ID.
+
+## Data Queried
+
+This query's date range spans from a `start-date` of `NdaysAgo`, where `N` is the `days` prop provided, until an `end-date` of `today`. See [DataChart](/DataChart) for more information on queries.
+
+### Metrics
+
+- `ga:sessions`
+- `ga:pageviews` (when `showPageViews` is enabled)
+
+### Dimensions
+
+- `ga:country`
+
+## Customizing
+
+This chart has been preconfigured for ease of use, but you can customize it by providing a `query` or `options` prop.
+
+The properties you specify in either prop object will override the ones used by this chart.
+
+This means you can cherry-pick the properties you'd like to override, such as the `metrics` in the `query`, or the `width` in `options`, without having to create a completely [custom chart](/charts#custom-charts).
+
+## Europe Example
+
+The following uses the [`europe` region alias](/GeoChart#region-aliases) to show traffic from Europe:
+
+<Playground>
+  <AnalyticsDashboard
+    authOptions={{ clientId }}
+    dashId="europe"
+    renderCharts={(gapi, viewId) => {
+      return (
+        <SessionsGeoChart
+          gapi={gapi}
+          viewId={viewId}
+          container="europe-traffic-geo-chart"
+          days={28}
+          showPageViews
+          options={{
+            region: 'europe',
+          }}
+        />
+      )
+    }}
+  />
+</Playground>
+
+## United States Example
+
+The following uses the `ga:region` [dimension](/DataChart#query-prop), the `US` [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) region, and the `provinces` resolution to show traffic from individual states in the United States:
+
+<Playground>
+  <AnalyticsDashboard
+    authOptions={{ clientId }}
+    dashId="usa"
+    renderCharts={(gapi, viewId) => {
+      return (
+        <SessionsGeoChart
+          gapi={gapi}
+          viewId={viewId}
+          container="usa-traffic-geo-chart"
+          days={28}
+          showPageViews
+          query={{
+            dimensions: 'ga:region',
+          }}
+          options={{
+            region: 'US',
+            resolution: 'provinces',
+          }}
+        />
+      )
+    }}
+  />
+</Playground>
+
+<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

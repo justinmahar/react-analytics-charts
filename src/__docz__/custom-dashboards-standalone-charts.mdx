@@ -1,0 +1,97 @@
+---
+name: Custom Dashboards and Standalone Charts
+route: /custom-dashboards-standalone-charts
+# menu: MenuName
+---
+
+import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
+import { TRACKING_ID } from '../__docz__/analytics-config';
+import { CreatedBy } from '../__docz__/components/CreatedBy';
+import { CustomDashboardExample } from '../__docz__/components/CustomDashboardExample';
+import clientId from './client-id-config';
+
+<GoogleAnalytics trackingId={TRACKING_ID} />
+
+# Custom Dashboards and Standalone Charts
+
+The [AnalyticsDashboard](/AnalyticsDashboard) component makes it easy to embed charts onto your site without having to deal with loading and readying the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/), checking authorization, and adding a view selector. The [AnalyticsDashboard](/AnalyticsDashboard) will handle all of that overhead for you.
+
+**See [AnalyticsDashboard](/AnalyticsDashboard) for the easiest way to embed charts on your site.**
+
+However, you may want to completely customize how your dashboard looks.
+
+- You might want more freedom over placement of the ViewSelector, auth buttons, and charts on the page. 
+- You might want to handle authorization yourself.
+- You might want to use a [React Context](https://reactjs.org/docs/context.html) to manage `gapi` ([Google Analytics Embed API](https://react-use-analytics-api.netlify.app/)) state.
+- You might just want to use only the chart components from this library and ignore everything else!
+
+Read on to see how you can use the included components, and optionally the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) hook, to build a completely custom dashboard.
+
+## Custom Dashboard Example
+
+To build your own dashboard, you'll need to handle a few things:
+
+- Load and ready the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/)
+- Sign the user in and out of Google Analytics
+- Show a view selector (optional—not needed if you know the [view ID](/ViewSelector#example))
+
+In addition to [AuthorizeButton](/AuthorizeButton), [SignOutButton](/SignOutButton), and [ViewSelector](/ViewSelector), hooks are available for API access via [react-use-analytics-api](https://react-use-analytics-api.netlify.app/), which this library uses internally.
+
+Using these, you can build a custom dashboard fairly easily:
+
+<div style={{ border: 'solid 2px #67788a', padding: '20px' }}>
+  <CustomDashboardExample authOptions={{ clientId }} />
+</div>
+
+```jsx
+import { useAnalyticsApi } from '@devboldly/react-use-google-analytics-embed-api';
+import * as React from 'react';
+import { AuthorizeButton, SessionsByDateChart, SessionsBySourceChart, SignOutButton, ViewSelector } from '@devboldly/react-analytics-charts';
+
+export function CustomDashboardExample(props) {
+  const [viewId, setViewId] = React.useState();
+  const { ready, gapi, authorized } = useAnalyticsApi();
+  return (
+    <div>
+      {!ready && 'Please wait...'}
+      {ready && (
+        <div>
+          {!authorized && <AuthorizeButton gapi={gapi} authOptions={props.authOptions} />}
+          {authorized && (
+            <div>
+              <ViewSelector gapi={gapi} onChange={viewId => setViewId(viewId)} />
+              <div>
+                <SessionsByDateChart gapi={gapi} viewId={viewId} />
+                <SessionsBySourceChart gapi={gapi} viewId={viewId} />
+              </div>
+              <div>
+                <SignOutButton gapi={gapi} />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+## Standalone Charts
+
+### Using Analytics Dashboard
+
+If you're already authorized and want to render a chart by itself, you can use an [AnalyticsDashboard](/AnalyticsDashboard) with a particular [view ID](/ViewSelector#example) and no [ViewSelector](/ViewSelector) visible, and no auth buttons. Give each dashboard a unique `dashId` if there is more than one.
+
+This effectively renders charts as standalone.
+
+See the [AnalyticsDashboard props](/AnalyticsDashboard#props) `viewId`, `hideViewSelector`, and `hideAuth` for more info.
+
+### Using [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/)
+
+If you load and ready the API with [react-use-analytics-api](https://react-use-analytics-api.netlify.com/), or already have `gapi` loaded and readied via your own means, you can add any of the charts by themselves.
+
+You will need to be authorized, and need to know the view ID (see the [view selector example](/ViewSelector#example)). Using the view ID and `gapi`, you can render any chart on the page by itself. 
+
+Just [choose a chart](/charts), then pass it the ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) (`gapi`), and the view ID (`viewId`), and it'll render on the page for you.
+
+Be sure to provide each chart with a `container` ID if you are rendering the same chart type multiple times on the page.
