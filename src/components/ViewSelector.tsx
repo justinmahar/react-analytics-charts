@@ -1,4 +1,4 @@
-import { GoogleAnalyticsEmbedAPI, useViewSelector } from '@devboldly/react-use-google-analytics-embed-api';
+import { GoogleAnalyticsEmbedAPI, useViewSelector } from 'react-use-analytics-api';
 import * as React from 'react';
 
 export interface ViewSelectorProps {
@@ -11,7 +11,7 @@ export interface ViewSelectorProps {
 }
 
 /**
- * See documentation: https://react-analytics-charts.netlify.com/ViewSelector
+ * See documentation: https://devboldly.github.io/react-analytics-charts/ViewSelector
  *
  * The ViewSelector component allows you to choose your account, property, and view via dropdown menus.
  */

@@ -1,4 +1,4 @@
-import { GeoChartOptions, Query, GoogleAnalyticsEmbedAPI } from '@devboldly/react-use-google-analytics-embed-api';
+import { GeoChartOptions, Query, GoogleAnalyticsEmbedAPI } from 'react-use-analytics-api';
 import * as React from 'react';
 import { DataChart } from './DataChart';
 
@@ -7,21 +7,21 @@ export interface GeoChartProps {
   gapi: GoogleAnalyticsEmbedAPI;
   /** **Required.** Provide an ID for the `div` that will contain the chart. */
   query: Query;
-  /** **Required.** The [`Query`](https://react-analytics-charts.netlify.com/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](https://react-analytics-charts.netlify.com/DataChart). */
+  /** **Required.** The [`Query`](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](https://devboldly.github.io/react-analytics-charts/DataChart). */
   container: string;
   /** Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [geo charts](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options). */
   options?: GeoChartOptions;
 }
 
 /**
- * See documentation: [GeoChart](https://react-analytics-charts.netlify.com/GeoChart)
+ * See documentation: [GeoChart](https://devboldly.github.io/react-analytics-charts/GeoChart)
  *
  * A geo chart shows data on a geographical map. You can specify either the entire world or a specific region.
  *
- * You can use this to create a custom chart by providing your own data query (see [DataChart](https://react-analytics-charts.netlify.com/DataChart) for more info on queries) and,
+ * You can use this to create a custom chart by providing your own data query (see [DataChart](https://devboldly.github.io/react-analytics-charts/DataChart) for more info on queries) and,
  * optionally, [geo chart options](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options) for the chart.
  *
- * Refer to the [Charts Overview](https://react-analytics-charts.netlify.com/charts) for a list of all charts available.
+ * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
 export function GeoChart(props: GeoChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   const divProps: { [propName: string]: any } = { ...props };

@@ -16,7 +16,7 @@ import { DataChart } from '../components/charts/DataChart';
 import { ViewSelector } from '../components/ViewSelector';
 import { AuthorizeButton } from '../components/AuthorizeButton';
 import { SignOutButton } from '../components/SignOutButton';
-import { useAnalyticsApi } from '@devboldly/react-use-google-analytics-embed-api';
+import { useAnalyticsApi } from 'react-use-analytics-api';
 import clientId from '../__docz__/client-id-config';
 
 // Learn how to write stories:

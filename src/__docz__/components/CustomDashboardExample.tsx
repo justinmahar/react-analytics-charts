@@ -1,4 +1,4 @@
-import { useAnalyticsApi } from '@devboldly/react-use-google-analytics-embed-api';
+import { useAnalyticsApi } from 'react-use-analytics-api';
 import * as React from 'react';
 import { AuthorizeButton } from '../../components/AuthorizeButton';
 import { SessionsByDateChart } from '../../components/charts/common/SessionsByDateChart';

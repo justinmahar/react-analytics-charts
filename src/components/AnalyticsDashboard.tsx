@@ -1,4 +1,4 @@
-import { GoogleAnalyticsEmbedAPI, useAnalyticsApi } from '@devboldly/react-use-google-analytics-embed-api';
+import { GoogleAnalyticsEmbedAPI, useAnalyticsApi } from 'react-use-analytics-api';
 import * as React from 'react';
 import { AuthorizeButton } from './AuthorizeButton';
 import { SessionsByDateChart } from './charts/common/SessionsByDateChart';
@@ -7,9 +7,9 @@ import { ViewSelector } from './ViewSelector';
 import { AuthorizeOptions } from './AuthorizeButton';
 
 export interface AnalyticsDashboardProps {
-  /** **Required.** [Authorize options](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for the button. Be sure to provide a `clientId` or a `serverAuth.access_token`. See [How To Get An OAuth Client ID From Google](https://react-analytics-charts.netlify.com/google-oauth-client-id) to get a Client ID. Read more about [access tokens](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/).*/
+  /** **Required.** [Authorize options](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for the button. Be sure to provide a `clientId` or a `serverAuth.access_token`. See [How To Get An OAuth Client ID From Google](https://devboldly.github.io/react-analytics-charts/google-oauth-client-id) to get a Client ID. Read more about [access tokens](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/).*/
   authOptions: AuthorizeOptions;
-  /** Optional. The view ID for the view you're charting. If you provide a `viewId`, the dashboard [ViewSelector](https://react-analytics-charts.netlify.com/ViewSelector) will start on the view with this ID. You can hide the view selector altogether with the `hideViewSelector` prop. */
+  /** Optional. The view ID for the view you're charting. If you provide a `viewId`, the dashboard [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) will start on the view with this ID. You can hide the view selector altogether with the `hideViewSelector` prop. */
   viewId?: string;
   /** Optional. When true, the view selector is hidden. You should provide a `viewId` prop so the dashboard knows what view to render charts for. Default `false`. */
   hideViewSelector?: boolean;
@@ -34,15 +34,15 @@ export interface AnalyticsDashboardProps {
 }
 
 /**
- * See documentation: [AnalyticsDashboard](https://react-analytics-charts.netlify.com/AnalyticsDashboard)
+ * See documentation: [AnalyticsDashboard](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard)
  *
- * This component allows you to drop in an analytics dashboard that automatically handles loading the [Google Analytics Embed API](https://react-use-analytics-api.netlify.com/), [sign in](https://react-analytics-charts.netlify.com/AuthorizeButton) and [sign out](https://react-analytics-charts.netlify.com/SignOutButton), and [view selection](https://react-analytics-charts.netlify.com/ViewSelector).
+ * This component allows you to drop in an analytics dashboard that automatically handles loading the [Google Analytics Embed API](https://react-use-analytics-api.netlify.com/), [sign in](https://devboldly.github.io/react-analytics-charts/AuthorizeButton) and [sign out](https://devboldly.github.io/react-analytics-charts/SignOutButton), and [view selection](https://devboldly.github.io/react-analytics-charts/ViewSelector).
  *
- * All you need to do is provide your [Client ID](https://react-analytics-charts.netlify.com/google-oauth-client-id) and a render prop that renders all the [charts](https://react-analytics-charts.netlify.com/charts) you'd like to see.
+ * All you need to do is provide your [Client ID](https://devboldly.github.io/react-analytics-charts/google-oauth-client-id) and a render prop that renders all the [charts](https://devboldly.github.io/react-analytics-charts/charts) you'd like to see.
  *
- * Refer to the [Charts Overview](https://react-analytics-charts.netlify.com/charts) for a list of all charts available.
+ * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
  *
- * If you need more flexibility, you can create your own [custom dashboard](https://react-analytics-charts.netlify.com/custom-dashboards-standalone-charts) if you'd like.
+ * If you need more flexibility, you can create your own [custom dashboard](https://devboldly.github.io/react-analytics-charts/custom-dashboards-standalone-charts) if you'd like.
  */
 export function AnalyticsDashboard(props: AnalyticsDashboardProps): JSX.Element {
   const [viewId, setViewId] = React.useState<string | undefined>(props.viewId);

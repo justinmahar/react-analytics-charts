@@ -1,4 +1,4 @@
-import { PieChartOptions, GoogleAnalyticsEmbedAPI, Query } from '@devboldly/react-use-google-analytics-embed-api';
+import { PieChartOptions, GoogleAnalyticsEmbedAPI, Query } from 'react-use-analytics-api';
 import * as React from 'react';
 import { DataChart } from './DataChart';
 
@@ -7,7 +7,7 @@ export interface PieChartProps {
   gapi: GoogleAnalyticsEmbedAPI;
   /** **Required.** Provide an ID for the `div` that will contain the chart. */
   query: Query;
-  /** **Required.** The [`Query`](https://react-analytics-charts.netlify.com/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](https://react-analytics-charts.netlify.com/DataChart). */
+  /** **Required.** The [`Query`](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](https://devboldly.github.io/react-analytics-charts/DataChart). */
   container: string;
   /** **Optional.** When `true`, the pie chart will become a donut chart. Default `false`. */
   donut?: boolean;
@@ -16,14 +16,14 @@ export interface PieChartProps {
 }
 
 /**
- * See documentation: [PieChart](https://react-analytics-charts.netlify.com/PieChart)
+ * See documentation: [PieChart](https://devboldly.github.io/react-analytics-charts/PieChart)
  *
  * A pie chart shows data as slices of pie. You can also display a pie chart as a donut.
  *
- * You can use this to create a custom chart by providing your own data query (see [DataChart](https://react-analytics-charts.netlify.com/DataChart) for more info on queries) and,
+ * You can use this to create a custom chart by providing your own data query (see [DataChart](https://devboldly.github.io/react-analytics-charts/DataChart) for more info on queries) and,
  * optionally, [pie chart options](https://developers.google.com/chart/interactive/docs/gallery/piechart#configuration-options) for the chart.
  *
- * Refer to the [Charts Overview](https://react-analytics-charts.netlify.com/charts) for a list of all charts available.
+ * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
 export function PieChart(props: PieChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   const divProps: { [propName: string]: any } = { ...props };

@@ -1,4 +1,4 @@
-import { GoogleAnalyticsEmbedAPI, useAuthorize } from '@devboldly/react-use-google-analytics-embed-api';
+import { GoogleAnalyticsEmbedAPI, useAuthorize } from 'react-use-analytics-api';
 import * as React from 'react';
 
 export interface AuthorizeButtonProps {
@@ -17,13 +17,13 @@ export interface AuthorizeButtonProps {
 }
 
 /**
- * See documentation: [AuthorizeButton](https://react-analytics-charts.netlify.com/AuthorizeButton)
+ * See documentation: [AuthorizeButton](https://devboldly.github.io/react-analytics-charts/AuthorizeButton)
  *
  * Renders a Google Analytics sign-in button allowing the user to sign in with their Google account.
  *
  * After signing in, the `onSignIn` handler is called. This handler can be used to update the view once signed in. The handler is not called if already signed in.
  *
- * To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://react-use-analytics-api.netlify.app/useAnalyticsApi) hook. A full example is available [here](https://react-analytics-charts.netlify.com/AuthorizeButton#example).
+ * To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://react-use-analytics-api.netlify.app/useAnalyticsApi) hook. A full example is available [here](https://devboldly.github.io/react-analytics-charts/AuthorizeButton#example).
  *
  * The [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) will only render the sign-in button once per page load. A refresh button will be shown when the original button's container is disposed of by React. Clicking that button reloads the current page.
  */
@@ -78,7 +78,7 @@ export function AuthorizeButton(props: AuthorizeButtonProps): JSX.Element {
 }
 
 export interface AuthorizeOptions {
-  /** The client ID of your project in the [developers console](https://console.developers.google.com/project). See [How To Get An OAuth Client ID From Google](https://react-analytics-charts.netlify.com/google-oauth-client-id) to get yours. */
+  /** The client ID of your project in the [developers console](https://console.developers.google.com/project). See [How To Get An OAuth Client ID From Google](https://devboldly.github.io/react-analytics-charts/google-oauth-client-id) to get yours. */
   clientId?: string;
   /** The ID of an HTML element in the DOM that will host the sign-in button. You may also pass a reference to the element itself. */
   container?: string;

@@ -1,4 +1,4 @@
-import { GoogleAnalyticsEmbedAPI, useSignOut } from '@devboldly/react-use-google-analytics-embed-api';
+import { GoogleAnalyticsEmbedAPI, useSignOut } from 'react-use-analytics-api';
 import * as React from 'react';
 
 export interface SignOutButtonProps {
@@ -11,11 +11,11 @@ export interface SignOutButtonProps {
 }
 
 /**
- * See documentation: [SignOutButton](https://react-analytics-charts.netlify.com/SignOutButton)
+ * See documentation: [SignOutButton](https://devboldly.github.io/react-analytics-charts/SignOutButton)
  *
  * A button that signs the user out of Google Analytics via the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/). Reloads the page after signing out.
  *
- * See [AuthorizeButton](https://react-analytics-charts.netlify.com/AuthorizeButton) for a full example of the authorization flow.
+ * See [AuthorizeButton](https://devboldly.github.io/react-analytics-charts/AuthorizeButton) for a full example of the authorization flow.
  */
 export function SignOutButton(props: SignOutButtonProps): JSX.Element {
   const signOut = useSignOut(props.gapi);
