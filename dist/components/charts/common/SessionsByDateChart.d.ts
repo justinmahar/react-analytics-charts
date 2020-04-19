@@ -1,0 +1,36 @@
+import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-analytics-api';
+import * as React from 'react';
+export interface SessionsByDateChartChartProps {
+    /** **Required.** The ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) */
+    gapi: GoogleAnalyticsEmbedAPI;
+    /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) for more information. */
+    viewId: string;
+    /** Optional. Number of days the chart shows data for. Defaults to `28`. */
+    days?: number;
+    /** Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) renders. One will be created if no value is provided. */
+    container?: string;
+    /** Optional. Set to `true` to show the page view count on the chart. Defaults to `false`. */
+    showPageViews?: boolean;
+    /** Optional. Set to `true` to show the user count on the chart. Defaults to `false`. */
+    showUsers?: boolean;
+    /** Optional. The options for this chart have been preconfigured, but you can add or override any [LineChartOptions](https://devboldly.github.io/react-analytics-charts/LineChart#chart-options) you'd like here, such as the `width` or `title`. */
+    options?: LineChartOptions;
+    /** Optional. The [query](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) you'd like here. */
+    query?: Query;
+}
+/**
+ * See documentation: [SessionsByDateChart](https://devboldly.github.io/react-analytics-charts/SessionsByDateChart)
+ *
+ * This [LineChart](https://devboldly.github.io/react-analytics-charts/LineChart) charts the number of sessions, and optionally pageviews and/or users, for each date, until today.
+ *
+ * This is useful for seeing how a site's traffic changes and grows over time.
+ *
+ * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
+ */
+export declare function SessionsByDateChart(props: SessionsByDateChartChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element;
+export declare namespace SessionsByDateChart {
+    var defaultProps: {
+        showPageViews: boolean;
+        showUsers: boolean;
+    };
+}
