@@ -2,7 +2,7 @@ import { Chart, GoogleAnalyticsEmbedAPI, Query, useDataChart } from 'react-use-a
 import * as React from 'react';
 
 export interface DataChartProps {
-  /** **Required.** The ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) */
+  /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
   gapi: GoogleAnalyticsEmbedAPI;
   /** **Required.** The [`Query`](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for the Analytics data. */
   query: Query;
@@ -22,7 +22,7 @@ export interface DataChartProps {
  *
  * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
  *
- * This component wraps the [`useDataChart`](https://react-use-analytics-api.netlify.app/useDataChart) hook, which uses the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) to query the analytics data and render the chart into a container on the page.
+ * This component wraps the [`useDataChart`](https://devboldly.github.io/react-use-analytics-api/useDataChart) hook, which uses the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) to query the analytics data and render the chart into a container on the page.
  */
 export function DataChart(props: DataChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   useDataChart(props.gapi, props.query, props.chart);

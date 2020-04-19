@@ -3,7 +3,7 @@ import * as React from 'react';
 import { DataChart } from './DataChart';
 
 export interface ColumnChartProps {
-  /** **Required.** The ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) */
+  /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
   gapi: GoogleAnalyticsEmbedAPI;
   /** **Required.** Provide an ID for the `div` that will contain the chart. */
   query: Query;

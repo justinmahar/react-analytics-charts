@@ -29,7 +29,7 @@ DataChart for you. (Those components also include [TypeScript](https://www.types
 
 There are also a number of [ready-made charts](/charts#common-charts) available for you to use with preconfigured queries and chart options. Refer to the [Charts Overview](/charts) for a list of all charts that wrap DataChart.
 
-This component wraps the [`useDataChart`](https://react-use-analytics-api.netlify.app/useDataChart) hook, which uses the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) to query the analytics data and render the chart into a container on the page.
+This component wraps the [`useDataChart`](https://devboldly.github.io/react-use-analytics-api/useDataChart) hook, which uses the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) to query the analytics data and render the chart into a container on the page.
 
 ## Usage
 
@@ -68,7 +68,7 @@ This component wraps the [`useDataChart`](https://react-use-analytics-api.netlif
 
 | Prop | Type | Description |
 |------|------|-------------|
-| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) |
+| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) |
 | query | [`Query`](#query-prop)  | **Required.** The [`Query`](#query-prop) for the Analytics data. See below. |
 | chart | [`Chart`](#chart-prop) | **Required.** Specifies the [`Chart`](#chart-prop) to be rendered. See below. |
 
@@ -104,7 +104,7 @@ Refer to the [Dimensions &amp; Metrics Explorer](https://ga-dev-tools.appspot.co
 
 ### Chart Prop
 
-The chart prop is an object that specifies the `container` ID, chart `type`, and chart `options` that the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) will use to generate the chart.
+The chart prop is an object that specifies the `container` ID, chart `type`, and chart `options` that the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) will use to generate the chart.
 
 The API will render your chart into the container with the ID provided. See the official [Chart specs](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#datachart-options) by Google for more information.
 

@@ -19,15 +19,15 @@ import { AuthorizeButton } from './AuthorizeButton';
 
 Renders a Google Analytics sign-in button allowing the user to sign in with their Google account.
 
-This component is rendered by the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) into a container on the page.
+This component is rendered by the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) into a container on the page.
 
 After signing in, the `onSignIn` handler is called. This handler can be used to update the view once signed in. The handler is not called if already signed in. 
 
-To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://react-use-analytics-api.netlify.app/useAnalyticsApi) hook. A full example is available below.
+To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://devboldly.github.io/react-use-analytics-api/useAnalyticsApi) hook. A full example is available below.
 
-The [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) will only render the sign-in button once per page load. A refresh button will be shown when the original button's container is disposed of by React. Clicking that button reloads the current page.
+The [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) will only render the sign-in button once per page load. A refresh button will be shown when the original button's container is disposed of by React. Clicking that button reloads the current page.
 
-This component wraps the [`useAuthorize`](https://react-use-analytics-api.netlify.app/useAuthorize) hook from [react-use-analytics-api](https://react-use-analytics-api.netlify.com/).
+This component wraps the [`useAuthorize`](https://devboldly.github.io/react-use-analytics-api/useAuthorize) hook from [react-use-analytics-api](https://devboldly.github.io/react-use-analytics-api/).
 
 See related [SignOutButton](/SignOutButton).
 
@@ -73,7 +73,7 @@ This component renders as either one or two divs, depending on if a refresh page
 
 Below is a live example showing the full authorization flow from signed out to signed in, and vice versa. 
 
-Although not necessary if using an [AnalyticsDashboard](/AnalyticsDashboard), if you want, you can use the [`useAnalyticsApi`](https://react-use-analytics-api.netlify.app/useAnalyticsApi) hook to check if the user is authorized.
+Although not necessary if using an [AnalyticsDashboard](/AnalyticsDashboard), if you want, you can use the [`useAnalyticsApi`](https://devboldly.github.io/react-use-analytics-api/useAnalyticsApi) hook to check if the user is authorized.
 
 <div style={{ border: 'solid 2px #67788a', padding: '20px' }}>
   <AuthExample />

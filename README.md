@@ -1,12 +1,8 @@
 <h2 align="center">
-  React Analytics Charts
-  <br/>
-  <small><a href="https://github.com/devboldly/react-analytics-charts">
-    react-analytics-charts
-  </a></small>
+  <a href="https://github.com/devboldly/react-analytics-charts">React Analytics Charts <img src="./src/__docz__/images/github.svg" width=20/></a>
 </h2>
 <h3 align="center">
-  React components to easily embed Google Analytics charts on your React site.<br/>Uses the <a href="https://react-use-analytics-api.netlify.com/">Google Analytics Embed API</a>.
+  React components to easily embed Google Analytics charts on your React site.<br/>Uses the <a href="https://devboldly.github.io/react-use-analytics-api/">Google Analytics Embed API</a>.
 </h3>
 <p align="center">
   <a href="https://badge.fury.io/js/react-analytics-charts">
@@ -30,7 +26,7 @@ Read the **[official documentation](https://devboldly.github.io/react-analytics-
 
 ## Overview
 
-Easily embed Google Analytics charts on your React site using this component library, which leverages the <a href="https://react-use-analytics-api.netlify.app/">Google Analytics Embed API</a>.
+Easily embed Google Analytics charts on your React site using this component library, which leverages the <a href="https://devboldly.github.io/react-use-analytics-api/">Google Analytics Embed API</a>.
 
 Choose from [10+ commonly used drop-in chart components](https://devboldly.github.io/react-analytics-charts/charts#common-charts), or build your own [custom charts](https://devboldly.github.io/react-analytics-charts/charts#custom-charts) and render them as [bar charts](https://devboldly.github.io/react-analytics-charts/BarChart), 
 [column charts](https://devboldly.github.io/react-analytics-charts/ColumnChart), [geo charts](https://devboldly.github.io/react-analytics-charts/GeoChart), [line charts](https://devboldly.github.io/react-analytics-charts/LineChart), [pie charts](https://devboldly.github.io/react-analytics-charts/PieChart), and [tables](https://devboldly.github.io/react-analytics-charts/TableChart).
@@ -108,7 +104,7 @@ See the [Charts Overview](https://devboldly.github.io/react-analytics-charts/cha
 
 All of the charts in this library can be used standalone.
 
-If you have the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) (`gapi`) loaded and ready, and you know [which view ID](https://devboldly.github.io/react-analytics-charts/ViewSelector#example) to query, you can pick any of the [available charts](https://devboldly.github.io/react-analytics-charts/charts) and drop them right onto your site as [standalone charts](https://devboldly.github.io/react-analytics-charts/custom-dashboards-standalone-charts#standalone-charts).
+If you have the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) (`gapi`) loaded and ready, and you know [which view ID](https://devboldly.github.io/react-analytics-charts/ViewSelector#example) to query, you can pick any of the [available charts](https://devboldly.github.io/react-analytics-charts/charts) and drop them right onto your site as [standalone charts](https://devboldly.github.io/react-analytics-charts/custom-dashboards-standalone-charts#standalone-charts).
 
 For example, if your view ID is `ga:123456789`:
 
@@ -120,7 +116,7 @@ import { SessionsByDateChart } from 'react-analytics-charts';
 <SessionsByDateChart gapi={gapi} viewId="ga:123456789" />
 ```
 
-You must be authorized. You can use the [ViewSelector demo](https://devboldly.github.io/react-analytics-charts/ViewSelector#example) to determine your view ID, and the [useAnalyticsApi](https://react-use-analytics-api.netlify.com/useAnalyticsApi) hook to easily load the `gapi` API and authorize. If you use the [AnalyticsDashboard](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard), this will all be handled for you.
+You must be authorized. You can use the [ViewSelector demo](https://devboldly.github.io/react-analytics-charts/ViewSelector#example) to determine your view ID, and the [useAnalyticsApi](https://devboldly.github.io/react-use-analytics-api/useAnalyticsApi) hook to easily load the `gapi` API and authorize. If you use the [AnalyticsDashboard](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard), this will all be handled for you.
 
 ## TypeScript
 

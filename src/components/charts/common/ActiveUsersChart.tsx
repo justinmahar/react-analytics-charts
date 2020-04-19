@@ -5,13 +5,13 @@ import { LineChart } from '../LineChart';
 export type ActiveUserDays = [1, 7, 14, 28, 30];
 
 export interface ActiveUsersChartProps {
-  /** **Required.** The ready and authorized [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) */
+  /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
   gapi: GoogleAnalyticsEmbedAPI;
   /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) for more information. */
   viewId: string;
   /** Optional. Number of days the chart shows data for. Defaults to `28`. */
   days?: number;
-  /** Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/) renders. One will be created if no value is provided. */
+  /** Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) renders. One will be created if no value is provided. */
   container?: string;
   /** Optional. Number of users who visited within the last `1`, `7`, `14`, `28`, or `30` days. Defaults to `7`. */
   activeUserDays?: ActiveUserDays;

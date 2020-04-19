@@ -16,7 +16,7 @@ var ViewSelector_1 = require("./ViewSelector");
 /**
  * See documentation: [AnalyticsDashboard](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard)
  *
- * This component allows you to drop in an analytics dashboard that automatically handles loading the [Google Analytics Embed API](https://react-use-analytics-api.netlify.com/), [sign in](https://devboldly.github.io/react-analytics-charts/AuthorizeButton) and [sign out](https://devboldly.github.io/react-analytics-charts/SignOutButton), and [view selection](https://devboldly.github.io/react-analytics-charts/ViewSelector).
+ * This component allows you to drop in an analytics dashboard that automatically handles loading the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/), [sign in](https://devboldly.github.io/react-analytics-charts/AuthorizeButton) and [sign out](https://devboldly.github.io/react-analytics-charts/SignOutButton), and [view selection](https://devboldly.github.io/react-analytics-charts/ViewSelector).
  *
  * All you need to do is provide your [Client ID](https://devboldly.github.io/react-analytics-charts/google-oauth-client-id) and a render prop that renders all the [charts](https://devboldly.github.io/react-analytics-charts/charts) you'd like to see.
  *

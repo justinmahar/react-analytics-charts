@@ -2,7 +2,7 @@ import { GoogleAnalyticsEmbedAPI, useViewSelector } from 'react-use-analytics-ap
 import * as React from 'react';
 
 export interface ViewSelectorProps {
-  /** **Required.** The ready [Google Analytics Embed API](https://react-use-analytics-api.netlify.app/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
+  /** **Required.** The ready [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
   gapi?: GoogleAnalyticsEmbedAPI;
   /** Optional. Handler that's called when the view selector is changed. Called with a single string arg, `viewId`, that is the view ID that was selected. */
   onChange?: (viewId: string) => void;
