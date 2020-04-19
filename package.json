@@ -33,7 +33,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "react-use-analytics-api": "^1.4.8"
+    "react-use-analytics-api": "^1.4.10"
   },
   "peerDependencies": {
     "react": "^16.13.0",
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
+    "@devboldly/react-devboldly-tools": "^1.0.4",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
@@ -58,7 +59,7 @@
     "@types/react-helmet": "^5.0.15",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "babel-loader": "^8.0.6",
-    "docz": "^2.2.0",
+    "docz": "^2.3.1",
     "eslint": "^6.8.0",
     "eslint-plugin-json": "^2.1.0",
     "eslint-plugin-prettier": "^3.1.2",

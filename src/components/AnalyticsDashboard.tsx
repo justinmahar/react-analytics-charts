@@ -18,7 +18,7 @@ export interface AnalyticsDashboardProps {
   /** Optional. Text shown while API is loading. Defaults to `Loading...` */
   loadingText?: string;
   /** Optional. This is the render prop where you render your charts. Pass `gapi` (loaded Google API) and `viewId` to all your charts. */
-  renderCharts?: (gapi: GoogleAnalyticsEmbedAPI, viewId: any) => JSX.Element;
+  renderCharts?: (gapi: GoogleAnalyticsEmbedAPI, viewId: string) => JSX.Element;
   /** Optional. When `true`, charts appear above the view selector and authorize button. Otherwise, they appear below. Default `false`. */
   chartsAppearFirst?: boolean;
   /** Optional. An ID string prepended to all HTML IDs used for the chart divs. Specify this if you have multiple dashboards on one page. */
