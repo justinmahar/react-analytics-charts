@@ -1,6 +1,6 @@
 {
   "name": "react-analytics-charts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Dev Boldly <devboldly@gmail.com>",
   "description": "React components to easily embed Google Analytics charts on your React site. Uses the Google Analytics Embed API.",
   "homepage": "https://github.com/devboldly/react-analytics-charts#readme",
