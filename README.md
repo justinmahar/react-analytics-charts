@@ -1,5 +1,5 @@
 <h2 align="center">
-  <a href="https://github.com/devboldly/react-analytics-charts">React Analytics Charts <img src="./src/__docz__/images/github.svg" width=20/></a>
+  <a href="https://github.com/devboldly/react-analytics-charts">React Analytics Charts <img src="https://raw.githubusercontent.com/devboldly/react-analytics-charts/master/src/__docz__/images/github.svg" width=20/></a>
 </h2>
 <h3 align="center">
   React components to easily embed Google Analytics charts on your React site.<br/>Uses the <a href="https://devboldly.github.io/react-use-analytics-api/">Google Analytics Embed API</a>.
