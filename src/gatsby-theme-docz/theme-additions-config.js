@@ -19,7 +19,7 @@ export const themeAdditionsConfig = {
   /** Location of the favicon. Set to undefined for no favicon. */
   faviconUrl: `${publicUrl}/favicon.ico`,
   /** Image URL for a header logo image. Set to undefined for no logo image. */
-  logoImageUrl: `${publicUrl}/favicon-32x32.png`,
+  logoImageUrl: `${publicUrl}/android-chrome-512x512.png`,
   /** Alt text for header logo image (when provided). */
   logoImageAlt: 'Site logo',
   /** Footer settings */
