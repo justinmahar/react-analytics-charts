@@ -1,5 +1,5 @@
 /** Name of your repository */
-const repoName = 'react-use-analytics-api';
+const repoName = 'react-analytics-charts';
 /** URL to public assets such as images */
 const publicUrl = `/${repoName}/public`;
 

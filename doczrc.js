@@ -25,7 +25,7 @@ const docsConfig = {
   /** Use this option to change the filepath of Docz config file. */
   // config: 'my-docz-config.js',
   /** Option used to set a public folder of your project */
-  public: '/public',
+  // public: '/public',
   /** Use this setting to debug your application and remove all progress bar from bundler. */
   // debug: false,
   /** Branch used to edit your document when clicking on Github button. */
