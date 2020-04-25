@@ -8,10 +8,10 @@
   <a href="https://badge.fury.io/js/react-analytics-charts">
     <img src="https://badge.fury.io/js/react-analytics-charts.svg" alt="npm Version"/>
   </a>
-  <a href="https://github.com/devboldly/react-analytics-charts/actions">
+  <a href="https://github.com/devboldly/react-analytics-charts/actions?query=workflow%3ATests">
     <img src="https://github.com/devboldly/react-analytics-charts/workflows/Tests/badge.svg" alt="Tests Status"/>
   </a>
-  <a href="https://github.com/devboldly/react-analytics-charts/actions">
+  <a href="https://github.com/devboldly/react-analytics-charts/actions?query=workflow%3ADeploy">
     <img src="https://github.com/devboldly/react-analytics-charts/workflows/Deploy/badge.svg" alt="Deploy Status"/>
   </a>
 </p>
@@ -22,7 +22,9 @@ Read the **[official documentation](https://devboldly.github.io/react-analytics-
 
 [![Analytics Dashboard Example](./src/__docz__/images/dash.png "Analytics Dashboard Example")](https://devboldly.github.io/react-analytics-charts/)
 
-**[👁️ Live Demo](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard#example)**
+👁️ **[Live Demo](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard#example)**
+
+*For API hooks, check out: [React Use Analytics API](https://devboldly.github.io/react-use-analytics-api/)*
 
 ## Overview
 
@@ -122,21 +124,23 @@ You must be authorized. You can use the [ViewSelector demo](https://devboldly.gi
 
 Type definitions have been included for [TypeScript](https://www.typescriptlang.org/) support.
 
+## Logo Attribution
+
+Logo graphics by [Twemoji](https://github.com/twitter/twemoji), licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). Favicon by [favicon.io](https://favicon.io/emoji-favicons/).
+
 ## Contributing
 
-Open source software is awesome and so are you. 😎
-
-Feel free to submit a pull request for bugs or additions, and make sure to update tests as appropriate. Even the smallest changes help.
+Feel free to submit a pull request for bugs or additions, and make sure to update tests as appropriate. If you find a mistake in the docs, send a PR! Even the smallest changes help.
 
 For major changes, open an issue first to discuss what you'd like to change.
 
+See the [library template](https://tinyurl.com/ya3k258d) for npm script documentation.
+
 ## ⭐ Found It Helpful? [Star It!](https://github.com/devboldly/react-analytics-charts/stargazers)
 
-More stars means more development love. So if you found this project helpful, [star it](https://github.com/devboldly/react-analytics-charts/stargazers)! [👉⭐](https://github.com/devboldly/react-analytics-charts/stargazers)
+If you found this project helpful, let the community know by giving it a [star](https://github.com/devboldly/react-analytics-charts/stargazers): [👉⭐](https://github.com/devboldly/react-analytics-charts/stargazers)
 
-## License
-
-This project is covered under the [MIT License](https://en.wikipedia.org/wiki/MIT_License):
+## MIT License
 
 ```
 Copyright © 2020 DevBoldly https://devboldly.com

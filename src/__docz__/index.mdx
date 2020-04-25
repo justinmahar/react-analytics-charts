@@ -9,14 +9,8 @@ route: /
 import { Playground } from 'docz';
 
 import { SvgIcon } from '@devboldly/react-devboldly-tools';
-// TODO: Clean up old analytics and footers
-import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
-import { TRACKING_ID } from '../__docz__/analytics-config';
-import { CreatedBy } from '../__docz__/components/CreatedBy';
 import githubSvg from '../__docz__/images/github.svg';
 import dashPng from '../__docz__/images/dash.png';
-
-<GoogleAnalytics trackingId={TRACKING_ID} />
 
 <div style={{
 	display: 'flex',
@@ -27,20 +21,18 @@ import dashPng from '../__docz__/images/dash.png';
   </div>
   <div>
     <a href="https://github.com/devboldly/react-analytics-charts/" target="_blank" rel="noopener noreferrer">
-      <img src={githubSvg} width="28" style={{ margin: '0 0 0 20px' }}/>
+      <SvgIcon src={githubSvg} size={28} style={{ margin: '0 0 0 20px' }} />
     </a>
   </div>
 </div>
 
-<strong>
-  React components to easily embed Google Analytics charts on your React site. Uses the <a href="https://devboldly.github.io/react-use-analytics-api/">Google Analytics Embed API</a>.
-</strong>
-
-<br/><br/>
+**React components to easily embed Google Analytics charts on your React site. Uses the <a href="https://devboldly.github.io/react-use-analytics-api/">Google Analytics Embed API</a>.**
 
 <img src={dashPng} />
 
-#### [👁️ Live Demo](/AnalyticsDashboard#example)
+👁️ **[Live Demo](/AnalyticsDashboard#example)**
+
+*For API hooks, check out: [React Use Analytics API](https://devboldly.github.io/react-use-analytics-api/)*
 
 ## Overview
 
@@ -142,14 +134,12 @@ Type definitions have been included for [TypeScript](https://www.typescriptlang.
 
 ## Contributing
 
-Open source software is awesome and so are you. 😎
-
-Feel free to submit a pull request for bugs or additions, and make sure to update tests as appropriate. Even the smallest changes help.
+Feel free to submit a pull request for bugs or additions, and make sure to update tests as appropriate. If you find a mistake in the docs, send a PR! Even the smallest changes help.
 
 For major changes, open an issue first to discuss what you'd like to change.
 
+See the [library template](https://tinyurl.com/ya3k258d) for npm script documentation.
+
 ## ⭐ Found It Helpful? [Star It!](https://github.com/devboldly/react-analytics-charts/stargazers)
 
-More stars means more development love. So if you found this project helpful, [star it](https://github.com/devboldly/react-analytics-charts/stargazers)! [👉⭐](https://github.com/devboldly/react-analytics-charts/stargazers)
-
-<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>
+If you found this project helpful, let the community know by giving it a [star](https://github.com/devboldly/react-analytics-charts/stargazers): [👉⭐](https://github.com/devboldly/react-analytics-charts/stargazers)

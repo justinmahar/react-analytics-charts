@@ -5,13 +5,8 @@ route: /AuthorizeButton
 ---
 
 import { Playground, Props } from 'docz';
-import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
-import { TRACKING_ID } from '../__docz__/analytics-config';
-import { CreatedBy } from '../__docz__/components/CreatedBy';
 import { AuthExample } from '../__docz__/components/AuthExample';
 import { AuthorizeButton } from './AuthorizeButton';
-
-<GoogleAnalytics trackingId={TRACKING_ID} />
 
 <h1>AuthorizeButton</h1>
 
@@ -47,7 +42,7 @@ See related [SignOutButton](/SignOutButton).
 
 <Props of={AuthorizeButton} />
 
-<small>Note: Expand each prop for more information.</small>
+> Note: Expand each prop for more information.
 
 ## Styling
 
@@ -106,5 +101,3 @@ export function AuthExample() {
   );
 }
 ```
-
-<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

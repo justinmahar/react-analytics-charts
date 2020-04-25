@@ -4,10 +4,10 @@ import { DataChart } from './DataChart';
 
 export interface PieChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
-  gapi: GoogleAnalyticsEmbedAPI;
-  /** **Required.** Provide an ID for the `div` that will contain the chart. */
-  query: Query;
+  gapi?: GoogleAnalyticsEmbedAPI;
   /** **Required.** The [`Query`](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](https://devboldly.github.io/react-analytics-charts/DataChart). */
+  query: Query;
+  /** **Required.** Provide an ID for the `div` that will contain the chart. */
   container: string;
   /** **Optional.** When `true`, the pie chart will become a donut chart. Default `false`. */
   donut?: boolean;

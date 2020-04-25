@@ -5,13 +5,8 @@ route: /SignOutButton
 ---
 
 import { Playground, Props } from 'docz';
-import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
-import { TRACKING_ID } from '../__docz__/analytics-config';
 import { AuthExample } from '../__docz__/components/AuthExample';
-import { CreatedBy } from '../__docz__/components/CreatedBy';
 import { SignOutButton } from './SignOutButton';
-
-<GoogleAnalytics trackingId={TRACKING_ID} />
 
 <h1>SignOutButton</h1>
 
@@ -59,7 +54,7 @@ export function AuthExample() {
 
 <Props of={SignOutButton} />
 
-<small>Note: Expand each prop for more information.</small>
+> Note: Expand each prop for more information.
 
 ## Styling
 
@@ -70,5 +65,3 @@ The `button` has the class name `analytics-sign-out-button`:
   /* Custom styles */
 }
 ```
-
-<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

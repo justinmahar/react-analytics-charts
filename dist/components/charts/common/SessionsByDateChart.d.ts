@@ -1,6 +1,6 @@
 import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-analytics-api';
 import * as React from 'react';
-export interface SessionsByDateChartChartProps {
+export interface SessionsByDateChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
     gapi: GoogleAnalyticsEmbedAPI;
     /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) for more information. */
@@ -27,7 +27,7 @@ export interface SessionsByDateChartChartProps {
  *
  * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
-export declare function SessionsByDateChart(props: SessionsByDateChartChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element;
+export declare function SessionsByDateChart(props: SessionsByDateChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element;
 export declare namespace SessionsByDateChart {
     var defaultProps: {
         showPageViews: boolean;

@@ -1,0 +1,70 @@
+/** Name of your repository */
+const repoName = 'react-use-analytics-api';
+/** URL to public assets such as images */
+const publicUrl = `/${repoName}/public`;
+
+/**
+ * Configuration for additions to the default Docz theme.
+ * Includes Google Analytics, favicon, a footer, and feedback forms.
+ */
+export const themeAdditionsConfig = {
+  /** Google Analytics tracking ID */
+  gaTrackingId: 'UA-148090679-6',
+  /** Used to ensure site runs */
+  repoName: repoName,
+  /** URL to public assets, such as images. */
+  publicUrl,
+  /** Location of the favicon. Set to undefined for no favicon. */
+  faviconUrl: `${publicUrl}/favicon.ico`,
+  /** Image URL for a header logo image. Set to undefined for no logo image. */
+  logoImageUrl: `${publicUrl}/favicon-32x32.png`,
+  /** Alt text for header logo image (when provided). */
+  logoImageAlt: 'Site logo',
+  /** Add text before the header logo, such as an emoji, to act as a logo image placeholder. */
+  logoPrefix: '🚀',
+  footer: {
+    /** Set to false to disable the author/"powered by" footer. */
+    enabled: true,
+    /** Name of project author */
+    authorName: 'DevBoldly',
+    /** URL to author's page */
+    authorUrl: 'https://devboldly.com/',
+    /** Set to true if you're a grumpy person :) */
+    hideEmoji: false,
+    /** Hide the "Created with <3 by name" author text from footer. */
+    hideAuthor: false,
+    /** Holidays like New Year's Day and Pi Day are announced for fun. It's an easter egg. Hide if you want. */
+    hideHolidays: false,
+    /** Shoutout to what's powering this project. */
+    poweredByName: `react${'-'}library${'-'}starter`,
+    /** Link for shoutout. */
+    poweredByUrl: `https://github.com/devboldly/react${'-'}library${'-'}starter`,
+    /** Hide the "powered by" text from footer. */
+    hidePoweredBy: false,
+  },
+  feedbackForm: {
+    /** Set to false to disable "was this page helpful?" feedback forms for whole site. */
+    enabled: true,
+    /** Site name submitted along with form, so you can track multiple sites with one form. Not shown to user. */
+    siteName: repoName,
+    /**
+     * Create and inspect your google form (i.e. in Chrome dev tools) and retrieve the form action URL.
+     * IMPORTANT: Be sure none of the fields have validation or your submits will fail!
+     */
+    formActionUrl:
+      'https://docs.google.com/forms/u/0/d/e/1FAIpQLScMRAM6r__I_rSeg_l-a5mk8p8iSTDNrjJCUOTlnxa63Czwrg/formResponse',
+    /** Form field name for the yes/no text field */
+    yesNoFieldName: 'entry.681938809',
+    /** Form field name for the feedback message text field */
+    feedbackFieldName: 'entry.593370879',
+    /** Form field name for the site name text field */
+    siteFieldName: 'entry.1824430892',
+    /** Form field name for the page URL text field */
+    pageUrlFieldName: 'entry.2081371977',
+    /**
+     * Page paths to exclude the feedback form from.
+     * Automatically uses repo name above to exclude in gh-pages as well.
+     */
+    excludedPaths: ['/', '/mit-license', '/code-of-conduct'],
+  },
+};

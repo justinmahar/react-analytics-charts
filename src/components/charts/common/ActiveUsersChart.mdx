@@ -5,14 +5,9 @@ route: /ActiveUsersChart
 ---
 
 import { Playground, Props } from 'docz';
-import GoogleAnalytics from '../../../__docz__/components/GoogleAnalytics';
-import { TRACKING_ID } from '../../../__docz__/analytics-config';
-import { CreatedBy } from '../../../__docz__/components/CreatedBy';
 import clientId from '../../../__docz__/client-id-config';
 import { AnalyticsDashboard } from '../../AnalyticsDashboard'
 import { ActiveUsersChart } from './ActiveUsersChart';
-
-<GoogleAnalytics trackingId={TRACKING_ID} />
 
 <h1>ActiveUsersChart</h1>
 
@@ -78,5 +73,3 @@ This chart has been preconfigured for ease of use, but you can customize it by p
 The properties you specify in either prop object will override the ones used by this chart.
 
 This means you can cherry-pick the properties you'd like to override, such as the `metrics` in the `query`, or the `width` in `options`, without having to create a completely [custom chart](/charts#custom-charts).
-
-<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>

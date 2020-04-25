@@ -2,9 +2,9 @@ import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-anal
 import * as React from 'react';
 import { LineChart } from '../LineChart';
 
-export interface SessionsByDateChartChartProps {
+export interface SessionsByDateChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
-  gapi: GoogleAnalyticsEmbedAPI;
+  gapi?: GoogleAnalyticsEmbedAPI;
   /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) for more information. */
   viewId: string;
   /** Optional. Number of days the chart shows data for. Defaults to `28`. */
@@ -31,7 +31,7 @@ export interface SessionsByDateChartChartProps {
  * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
 export function SessionsByDateChart(
-  props: SessionsByDateChartChartProps & React.HTMLAttributes<HTMLDivElement>
+  props: SessionsByDateChartProps & React.HTMLAttributes<HTMLDivElement>
 ): JSX.Element {
   const days: number = props.days ? Math.max(1, Math.abs(props.days)) : 28;
 

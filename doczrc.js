@@ -44,8 +44,9 @@ const docsConfig = {
     { name: 'Common Charts' },
     { name: 'Custom Charts' },
     'Custom Dashboards and Standalone Charts',
-    'How To Get An OAuth Client ID From Google',
-    'License',
+    'How To Get An OAuth Client ID From Google', 
+    'Code of Conduct', 
+    'MIT License',
   ],
   /** Specify an array of plugins that you want to use. */
   // plugins: [],

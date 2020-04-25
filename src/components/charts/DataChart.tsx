@@ -3,7 +3,7 @@ import * as React from 'react';
 
 export interface DataChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
-  gapi: GoogleAnalyticsEmbedAPI;
+  gapi?: GoogleAnalyticsEmbedAPI;
   /** **Required.** The [`Query`](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for the Analytics data. */
   query: Query;
   /** **Required.** Specifies the [`Chart`](https://devboldly.github.io/react-analytics-charts/DataChart#chart-prop) to be rendered. */

@@ -5,9 +5,6 @@ route: /AnalyticsDashboard
 ---
 
 import { Playground, Props } from 'docz';
-import GoogleAnalytics from '../__docz__/components/GoogleAnalytics';
-import { TRACKING_ID } from '../__docz__/analytics-config';
-import { CreatedBy } from '../__docz__/components/CreatedBy';
 import clientId from '../__docz__/client-id-config';
 import { AnalyticsDashboard } from './AnalyticsDashboard';
 import { SessionsByDateChart } from './charts/common/SessionsByDateChart';
@@ -15,8 +12,6 @@ import { SessionsGeoChart } from './charts/common/SessionsGeoChart';
 import { SessionsByHourChart } from './charts/common/SessionsByHourChart';
 import { SessionsBySourceChart } from './charts/common/SessionsBySourceChart';
 import { PageViewsPerPathChart } from './charts/common/PageViewsPerPathChart';
-
-<GoogleAnalytics trackingId={TRACKING_ID} />
 
 <h1>AnalyticsDashboard</h1>
 
@@ -72,7 +67,7 @@ import { SessionsByDateChart, SessionsGeoChart } from 'react-analytics-charts';
 
 <Props of={AnalyticsDashboard} />
 
-<small>Note: Expand each prop for more information.</small>
+> Note: Expand each prop for more information.
 
 <br/><br/>
 
@@ -139,5 +134,3 @@ Click the "Access Google Analytics" button to get started.
 Many more [ready-made charts](/charts#common-charts) are available, and you can [create your own charts](/charts#custom-charts) if you'd like.
 
 See the [Charts Overview](/charts) for more information.
-
-<CreatedBy author="DevBoldly" url="https://devboldly.com/" emoji="🍺" emojiLabel="Beer"/>
