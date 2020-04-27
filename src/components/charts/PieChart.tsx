@@ -9,7 +9,7 @@ export interface PieChartProps {
   query: Query;
   /** **Required.** Provide an ID for the `div` that will contain the chart. */
   container: string;
-  /** **Optional.** When `true`, the pie chart will become a donut chart. Default `false`. */
+  /** Optional. When `true`, the pie chart will become a donut chart. Default `false`. */
   donut?: boolean;
   /** Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [pie charts](https://developers.google.com/chart/interactive/docs/gallery/piechart#configuration-options). */
   options?: PieChartOptions;
