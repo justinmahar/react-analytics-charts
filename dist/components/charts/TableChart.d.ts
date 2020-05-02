@@ -2,10 +2,10 @@ import { GoogleAnalyticsEmbedAPI, Query, TableChartOptions } from 'react-use-ana
 import * as React from 'react';
 export interface TableChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
-    gapi: GoogleAnalyticsEmbedAPI;
-    /** **Required.** Provide an ID for the `div` that will contain the chart. */
-    query: Query;
+    gapi?: GoogleAnalyticsEmbedAPI;
     /** **Required.** The [`Query`](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](https://devboldly.github.io/react-analytics-charts/DataChart). */
+    query: Query;
+    /** **Required.** Provide an ID for the `div` that will contain the chart. */
     container: string;
     /** Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [tables](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options). */
     options?: TableChartOptions;

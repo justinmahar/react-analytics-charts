@@ -2,7 +2,7 @@ import { GoogleAnalyticsEmbedAPI, ColumnChartOptions, Query } from 'react-use-an
 import * as React from 'react';
 export interface SessionsByHourChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
-    gapi: GoogleAnalyticsEmbedAPI;
+    gapi?: GoogleAnalyticsEmbedAPI;
     /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) for more information. */
     viewId: string;
     /** Optional. Number of days the chart shows data for. Defaults to `28`. */

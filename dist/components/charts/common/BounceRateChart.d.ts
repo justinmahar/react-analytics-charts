@@ -2,7 +2,7 @@ import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-anal
 import * as React from 'react';
 export interface BounceRateChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
-    gapi: GoogleAnalyticsEmbedAPI;
+    gapi?: GoogleAnalyticsEmbedAPI;
     /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) for more information. */
     viewId: string;
     /** Optional. Number of days the chart shows data for. Defaults to `28`. */
