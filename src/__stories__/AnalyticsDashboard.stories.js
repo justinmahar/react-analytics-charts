@@ -19,9 +19,6 @@ import { SignOutButton } from '../components/SignOutButton';
 import { useAnalyticsApi } from 'react-use-analytics-api';
 import clientId from '../__docz__/client-id-config';
 
-// Learn how to write stories:
-// https://storybook.js.org/docs/basics/writing-stories/
-
 // A Storybook is a collection of stories. Each story represents a single visual state of a component.
 // Technically, a story is a function that returns something that can be rendered to screen.
 

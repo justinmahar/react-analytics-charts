@@ -5,9 +5,6 @@ import { useAnalyticsApi } from 'react-use-analytics-api';
 import { AuthorizeButton, AuthorizeButtonProps } from '../components/AuthorizeButton';
 import clientId from '../__docz__/client-id-config';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: AuthorizeButtonProps, children: React.ReactNode = undefined): RenderResult {
   return render(<AuthorizeButton {...props}>{children}</AuthorizeButton>);
 }

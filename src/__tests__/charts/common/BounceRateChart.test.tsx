@@ -4,9 +4,6 @@ import { BounceRateChart, BounceRateChartProps } from '../../../components/chart
 import { renderHook } from '@testing-library/react-hooks';
 import { useAnalyticsApi } from 'react-use-analytics-api';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: BounceRateChartProps, children: React.ReactNode = undefined): RenderResult {
   return render(<BounceRateChart {...props}>{children}</BounceRateChart>);
 }

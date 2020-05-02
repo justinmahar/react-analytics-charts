@@ -7,9 +7,6 @@ import {
 import { renderHook } from '@testing-library/react-hooks';
 import { useAnalyticsApi } from 'react-use-analytics-api';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: PageViewsPerPathChartProps, children: React.ReactNode = undefined): RenderResult {
   return render(<PageViewsPerPathChart {...props}>{children}</PageViewsPerPathChart>);
 }

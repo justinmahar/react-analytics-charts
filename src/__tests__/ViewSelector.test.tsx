@@ -4,9 +4,6 @@ import React from 'react';
 import { useAnalyticsApi } from 'react-use-analytics-api';
 import { ViewSelector, ViewSelectorProps } from '../components/ViewSelector';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: ViewSelectorProps, children: React.ReactNode = undefined): RenderResult {
   return render(<ViewSelector {...props}>{children}</ViewSelector>);
 }

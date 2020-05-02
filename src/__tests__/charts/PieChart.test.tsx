@@ -4,9 +4,6 @@ import { PieChart, PieChartProps } from '../../components/charts/PieChart';
 import { renderHook } from '@testing-library/react-hooks';
 import { useAnalyticsApi } from 'react-use-analytics-api';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: PieChartProps, children: React.ReactNode = undefined): RenderResult {
   return render(<PieChart {...props}>{children}</PieChart>);
 }

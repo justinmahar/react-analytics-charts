@@ -4,9 +4,6 @@ import { BarChart, BarChartProps } from '../../components/charts/BarChart';
 import { renderHook } from '@testing-library/react-hooks';
 import { useAnalyticsApi } from 'react-use-analytics-api';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: BarChartProps, children: React.ReactNode = undefined): RenderResult {
   return render(<BarChart {...props}>{children}</BarChart>);
 }

@@ -3,9 +3,6 @@ import React from 'react';
 import { AnalyticsDashboard, AnalyticsDashboardProps } from '../components/AnalyticsDashboard';
 import clientId from '../__docz__/client-id-config';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: AnalyticsDashboardProps, children: React.ReactNode = undefined): RenderResult {
   return render(<AnalyticsDashboard {...props}>{children}</AnalyticsDashboard>);
 }

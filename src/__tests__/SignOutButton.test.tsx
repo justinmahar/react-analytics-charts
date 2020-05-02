@@ -4,9 +4,6 @@ import React from 'react';
 import { useAnalyticsApi } from 'react-use-analytics-api';
 import { SignOutButton, SignOutButtonProps } from '../components/SignOutButton';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: SignOutButtonProps, children: React.ReactNode = undefined): RenderResult {
   return render(<SignOutButton {...props}>{children}</SignOutButton>);
 }

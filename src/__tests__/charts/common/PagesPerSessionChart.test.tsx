@@ -7,9 +7,6 @@ import {
 import { useAnalyticsApi } from 'react-use-analytics-api';
 import { renderHook } from '@testing-library/react-hooks';
 
-// Learn how to test React components:
-// https://testing-library.com/docs/react-testing-library/intro
-
 function renderComponent(props: PagesPerSessionChartProps, children: React.ReactNode = undefined): RenderResult {
   return render(<PagesPerSessionChart {...props}>{children}</PagesPerSessionChart>);
 }
