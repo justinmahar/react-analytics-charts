@@ -9,7 +9,7 @@ export interface ViewSelectorProps {
     idPrefix?: string;
 }
 /**
- * See documentation: https://devboldly.github.io/react-analytics-charts/ViewSelector
+ * See documentation: [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector)
  *
  * The ViewSelector component allows you to choose your account, property, and view via dropdown menus.
  */

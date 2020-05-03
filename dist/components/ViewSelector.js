@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_use_analytics_api_1 = require("react-use-analytics-api");
 var React = __importStar(require("react"));
 /**
- * See documentation: https://devboldly.github.io/react-analytics-charts/ViewSelector
+ * See documentation: [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector)
  *
  * The ViewSelector component allows you to choose your account, property, and view via dropdown menus.
  */
