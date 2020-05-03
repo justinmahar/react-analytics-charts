@@ -20,7 +20,7 @@
 
 Read the **[official documentation](https://devboldly.github.io/react-analytics-charts/)**.
 
-[![Analytics Dashboard Example](./src/__docz__/images/dash.png "Analytics Dashboard Example")](https://devboldly.github.io/react-analytics-charts/)
+[![Analytics Dashboard Example](./src/__docz__/images/dash.png "Analytics Dashboard Example")](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard#example)
 
 👁️ **[Live Demo](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard#example)**
 
