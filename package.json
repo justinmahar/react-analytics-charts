@@ -35,7 +35,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "react-use-analytics-api": "^1.4.11"
+    "react-use-analytics-api": "^1.4.12"
   },
   "peerDependencies": {
     "react": "^16.13.0",
