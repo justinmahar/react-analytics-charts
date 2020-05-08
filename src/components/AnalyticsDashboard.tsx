@@ -9,7 +9,7 @@ import { AuthorizeOptions } from './AuthorizeButton';
 export interface AnalyticsDashboardProps {
   /** **Required.** [Authorize options](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for the button. Be sure to provide a `clientId` or a `serverAuth.access_token`. See [How To Get An OAuth Client ID From Google](https://devboldly.github.io/react-analytics-charts/google-oauth-client-id) to get a Client ID. Read more about [access tokens](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/).*/
   authOptions: AuthorizeOptions;
-  /** Optional. The view ID for the view you're charting. If you provide a `viewId`, the dashboard [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) will start on the view with this ID. You can hide the view selector altogether with the `hideViewSelector` prop. */
+  /** Optional. The view ID for the view you're charting. If you provide a `viewId`, you should hide the view selector with the `hideViewSelector` prop (the view selector component does not support selecting a default view). */
   viewId?: string;
   /** Optional. When true, the view selector is hidden. You should provide a `viewId` prop so the dashboard knows what view to render charts for. Default `false`. */
   hideViewSelector?: boolean;

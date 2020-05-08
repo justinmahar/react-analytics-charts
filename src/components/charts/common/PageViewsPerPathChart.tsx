@@ -52,6 +52,7 @@ export function PageViewsPerPathChart(
       options={{
         sortAscending: false,
         sortColumn: 1,
+        pageSize: 10,
         ...props.options,
       }}
     />
