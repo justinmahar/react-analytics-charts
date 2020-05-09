@@ -12,8 +12,6 @@ export const themeAdditionsConfig = {
   projectName: repoName,
   /** Google Analytics tracking ID */
   gaTrackingId: 'UA-148090679-6',
-  /** Google site verification */
-  googleSiteVerification: 'm3gim8TmX19i4PGPoMR4_6j4eSThtszNtFH9QRBKQlY',
   /** Used to ensure site runs */
   repoName: repoName,
   /** URL to public assets, such as images. */

@@ -37,11 +37,6 @@ export default ({ children }) => {
           <link rel="icon" type="image/x-icon" href={faviconUrl} />
         </Helmet>
       )}
-      {themeAdditionsConfig.googleSiteVerification && (
-        <Helmet>
-          <meta name="google-site-verification" content={themeAdditionsConfig.googleSiteVerification} />
-        </Helmet>
-      )}
       {children}
     </>
   );
