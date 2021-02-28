@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { GoogleAnalyticsEmbedAPI } from "react-use-analytics-api";
-import { AuthorizeOptions } from "./AuthorizeButton";
+import { GoogleAnalyticsEmbedAPI } from 'react-use-analytics-api';
+import { AuthorizeOptions } from './AuthorizeButton';
 export interface AnalyticsDashboardProps {
     /** **Required.** [Authorize options](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for the button. Be sure to provide a `clientId` or a `serverAuth.access_token`. See [How To Get An OAuth Client ID From Google](https://justinmahar.github.io/react-analytics-charts/google-oauth-client-id) to get a Client ID. Read more about [access tokens](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/).*/
     authOptions: AuthorizeOptions;

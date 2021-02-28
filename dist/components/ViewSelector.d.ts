@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { GoogleAnalyticsEmbedAPI } from "react-use-analytics-api";
+import { GoogleAnalyticsEmbedAPI } from 'react-use-analytics-api';
 export interface ViewSelectorProps {
     /** **Required.** The ready [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
     gapi?: GoogleAnalyticsEmbedAPI;

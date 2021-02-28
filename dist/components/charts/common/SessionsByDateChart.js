@@ -46,27 +46,16 @@ function SessionsByDateChart(props) {
     var days = props.days ? Math.max(1, Math.abs(props.days)) : 28;
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = [
-        "gapi",
-        "viewId",
-        "days",
-        "container",
-        "showPageViews",
-        "showUsers",
-        "options",
-        "query",
-    ];
+    var propKeys = ['gapi', 'viewId', 'days', 'container', 'showPageViews', 'showUsers', 'options', 'query'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
-    var metrics = ["ga:sessions"];
+    var metrics = ['ga:sessions'];
     if (props.showPageViews) {
-        metrics.push("ga:pageviews");
+        metrics.push('ga:pageviews');
     }
     if (props.showUsers) {
-        metrics.push("ga:users");
+        metrics.push('ga:users');
     }
-    return (React.createElement(LineChart_1.LineChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: metrics.join(","), dimensions: "ga:date", "start-date": days + "daysAgo", "end-date": "today", ids: props.viewId }, props.query), container: props.container
-            ? props.container
-            : "gapi-sessions-by-date-chart-" + days + "-days", options: __assign({ title: "Sessions (" + days + " Day" + (days !== 1 ? "s" : "") + ")" }, props.options) })));
+    return (React.createElement(LineChart_1.LineChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: metrics.join(','), dimensions: 'ga:date', 'start-date': days + "daysAgo", 'end-date': 'today', ids: props.viewId }, props.query), container: props.container ? props.container : "gapi-sessions-by-date-chart-" + days + "-days", options: __assign({ title: "Sessions (" + days + " Day" + (days !== 1 ? 's' : '') + ")" }, props.options) })));
 }
 exports.SessionsByDateChart = SessionsByDateChart;
 SessionsByDateChart.defaultProps = {

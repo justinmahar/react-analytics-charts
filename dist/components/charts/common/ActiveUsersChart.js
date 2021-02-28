@@ -46,19 +46,9 @@ function ActiveUsersChart(props) {
     var days = props.days ? Math.max(1, Math.abs(props.days)) : 28;
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = [
-        "gapi",
-        "viewId",
-        "days",
-        "container",
-        "activeUserDays",
-        "options",
-        "query",
-    ];
+    var propKeys = ['gapi', 'viewId', 'days', 'container', 'activeUserDays', 'options', 'query'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
-    return (React.createElement(LineChart_1.LineChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: "ga:" + props.activeUserDays + "dayUsers", dimensions: "ga:date", "start-date": days + "daysAgo", "end-date": "today", ids: props.viewId }, props.query), container: props.container
-            ? props.container
-            : "gapi-" + props.activeUserDays + "-day-active-users-chart-" + days + "-days", options: __assign({ title: props.activeUserDays + "-Day Active Users (" + days + " Day" + (days !== 1 ? "s" : "") + ")" }, props.options) })));
+    return (React.createElement(LineChart_1.LineChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: "ga:" + props.activeUserDays + "dayUsers", dimensions: 'ga:date', 'start-date': days + "daysAgo", 'end-date': 'today', ids: props.viewId }, props.query), container: props.container ? props.container : "gapi-" + props.activeUserDays + "-day-active-users-chart-" + days + "-days", options: __assign({ title: props.activeUserDays + "-Day Active Users (" + days + " Day" + (days !== 1 ? 's' : '') + ")" }, props.options) })));
 }
 exports.ActiveUsersChart = ActiveUsersChart;
 ActiveUsersChart.defaultProps = {

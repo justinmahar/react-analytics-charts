@@ -46,10 +46,8 @@ function SessionsBySourceChart(props) {
     var days = props.days ? Math.max(1, Math.abs(props.days)) : 28;
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = ["gapi", "viewId", "days", "container", "options", "query"];
+    var propKeys = ['gapi', 'viewId', 'days', 'container', 'options', 'query'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
-    return (React.createElement(PieChart_1.PieChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: "ga:sessions", dimensions: "ga:source", "start-date": days + "daysAgo", "end-date": "today", ids: props.viewId }, props.query), container: props.container
-            ? props.container
-            : "gapi-sessions-by-source-chart-" + days + "-days", donut: true, options: __assign({ title: "Sessions By Source (" + days + " Day" + (days !== 1 ? "s" : "") + ")" }, props.options) })));
+    return (React.createElement(PieChart_1.PieChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: 'ga:sessions', dimensions: 'ga:source', 'start-date': days + "daysAgo", 'end-date': 'today', ids: props.viewId }, props.query), container: props.container ? props.container : "gapi-sessions-by-source-chart-" + days + "-days", donut: true, options: __assign({ title: "Sessions By Source (" + days + " Day" + (days !== 1 ? 's' : '') + ")" }, props.options) })));
 }
 exports.SessionsBySourceChart = SessionsBySourceChart;

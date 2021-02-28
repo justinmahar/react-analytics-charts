@@ -44,14 +44,11 @@ function AnalyticsDashboard(props) {
     var showAuth = !props.hideAuth;
     var renderedCharts = React.createElement(React.Fragment, null);
     if (ready && gapi && viewId) {
-        renderedCharts = props.renderCharts ? (props.renderCharts(gapi, viewId)) : (React.createElement(React.Fragment, null));
+        renderedCharts = props.renderCharts ? props.renderCharts(gapi, viewId) : React.createElement(React.Fragment, null);
     }
-    var analyticsAuthWidgetsClassName = "analytics-auth-widgets";
+    var analyticsAuthWidgetsClassName = 'analytics-auth-widgets';
     return (React.createElement("div", { className: "analytics-dashboard" },
-        !ready &&
-            (typeof props.loadingText === "string"
-                ? props.loadingText
-                : "Loading..."),
+        !ready && (typeof props.loadingText === 'string' ? props.loadingText : 'Loading...'),
         ready && (React.createElement(React.Fragment, null,
             authorized && !!props.chartsAppearFirst && renderedCharts,
             !authorized && showAuth && (React.createElement("div", { className: analyticsAuthWidgetsClassName },

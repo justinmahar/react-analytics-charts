@@ -1,5 +1,5 @@
-import { BarChartOptions, GoogleAnalyticsEmbedAPI, Query } from "react-use-analytics-api";
-import * as React from "react";
+import { BarChartOptions, GoogleAnalyticsEmbedAPI, Query } from 'react-use-analytics-api';
+import * as React from 'react';
 export interface BarChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
     gapi?: GoogleAnalyticsEmbedAPI;

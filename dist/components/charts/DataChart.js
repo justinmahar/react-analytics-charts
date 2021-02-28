@@ -51,8 +51,8 @@ function DataChart(props) {
     react_use_analytics_api_1.useDataChart(props.gapi, props.query, props.chart);
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = ["gapi", "query", "chart"];
+    var propKeys = ['gapi', 'query', 'chart'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
-    return (React.createElement("div", __assign({}, divProps, { className: "gapi-data-chart-container", id: props.chart.container })));
+    return React.createElement("div", __assign({}, divProps, { className: "gapi-data-chart-container", id: props.chart.container }));
 }
 exports.DataChart = DataChart;

@@ -32,13 +32,13 @@ var React = __importStar(require("react"));
 function SignOutButton(props) {
     var signOut = react_use_analytics_api_1.useSignOut(props.gapi);
     var signOutHandler = function () {
-        if (typeof props.gapi !== "undefined") {
+        if (typeof props.gapi !== 'undefined') {
             signOut();
-            if (typeof window !== "undefined" && !props.noReload) {
+            if (typeof window !== 'undefined' && !props.noReload) {
                 window.location.reload(false);
             }
         }
     };
-    return (React.createElement("button", { className: "analytics-sign-out-button", onClick: signOutHandler }, props.text ? props.text : "Sign Out"));
+    return (React.createElement("button", { className: "analytics-sign-out-button", onClick: signOutHandler }, props.text ? props.text : 'Sign Out'));
 }
 exports.SignOutButton = SignOutButton;

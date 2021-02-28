@@ -47,13 +47,13 @@ var React = __importStar(require("react"));
 function AuthorizeButton(props) {
     var _a, _b;
     var authDiv = React.useRef(null);
-    var embedApiAuthContainerId = (typeof props.idPrefix === "string" ? props.idPrefix + "-" : "") + "gapi-authorize-container";
+    var embedApiAuthContainerId = (typeof props.idPrefix === 'string' ? props.idPrefix + '-' : '') + "gapi-authorize-container";
     var authOptions = __assign({ container: embedApiAuthContainerId }, props.authOptions);
     var _c = React.useState(false), authorizeCalled = _c[0], setAuthorizeCalled = _c[1];
     var authorize = react_use_analytics_api_1.useAuthorize(props.gapi, authOptions, props.onSignIn);
     React.useEffect(function () {
         var aborted = false;
-        if (!aborted && typeof props.gapi !== "undefined" && !authorizeCalled) {
+        if (!aborted && typeof props.gapi !== 'undefined' && !authorizeCalled) {
             authorize();
             setAuthorizeCalled(true);
         }
@@ -63,9 +63,7 @@ function AuthorizeButton(props) {
     }, [authorize, authorizeCalled, props.gapi]);
     var hasButton = authDiv.current && ((_b = (_a = authDiv === null || authDiv === void 0 ? void 0 : authDiv.current) === null || _a === void 0 ? void 0 : _a.children) === null || _b === void 0 ? void 0 : _b.length) > 0;
     var handleRefresh = function () {
-        if (typeof window !== "undefined" &&
-            window.location &&
-            window.location.reload) {
+        if (typeof window !== 'undefined' && window.location && window.location.reload) {
             window.location.reload(false);
         }
     };
@@ -73,11 +71,10 @@ function AuthorizeButton(props) {
         React.createElement("div", { ref: authDiv, className: "gapi-authorize-container", id: embedApiAuthContainerId }),
         !props.hideRefreshButton && !hasButton && (React.createElement("div", { className: "analytics-refresh-button-container" },
             React.createElement("button", { onClick: handleRefresh },
-                typeof props.refreshButtonText === "string" &&
-                    props.refreshButtonText,
-                typeof props.refreshButtonText !== "string" && (React.createElement(React.Fragment, null,
+                typeof props.refreshButtonText === 'string' && props.refreshButtonText,
+                typeof props.refreshButtonText !== 'string' && (React.createElement(React.Fragment, null,
                     React.createElement("span", { role: "img", "aria-label": "chart" }, "\uD83D\uDCC8"),
-                    " ",
+                    ' ',
                     "Refresh To Access Google Analytics")))))));
 }
 exports.AuthorizeButton = AuthorizeButton;

@@ -1,5 +1,5 @@
-import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from "react-use-analytics-api";
-import * as React from "react";
+import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-analytics-api';
+import * as React from 'react';
 export declare type ActiveUserDays = [1, 7, 14, 28, 30];
 export interface ActiveUsersChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */

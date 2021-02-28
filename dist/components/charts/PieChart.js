@@ -46,12 +46,12 @@ var DataChart_1 = require("./DataChart");
 function PieChart(props) {
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = ["gapi", "query", "container", "donut", "options"];
+    var propKeys = ['gapi', 'query', 'container', 'donut', 'options'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
     return (React.createElement(DataChart_1.DataChart, __assign({}, divProps, { gapi: props.gapi, query: props.query, chart: {
             container: props.container,
-            type: "PIE",
-            options: __assign({ width: "100%", pieHole: props.donut ? goldenRatioHole : undefined }, props.options),
+            type: 'PIE',
+            options: __assign({ width: '100%', pieHole: props.donut ? goldenRatioHole : undefined }, props.options),
         } })));
 }
 exports.PieChart = PieChart;

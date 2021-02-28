@@ -46,23 +46,13 @@ function SessionsGeoChart(props) {
     var days = props.days ? Math.max(1, Math.abs(props.days)) : 28;
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = [
-        "gapi",
-        "viewId",
-        "days",
-        "container",
-        "showPageViews",
-        "options",
-        "query",
-    ];
+    var propKeys = ['gapi', 'viewId', 'days', 'container', 'showPageViews', 'options', 'query'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
-    var metrics = ["ga:sessions"];
+    var metrics = ['ga:sessions'];
     if (props.showPageViews) {
-        metrics.push("ga:pageviews");
+        metrics.push('ga:pageviews');
     }
-    return (React.createElement(GeoChart_1.GeoChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: metrics.join(","), dimensions: "ga:country", "start-date": days + "daysAgo", "end-date": "today", ids: props.viewId }, props.query), container: props.container
-            ? props.container
-            : "gapi-sessions-geo-chart-" + days + "-days", options: props.options })));
+    return (React.createElement(GeoChart_1.GeoChart, __assign({}, divProps, { gapi: props.gapi, query: __assign({ metrics: metrics.join(','), dimensions: 'ga:country', 'start-date': days + "daysAgo", 'end-date': 'today', ids: props.viewId }, props.query), container: props.container ? props.container : "gapi-sessions-geo-chart-" + days + "-days", options: props.options })));
 }
 exports.SessionsGeoChart = SessionsGeoChart;
 SessionsGeoChart.defaultProps = {

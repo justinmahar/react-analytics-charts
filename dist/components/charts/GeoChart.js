@@ -47,52 +47,52 @@ function GeoChart(props) {
     var _a;
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = ["gapi", "query", "container", "options"];
+    var propKeys = ['gapi', 'query', 'container', 'options'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
     var region = (_a = props === null || props === void 0 ? void 0 : props.options) === null || _a === void 0 ? void 0 : _a.region;
     if (region &&
         Object.keys(exports.regionAliases).includes(region) &&
         props.options &&
-        typeof props.options.region === "string") {
+        typeof props.options.region === 'string') {
         region = exports.regionAliases[props.options.region];
     }
     return (React.createElement(DataChart_1.DataChart, __assign({}, divProps, { gapi: props.gapi, query: props.query, chart: {
             container: props.container,
-            type: "GEO",
+            type: 'GEO',
             options: __assign(__assign({}, props.options), { region: region }),
         } })));
 }
 exports.GeoChart = GeoChart;
 exports.regionAliases = {
     // world: '001',
-    africa: "002",
-    "northern-africa": "015",
-    "sub-saharan-africa": "202",
-    "eastern-africa": "014",
-    "middle-africa": "017",
-    "southern-africa": "018",
-    "western-africa": "011",
-    americas: "019",
-    "latin-america-caribbean": "419",
-    caribbean: "029",
-    "central-america": "013",
-    "south-america": "005",
-    "north-america": "003",
-    "northern-america": "021",
-    asia: "142",
-    "central-asia": "143",
-    "eastern-asia": "030",
-    "south-eastern-asia": "035",
-    "southern-asia": "034",
-    "western-asia": "145",
-    europe: "150",
-    "eastern-europe-northern-asia": "151",
-    "northern-europe": "154",
-    "southern-europe": "039",
-    "western-europe": "155",
-    oceania: "009",
-    "australia-and-new-zealand": "053",
-    melanesia: "054",
-    micronesia: "057",
-    polynesia: "061",
+    africa: '002',
+    'northern-africa': '015',
+    'sub-saharan-africa': '202',
+    'eastern-africa': '014',
+    'middle-africa': '017',
+    'southern-africa': '018',
+    'western-africa': '011',
+    americas: '019',
+    'latin-america-caribbean': '419',
+    caribbean: '029',
+    'central-america': '013',
+    'south-america': '005',
+    'north-america': '003',
+    'northern-america': '021',
+    asia: '142',
+    'central-asia': '143',
+    'eastern-asia': '030',
+    'south-eastern-asia': '035',
+    'southern-asia': '034',
+    'western-asia': '145',
+    europe: '150',
+    'eastern-europe-northern-asia': '151',
+    'northern-europe': '154',
+    'southern-europe': '039',
+    'western-europe': '155',
+    oceania: '009',
+    'australia-and-new-zealand': '053',
+    melanesia: '054',
+    micronesia: '057',
+    polynesia: '061',
 };

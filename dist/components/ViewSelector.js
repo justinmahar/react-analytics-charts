@@ -28,8 +28,8 @@ var React = __importStar(require("react"));
  * The ViewSelector component allows you to choose your account, property, and view via dropdown menus.
  */
 function ViewSelector(props) {
-    var onChange = typeof props.onChange === "function" ? props.onChange : function () { return undefined; };
-    var viewSelectorId = (typeof props.idPrefix === "string" ? props.idPrefix + "-" : "") + "gapi-view-selector-container";
+    var onChange = typeof props.onChange === 'function' ? props.onChange : function () { return undefined; };
+    var viewSelectorId = (typeof props.idPrefix === 'string' ? props.idPrefix + '-' : '') + "gapi-view-selector-container";
     react_use_analytics_api_1.useViewSelector(props.gapi, viewSelectorId, onChange);
     return React.createElement("div", { id: viewSelectorId, className: "gapi-view-selector-container" });
 }

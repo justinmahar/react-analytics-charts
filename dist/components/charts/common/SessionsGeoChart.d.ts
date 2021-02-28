@@ -1,5 +1,5 @@
-import { GeoChartOptions, GoogleAnalyticsEmbedAPI, Query } from "react-use-analytics-api";
-import * as React from "react";
+import { GeoChartOptions, GoogleAnalyticsEmbedAPI, Query } from 'react-use-analytics-api';
+import * as React from 'react';
 export interface SessionsGeoChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
     gapi?: GoogleAnalyticsEmbedAPI;

@@ -1,5 +1,5 @@
-import { ColumnChartOptions, GoogleAnalyticsEmbedAPI, Query } from "react-use-analytics-api";
-import * as React from "react";
+import { ColumnChartOptions, GoogleAnalyticsEmbedAPI, Query } from 'react-use-analytics-api';
+import * as React from 'react';
 export interface SessionDurationChartProps {
     /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
     gapi?: GoogleAnalyticsEmbedAPI;

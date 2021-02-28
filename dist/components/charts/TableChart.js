@@ -46,12 +46,12 @@ var DataChart_1 = require("./DataChart");
 function TableChart(props) {
     var divProps = __assign({}, props);
     // Remove our own props
-    var propKeys = ["gapi", "query", "container", "options"];
+    var propKeys = ['gapi', 'query', 'container', 'options'];
     propKeys.forEach(function (propKey) { return delete divProps[propKey]; });
     return (React.createElement(DataChart_1.DataChart, __assign({}, divProps, { gapi: props.gapi, query: props.query, chart: {
             container: props.container,
-            type: "TABLE",
-            options: __assign({ width: "100%" }, props.options),
+            type: 'TABLE',
+            options: __assign({ width: '100%' }, props.options),
         } })));
 }
 exports.TableChart = TableChart;
