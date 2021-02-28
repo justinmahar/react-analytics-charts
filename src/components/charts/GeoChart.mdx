@@ -4,10 +4,7 @@ menu: Custom Charts
 route: /GeoChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../AnalyticsDashboard";
-import { GeoChart } from "./GeoChart";
+import { Props } from "docz";
 
 <h1>GeoChart</h1>
 
@@ -26,33 +23,26 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 import { AnalyticsDashboard, GeoChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <GeoChart
-          gapi={gapi}
-          query={{
-            metrics: "ga:sessions,ga:pageviews",
-            dimensions: "ga:country",
-            "start-date": `28daysAgo`,
-            "end-date": "today",
-            ids: viewId,
-          }}
-          container="traffic-geo-chart"
-        />
-      );
-    }}
-  />
-</Playground>
-
-<br />
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <GeoChart
+        gapi={gapi}
+        query={{
+          metrics: "ga:sessions,ga:pageviews",
+          dimensions: "ga:country",
+          "start-date": `28daysAgo`,
+          "end-date": "today",
+          ids: viewId,
+        }}
+        container="traffic-geo-chart"
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 
@@ -144,58 +134,58 @@ Some codes are not supported by Google, but feel free to try them in case they'v
 
 The following uses the `europe` alias for [UN M49 code](https://en.wikipedia.org/wiki/UN_M49) `150`:
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    dashId="europe"
-    renderCharts={(gapi, viewId) => {
-      return (
-        <GeoChart
-          gapi={gapi}
-          query={{
-            metrics: "ga:sessions,ga:pageviews",
-            dimensions: "ga:country",
-            "start-date": `28daysAgo`,
-            "end-date": "today",
-            ids: viewId,
-          }}
-          container="europe-traffic-geo-chart"
-          options={{
-            region: "europe",
-            resolution: "countries",
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  dashId="europe"
+  renderCharts={(gapi, viewId) => {
+    return (
+      <GeoChart
+        gapi={gapi}
+        query={{
+          metrics: "ga:sessions,ga:pageviews",
+          dimensions: "ga:country",
+          "start-date": `28daysAgo`,
+          "end-date": "today",
+          ids: viewId,
+        }}
+        container="europe-traffic-geo-chart"
+        options={{
+          region: "europe",
+          resolution: "countries",
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## United States Example
 
 The following uses the `ga:region` [dimension](/DataChart#query-prop), the `US` [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) region, and the `provinces` resolution to show traffic from individual states in the United States:
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    dashId="usa"
-    renderCharts={(gapi, viewId) => {
-      return (
-        <GeoChart
-          gapi={gapi}
-          query={{
-            metrics: "ga:sessions,ga:pageviews",
-            dimensions: "ga:region",
-            "start-date": `28daysAgo`,
-            "end-date": "today",
-            ids: viewId,
-          }}
-          container="usa-traffic-geo-chart"
-          options={{
-            region: "US",
-            resolution: "provinces",
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  dashId="usa"
+  renderCharts={(gapi, viewId) => {
+    return (
+      <GeoChart
+        gapi={gapi}
+        query={{
+          metrics: "ga:sessions,ga:pageviews",
+          dimensions: "ga:region",
+          "start-date": `28daysAgo`,
+          "end-date": "today",
+          ids: viewId,
+        }}
+        container="usa-traffic-geo-chart"
+        options={{
+          region: "US",
+          resolution: "provinces",
+        }}
+      />
+    );
+  }}
+/>
+```

@@ -4,9 +4,8 @@ menu: Core Components
 route: /SignOutButton
 ---
 
-import { Playground, Props } from 'docz';
-import { AuthExample } from '../__docz__/components/AuthExample';
-import { SignOutButton } from './SignOutButton';
+import { Props } from "docz";
+import { SignOutButton } from "./SignOutButton";
 
 <h1>SignOutButton</h1>
 
@@ -19,21 +18,17 @@ See related [AuthorizeButton](/AuthorizeButton).
 ## Usage
 
 ```jsx
-import { SignOutButton } from 'react-analytics-charts';
+import { SignOutButton } from "react-analytics-charts";
 ```
 
 ```jsx
 <SignOutButton gapi={gapi} />
 ```
 
-<div style={{ border: 'solid 2px #67788a', padding: '20px' }}>
-  <AuthExample />
-</div>
-
 ```jsx
-import * as React from 'react';
-import { useAnalyticsApi } from 'react-use-analytics-api';
-import { AuthorizeButton, SignOutButton } from 'react-analytics-charts';
+import * as React from "react";
+import { useAnalyticsApi } from "react-use-analytics-api";
+import { AuthorizeButton, SignOutButton } from "react-analytics-charts";
 
 export function AuthExample() {
   const { gapi, authorized } = useAnalyticsApi();
@@ -41,10 +36,13 @@ export function AuthExample() {
     <div>
       {!authorized && (
         <div>
-          Not authorized. Sign in here:{' '}
+          Not authorized. Sign in here:{" "}
           <AuthorizeButton
             gapi={gapi}
-            authOptions={{ clientId: '123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com' }}
+            authOptions={{
+              clientId:
+                "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com",
+            }}
           />
         </div>
       )}

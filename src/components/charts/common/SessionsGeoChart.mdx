@@ -4,10 +4,7 @@ menu: Common Charts
 route: /SessionsGeoChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../../AnalyticsDashboard";
-import { SessionsGeoChart } from "./SessionsGeoChart";
+import { Props } from "docz";
 
 <h1>SessionsGeoChart</h1>
 
@@ -25,21 +22,16 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 import { AnalyticsDashboard, SessionsGeoChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <SessionsGeoChart gapi={gapi} viewId={viewId} days={28} showPageViews />
-      );
-    }}
-  />
-</Playground>
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <SessionsGeoChart gapi={gapi} viewId={viewId} days={28} showPageViews />
+    );
+  }}
+/>
+```
 
 ## Props
 
@@ -82,52 +74,52 @@ This means you can cherry-pick the properties you'd like to override, such as th
 
 The following uses the [`europe` region alias](/GeoChart#region-aliases) to show traffic from Europe:
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    dashId="europe"
-    renderCharts={(gapi, viewId) => {
-      return (
-        <SessionsGeoChart
-          gapi={gapi}
-          viewId={viewId}
-          container="europe-traffic-geo-chart"
-          days={28}
-          showPageViews
-          options={{
-            region: "europe",
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  dashId="europe"
+  renderCharts={(gapi, viewId) => {
+    return (
+      <SessionsGeoChart
+        gapi={gapi}
+        viewId={viewId}
+        container="europe-traffic-geo-chart"
+        days={28}
+        showPageViews
+        options={{
+          region: "europe",
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## United States Example
 
 The following uses the `ga:region` [dimension](/DataChart#query-prop), the `US` [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) region, and the `provinces` resolution to show traffic from individual states in the United States:
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    dashId="usa"
-    renderCharts={(gapi, viewId) => {
-      return (
-        <SessionsGeoChart
-          gapi={gapi}
-          viewId={viewId}
-          container="usa-traffic-geo-chart"
-          days={28}
-          showPageViews
-          query={{
-            dimensions: "ga:region",
-          }}
-          options={{
-            region: "US",
-            resolution: "provinces",
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  dashId="usa"
+  renderCharts={(gapi, viewId) => {
+    return (
+      <SessionsGeoChart
+        gapi={gapi}
+        viewId={viewId}
+        container="usa-traffic-geo-chart"
+        days={28}
+        showPageViews
+        query={{
+          dimensions: "ga:region",
+        }}
+        options={{
+          region: "US",
+          resolution: "provinces",
+        }}
+      />
+    );
+  }}
+/>
+```

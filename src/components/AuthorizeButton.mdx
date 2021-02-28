@@ -4,9 +4,8 @@ menu: Core Components
 route: /AuthorizeButton
 ---
 
-import { Playground, Props } from 'docz';
-import { AuthExample } from '../__docz__/components/AuthExample';
-import { AuthorizeButton } from './AuthorizeButton';
+import { Props } from "docz";
+import { AuthorizeButton } from "./AuthorizeButton";
 
 <h1>AuthorizeButton</h1>
 
@@ -16,7 +15,7 @@ Renders a Google Analytics sign-in button allowing the user to sign in with thei
 
 This component is rendered by the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) into a container on the page.
 
-After signing in, the `onSignIn` handler is called. This handler can be used to update the view once signed in. The handler is not called if already signed in. 
+After signing in, the `onSignIn` handler is called. This handler can be used to update the view once signed in. The handler is not called if already signed in.
 
 To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://justinmahar.github.io/react-use-analytics-api/useAnalyticsApi) hook. A full example is available below.
 
@@ -29,14 +28,15 @@ See related [SignOutButton](/SignOutButton).
 ## Usage
 
 ```jsx
-import { AuthorizeButton } from 'react-analytics-charts';
+import { AuthorizeButton } from "react-analytics-charts";
 ```
 
 ```jsx
 <AuthorizeButton
   gapi={gapi}
   authOptions={{
-    clientId: '123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com',
+    clientId:
+      "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com",
   }}
   onSignIn={signInHandler}
 />
@@ -70,18 +70,14 @@ This component renders as either one or two divs, depending on if a refresh page
 
 ## Example
 
-Below is a live example showing the full authorization flow from signed out to signed in, and vice versa. 
+Below is an example showing the full authorization flow from signed out to signed in, and vice versa.
 
 Although not necessary if using an [AnalyticsDashboard](/AnalyticsDashboard), if you want, you can use the [`useAnalyticsApi`](https://justinmahar.github.io/react-use-analytics-api/useAnalyticsApi) hook to check if the user is authorized.
 
-<div style={{ border: 'solid 2px #67788a', padding: '20px' }}>
-  <AuthExample />
-</div>
-
 ```jsx
-import * as React from 'react';
-import { useAnalyticsApi } from 'react-use-analytics-api';
-import { AuthorizeButton, SignOutButton } from 'react-analytics-charts';
+import * as React from "react";
+import { useAnalyticsApi } from "react-use-analytics-api";
+import { AuthorizeButton, SignOutButton } from "react-analytics-charts";
 
 export function AuthExample() {
   const { gapi, authorized } = useAnalyticsApi();
@@ -89,10 +85,13 @@ export function AuthExample() {
     <div>
       {!authorized && (
         <div>
-          Not authorized. Sign in here:{' '}
+          Not authorized. Sign in here:{" "}
           <AuthorizeButton
             gapi={gapi}
-            authOptions={{ clientId: '123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com' }}
+            authOptions={{
+              clientId:
+                "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com",
+            }}
           />
         </div>
       )}

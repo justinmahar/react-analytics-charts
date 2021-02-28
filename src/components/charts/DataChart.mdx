@@ -4,10 +4,7 @@ menu: Core Components
 route: /DataChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../AnalyticsDashboard";
-import { DataChart } from "./DataChart";
+import { Props } from "docz";
 
 <h1>DataChart</h1>
 
@@ -32,39 +29,32 @@ This component wraps the [`useDataChart`](https://justinmahar.github.io/react-us
 import { AnalyticsDashboard, DataChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <DataChart
-          gapi={gapi}
-          query={{
-            ids: viewId,
-            "start-date": "28daysAgo",
-            "end-date": "today",
-            metrics: "ga:sessions",
-            dimensions: "ga:browser",
-          }}
-          chart={{
-            container: "data-chart-container",
-            type: "BAR",
-            options: {
-              title: "Sessions By Browser (28 Days)",
-            },
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
-
-<br />
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <DataChart
+        gapi={gapi}
+        query={{
+          ids: viewId,
+          "start-date": "28daysAgo",
+          "end-date": "today",
+          metrics: "ga:sessions",
+          dimensions: "ga:browser",
+        }}
+        chart={{
+          container: "data-chart-container",
+          type: "BAR",
+          options: {
+            title: "Sessions By Browser (28 Days)",
+          },
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 

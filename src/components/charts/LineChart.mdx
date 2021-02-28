@@ -4,10 +4,7 @@ menu: Custom Charts
 route: /LineChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../AnalyticsDashboard";
-import { LineChart } from "./LineChart";
+import { Props } from "docz";
 
 <h1>LineChart</h1>
 
@@ -26,36 +23,29 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 import { AnalyticsDashboard, LineChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <LineChart
-          gapi={gapi}
-          query={{
-            ids: viewId,
-            "start-date": "14daysAgo",
-            "end-date": "today",
-            metrics: "ga:sessions",
-            dimensions: "ga:date",
-          }}
-          container="sessions-by-date-chart"
-          options={{
-            title: `Sessions (14 Days)`,
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
-
-<br />
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <LineChart
+        gapi={gapi}
+        query={{
+          ids: viewId,
+          "start-date": "14daysAgo",
+          "end-date": "today",
+          metrics: "ga:sessions",
+          dimensions: "ga:date",
+        }}
+        container="sessions-by-date-chart"
+        options={{
+          title: `Sessions (14 Days)`,
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 

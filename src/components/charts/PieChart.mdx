@@ -4,10 +4,7 @@ menu: Custom Charts
 route: /PieChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../AnalyticsDashboard";
-import { PieChart } from "./PieChart";
+import { Props } from "docz";
 
 <h1>PieChart</h1>
 
@@ -26,36 +23,29 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 import { AnalyticsDashboard, PieChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <PieChart
-          gapi={gapi}
-          query={{
-            ids: viewId,
-            "start-date": "30daysAgo",
-            "end-date": "today",
-            metrics: "ga:sessions,ga:users,ga:pageviews",
-            dimensions: "ga:deviceCategory",
-          }}
-          container="traffic-by-device-category-chart"
-          options={{
-            title: "Traffic By Device Category (30 Days)",
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
-
-<br />
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <PieChart
+        gapi={gapi}
+        query={{
+          ids: viewId,
+          "start-date": "30daysAgo",
+          "end-date": "today",
+          metrics: "ga:sessions,ga:users,ga:pageviews",
+          dimensions: "ga:deviceCategory",
+        }}
+        container="traffic-by-device-category-chart"
+        options={{
+          title: "Traffic By Device Category (30 Days)",
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 
@@ -97,56 +87,56 @@ See all [chart options](https://developers.google.com/chart/interactive/docs/gal
 
 ## Donut Chart Example
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    dashId="donut"
-    renderCharts={(gapi, viewId) => {
-      return (
-        <PieChart
-          gapi={gapi}
-          query={{
-            ids: viewId,
-            "start-date": "30daysAgo",
-            "end-date": "today",
-            metrics: "ga:sessions",
-            dimensions: "ga:source",
-          }}
-          container="donut-traffic-by-device-category-chart"
-          donut
-          options={{
-            title: "Traffic By Source (30 Days)",
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  dashId="donut"
+  renderCharts={(gapi, viewId) => {
+    return (
+      <PieChart
+        gapi={gapi}
+        query={{
+          ids: viewId,
+          "start-date": "30daysAgo",
+          "end-date": "today",
+          metrics: "ga:sessions",
+          dimensions: "ga:source",
+        }}
+        container="donut-traffic-by-device-category-chart"
+        donut
+        options={{
+          title: "Traffic By Source (30 Days)",
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## 3D Chart Example
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    dashId="3d-pie"
-    renderCharts={(gapi, viewId) => {
-      return (
-        <PieChart
-          gapi={gapi}
-          query={{
-            ids: viewId,
-            "start-date": "30daysAgo",
-            "end-date": "today",
-            metrics: "ga:pageviews",
-            dimensions: "ga:pagePath",
-          }}
-          container="3d-pie-pageviews-per-path-chart"
-          options={{
-            title: "Pageviews Per Path (30 Days)",
-            is3D: true,
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  dashId="3d-pie"
+  renderCharts={(gapi, viewId) => {
+    return (
+      <PieChart
+        gapi={gapi}
+        query={{
+          ids: viewId,
+          "start-date": "30daysAgo",
+          "end-date": "today",
+          metrics: "ga:pageviews",
+          dimensions: "ga:pagePath",
+        }}
+        container="3d-pie-pageviews-per-path-chart"
+        options={{
+          title: "Pageviews Per Path (30 Days)",
+          is3D: true,
+        }}
+      />
+    );
+  }}
+/>
+```

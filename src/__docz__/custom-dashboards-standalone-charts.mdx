@@ -4,9 +4,6 @@ route: /custom-dashboards-standalone-charts
 # menu: MenuName
 ---
 
-import { CustomDashboardExample } from '../__docz__/components/CustomDashboardExample';
-import clientId from './client-id-config';
-
 # Custom Dashboards and Standalone Charts
 
 The [AnalyticsDashboard](/AnalyticsDashboard) component makes it easy to embed charts onto your site without having to deal with loading and readying the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/), checking authorization, and adding a view selector. The [AnalyticsDashboard](/AnalyticsDashboard) will handle all of that overhead for you.
@@ -15,7 +12,7 @@ The [AnalyticsDashboard](/AnalyticsDashboard) component makes it easy to embed c
 
 However, you may want to completely customize how your dashboard looks.
 
-- You might want more freedom over placement of the ViewSelector, auth buttons, and charts on the page. 
+- You might want more freedom over placement of the ViewSelector, auth buttons, and charts on the page.
 - You might want to handle authorization yourself.
 - You might want to use a [React Context](https://reactjs.org/docs/context.html) to manage `gapi` ([Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/)) state.
 - You might just want to use only the chart components from this library and ignore everything else!
@@ -34,27 +31,34 @@ In addition to [AuthorizeButton](/AuthorizeButton), [SignOutButton](/SignOutButt
 
 Using these, you can build a custom dashboard fairly easily:
 
-<div style={{ border: 'solid 2px #67788a', padding: '20px' }}>
-  <CustomDashboardExample authOptions={{ clientId }} />
-</div>
-
 ```jsx
-import { useAnalyticsApi } from 'react-use-analytics-api';
-import * as React from 'react';
-import { AuthorizeButton, SessionsByDateChart, SessionsBySourceChart, SignOutButton, ViewSelector } from 'react-analytics-charts';
+import { useAnalyticsApi } from "react-use-analytics-api";
+import * as React from "react";
+import {
+  AuthorizeButton,
+  SessionsByDateChart,
+  SessionsBySourceChart,
+  SignOutButton,
+  ViewSelector,
+} from "react-analytics-charts";
 
 export function CustomDashboardExample(props) {
   const [viewId, setViewId] = React.useState();
   const { ready, gapi, authorized } = useAnalyticsApi();
   return (
     <div>
-      {!ready && 'Please wait...'}
+      {!ready && "Please wait..."}
       {ready && (
         <div>
-          {!authorized && <AuthorizeButton gapi={gapi} authOptions={props.authOptions} />}
+          {!authorized && (
+            <AuthorizeButton gapi={gapi} authOptions={props.authOptions} />
+          )}
           {authorized && (
             <div>
-              <ViewSelector gapi={gapi} onChange={viewId => setViewId(viewId)} />
+              <ViewSelector
+                gapi={gapi}
+                onChange={(viewId) => setViewId(viewId)}
+              />
               <div>
                 <SessionsByDateChart gapi={gapi} viewId={viewId} />
                 <SessionsBySourceChart gapi={gapi} viewId={viewId} />
@@ -85,7 +89,7 @@ See the [AnalyticsDashboard props](/AnalyticsDashboard#props) `viewId`, `hideVie
 
 If you load and ready the API with [react-use-analytics-api](https://justinmahar.github.io/react-use-analytics-api/), or already have `gapi` loaded and readied via your own means, you can add any of the charts by themselves.
 
-You will need to be authorized, and need to know the view ID (see the [view selector example](/ViewSelector#example)). Using the view ID and `gapi`, you can render any chart on the page by itself. 
+You will need to be authorized, and need to know the view ID (see the [view selector example](/ViewSelector#example)). Using the view ID and `gapi`, you can render any chart on the page by itself.
 
 Just [choose a chart](/charts), then pass it the ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) (`gapi`), and the view ID (`viewId`), and it'll render on the page for you.
 

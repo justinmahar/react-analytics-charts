@@ -4,10 +4,7 @@ menu: Common Charts
 route: /SessionsByDateChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../../AnalyticsDashboard";
-import { SessionsByDateChart } from "./SessionsByDateChart";
+import { Props } from "docz";
 
 <h1>SessionsByDateChart</h1>
 
@@ -28,27 +25,22 @@ import {
 } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <SessionsByDateChart
-          gapi={gapi}
-          viewId={viewId}
-          days={28}
-          showPageViews
-          showUsers
-        />
-      );
-    }}
-  />
-</Playground>
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <SessionsByDateChart
+        gapi={gapi}
+        viewId={viewId}
+        days={28}
+        showPageViews
+        showUsers
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 

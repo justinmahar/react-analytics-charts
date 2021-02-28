@@ -4,18 +4,12 @@ menu: Core Components
 route: /AnalyticsDashboard
 ---
 
-import { Playground, Props } from 'docz';
-import clientId from '../__docz__/client-id-config';
-import { AnalyticsDashboard } from './AnalyticsDashboard';
-import { SessionsByDateChart } from './charts/common/SessionsByDateChart';
-import { SessionsGeoChart } from './charts/common/SessionsGeoChart';
-import { SessionsByHourChart } from './charts/common/SessionsByHourChart';
-import { SessionsBySourceChart } from './charts/common/SessionsBySourceChart';
-import { PageViewsPerPathChart } from './charts/common/PageViewsPerPathChart';
+import { Props } from "docz";
+import { AnalyticsDashboard } from "./AnalyticsDashboard";
 
 <h1>AnalyticsDashboard</h1>
 
-See the **[live demo example](#example)** below.
+See the **[full example](#example)** below.
 
 ## Description
 
@@ -34,14 +28,17 @@ AnalyticsDashboard takes a `clientId` and a `renderCharts` render prop.
 Just use the `renderCharts` prop to render the charts you'd like to view and the dashboard will handle everything else, including loading the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/), handling auth, and showing a view selector.
 
 ```jsx
-import { AnalyticsDashboard } from 'react-analytics-charts';
+import { AnalyticsDashboard } from "react-analytics-charts";
 // Over ten different commonly used charts are available
-import { SessionsByDateChart, SessionsGeoChart } from 'react-analytics-charts';
+import { SessionsByDateChart, SessionsGeoChart } from "react-analytics-charts";
 ```
 
 ```jsx
 <AnalyticsDashboard
-  authOptions={{ clientId: "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com" }}
+  authOptions={{
+    clientId:
+      "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com",
+  }}
   renderCharts={(gapi, viewId) => {
     return (
       <div>
@@ -51,11 +48,7 @@ import { SessionsByDateChart, SessionsGeoChart } from 'react-analytics-charts';
           showPageViews
           showUsers
         />
-        <SessionsGeoChart 
-          gapi={gapi} 
-          viewId={viewId} 
-          showPageViews 
-        />
+        <SessionsGeoChart gapi={gapi} viewId={viewId} showPageViews />
         ... More charts here ...
       </div>
     );
@@ -69,13 +62,14 @@ import { SessionsByDateChart, SessionsGeoChart } from 'react-analytics-charts';
 
 > Note: Expand each prop for more information.
 
-<br/><br/>
+<br />
+<br />
 
 If you have more than one dashboard on the page, be sure to specify a unique `dashId`.
 
 ## Styling
 
-- The analytics dashboard is rendered as a `div` with the class name `analytics-dashboard`. 
+- The analytics dashboard is rendered as a `div` with the class name `analytics-dashboard`.
 - The authorize and sign-out buttons are in a `div` with the class name `analytics-auth-widgets`.
 
 ```css
@@ -89,8 +83,8 @@ If you have more than one dashboard on the page, be sure to specify a unique `da
 ```
 
 See the styling docs for [AuthorizeButton](/AuthorizeButton#styling), [DataChart](/DataChart#styling),
-[SignOutButton](/SignOutButton#styling), and [ViewSelector](/ViewSelector#styling) to style the different components 
-used in the analytics dashboard. 
+[SignOutButton](/SignOutButton#styling), and [ViewSelector](/ViewSelector#styling) to style the different components
+used in the analytics dashboard.
 
 Charts can be styled individually as you see fit (give them a `className`, `style`, wrap in a styled component, etc).
 
@@ -98,38 +92,46 @@ Charts can be styled individually as you see fit (give them a `className`, `styl
 
 The following example renders a few common charts for the past 28 days, and adds some basic layout styles to them.
 
-Click the "Access Google Analytics" button to get started.
-
-<Playground>
-  <AnalyticsDashboard
-      authOptions={{ clientId }}
-      renderCharts={(gapi, viewId) => {
-        const chartStyles = {
-          margin: '15px',
-          maxWidth: 400,
-        };
-        return (
-          <div style={{ display: 'flex', flexWrap: 'wrap', }}>
-            <SessionsByDateChart
-              gapi={gapi}
-              viewId={viewId}
-              style={chartStyles}
-              showPageViews
-              showUsers
-            />
-            <SessionsGeoChart gapi={gapi} viewId={viewId} style={chartStyles} showPageViews options={{ width: 400 }}/>
-            <SessionsBySourceChart gapi={gapi} viewId={viewId} style={chartStyles} />
-            <SessionsByHourChart gapi={gapi} viewId={viewId} style={chartStyles} />
-            <PageViewsPerPathChart gapi={gapi} viewId={viewId} style={{ margin: '15px' }} />
-          </div>
-        );
-      }}
-    />
-</Playground>
-
-<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
-
-<br/><br/>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    const chartStyles = {
+      margin: "15px",
+      maxWidth: 400,
+    };
+    return (
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <SessionsByDateChart
+          gapi={gapi}
+          viewId={viewId}
+          style={chartStyles}
+          showPageViews
+          showUsers
+        />
+        <SessionsGeoChart
+          gapi={gapi}
+          viewId={viewId}
+          style={chartStyles}
+          showPageViews
+          options={{ width: 400 }}
+        />
+        <SessionsBySourceChart
+          gapi={gapi}
+          viewId={viewId}
+          style={chartStyles}
+        />
+        <SessionsByHourChart gapi={gapi} viewId={viewId} style={chartStyles} />
+        <PageViewsPerPathChart
+          gapi={gapi}
+          viewId={viewId}
+          style={{ margin: "15px" }}
+        />
+      </div>
+    );
+  }}
+/>
+```
 
 Many more [ready-made charts](/charts#common-charts) are available, and you can [create your own charts](/charts#custom-charts) if you'd like.
 

@@ -22,7 +22,7 @@ Read the **[official documentation](https://justinmahar.github.io/react-analytic
 
 [![Analytics Dashboard Example](./src/__docz__/images/dash.png "Analytics Dashboard Example")](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard#example)
 
-👁️ **[Live Demo](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard#example)**
+👁️ **[Full Example](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard#example)**
 
 _For API hooks, check out: [React Use Analytics API](https://justinmahar.github.io/react-use-analytics-api/)_
 
@@ -33,7 +33,7 @@ Easily embed Google Analytics charts on your React site using this component lib
 Choose from [10+ commonly used drop-in chart components](https://justinmahar.github.io/react-analytics-charts/charts#common-charts), or build your own [custom charts](https://justinmahar.github.io/react-analytics-charts/charts#custom-charts) and render them as [bar charts](https://justinmahar.github.io/react-analytics-charts/BarChart),
 [column charts](https://justinmahar.github.io/react-analytics-charts/ColumnChart), [geo charts](https://justinmahar.github.io/react-analytics-charts/GeoChart), [line charts](https://justinmahar.github.io/react-analytics-charts/LineChart), [pie charts](https://justinmahar.github.io/react-analytics-charts/PieChart), and [tables](https://justinmahar.github.io/react-analytics-charts/TableChart).
 
-See the [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard) documentation for a **[full live demo](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard#example)**, or reference any of the available [charts](https://justinmahar.github.io/react-analytics-charts/charts) for individual live demo examples.
+See the [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard) documentation for a **[full example](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard#example)**, or reference any of the available [charts](https://justinmahar.github.io/react-analytics-charts/charts) for individual examples.
 
 ### Features include:
 
@@ -45,8 +45,8 @@ See the [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-chart
   - Building [your own charts](https://justinmahar.github.io/react-analytics-charts/charts) is easy, too!
 - **💼 Handles overhead for you**
   - [Dashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard) handles embed API access, sign-in, sign-out, and view selection for you. Just focus on the [charts](https://justinmahar.github.io/react-analytics-charts/charts) you want.
-- **✨ Live examples and rich documentation**
-  - Quickly refer to docs on queries and charts, all from one place, with plenty of live examples.
+- **✨ Full examples and rich documentation**
+  - Quickly refer to docs on queries and charts, all from one place, with plenty of examples.
 
 ## Installation
 
@@ -62,7 +62,7 @@ You can also use an [access token](https://ga-dev-tools.appspot.com/embed-api/se
 
 ### Analytics Dashboard
 
-The [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard) component handles loading the Google Analytics Embed API, sign-in and sign-out, and view selection for you. See the [live demo](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard#example).
+The [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard) component handles loading the Google Analytics Embed API, sign-in and sign-out, and view selection for you. See the [full example](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard#example).
 
 The following example embeds an analytics dashboard with two charts.
 
@@ -117,7 +117,7 @@ import { SessionsByDateChart } from "react-analytics-charts";
 <SessionsByDateChart gapi={gapi} viewId="ga:123456789" />
 ```
 
-You must be authorized. You can use the [ViewSelector demo](https://justinmahar.github.io/react-analytics-charts/ViewSelector#example) to determine your view ID, and the [useAnalyticsApi](https://justinmahar.github.io/react-use-analytics-api/useAnalyticsApi) hook to easily load the `gapi` API and authorize. If you use the [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard), this will all be handled for you.
+You must be authorized. You can use the [ViewSelector example](https://justinmahar.github.io/react-analytics-charts/ViewSelector#example) to determine your view ID, and the [useAnalyticsApi](https://justinmahar.github.io/react-use-analytics-api/useAnalyticsApi) hook to easily load the `gapi` API and authorize. If you use the [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard), this will all be handled for you.
 
 ## TypeScript
 

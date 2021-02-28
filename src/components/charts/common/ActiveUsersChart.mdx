@@ -4,10 +4,7 @@ menu: Common Charts
 route: /ActiveUsersChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../../AnalyticsDashboard";
-import { ActiveUsersChart } from "./ActiveUsersChart";
+import { Props } from "docz";
 
 <h1>ActiveUsersChart</h1>
 
@@ -25,26 +22,21 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 import { AnalyticsDashboard, ActiveUsersChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <ActiveUsersChart
-          gapi={gapi}
-          viewId={viewId}
-          days={28}
-          activeUserDays={7}
-        />
-      );
-    }}
-  />
-</Playground>
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <ActiveUsersChart
+        gapi={gapi}
+        viewId={viewId}
+        days={28}
+        activeUserDays={7}
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 

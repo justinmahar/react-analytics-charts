@@ -4,10 +4,7 @@ menu: Custom Charts
 route: /BarChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../AnalyticsDashboard";
-import { BarChart } from "./BarChart";
+import { Props } from "docz";
 
 <h1>BarChart</h1>
 
@@ -26,36 +23,29 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 import { AnalyticsDashboard, BarChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <BarChart
-          gapi={gapi}
-          query={{
-            ids: viewId,
-            "start-date": "30daysAgo",
-            "end-date": "today",
-            metrics: "ga:sessions,ga:users,ga:pageviews",
-            dimensions: "ga:deviceCategory",
-          }}
-          container="traffic-by-device-category-chart"
-          options={{
-            title: "Traffic By Device Category (30 Days)",
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
-
-<br />
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <BarChart
+        gapi={gapi}
+        query={{
+          ids: viewId,
+          "start-date": "30daysAgo",
+          "end-date": "today",
+          metrics: "ga:sessions,ga:users,ga:pageviews",
+          dimensions: "ga:deviceCategory",
+        }}
+        container="traffic-by-device-category-chart"
+        options={{
+          title: "Traffic By Device Category (30 Days)",
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 

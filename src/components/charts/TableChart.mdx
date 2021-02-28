@@ -4,10 +4,7 @@ menu: Custom Charts
 route: /TableChart
 ---
 
-import { Playground, Props } from "docz";
-import clientId from "../../__docz__/client-id-config";
-import { AnalyticsDashboard } from "../AnalyticsDashboard";
-import { TableChart } from "./TableChart";
+import { Props } from "docz";
 
 <h1>TableChart</h1>
 
@@ -26,37 +23,30 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 import { AnalyticsDashboard, TableChart } from "react-analytics-charts";
 ```
 
-<Playground>
-  <AnalyticsDashboard
-    authOptions={{ clientId }}
-    renderCharts={(gapi, viewId) => {
-      return (
-        <TableChart
-          gapi={gapi}
-          query={{
-            ids: viewId,
-            "start-date": "28daysAgo",
-            "end-date": "today",
-            metrics: "ga:pageviews",
-            dimensions: "ga:pagePath",
-          }}
-          container="pageviews-per-path-chart"
-          options={{
-            sortAscending: false,
-            sortColumn: 1,
-          }}
-        />
-      );
-    }}
-  />
-</Playground>
-
-<br />
-
-<small>
-  Note: You can edit the source above. Your changes will be rendered
-  immediately.
-</small>
+```jsx
+<AnalyticsDashboard
+  authOptions={{ clientId }}
+  renderCharts={(gapi, viewId) => {
+    return (
+      <TableChart
+        gapi={gapi}
+        query={{
+          ids: viewId,
+          "start-date": "28daysAgo",
+          "end-date": "today",
+          metrics: "ga:pageviews",
+          dimensions: "ga:pagePath",
+        }}
+        container="pageviews-per-path-chart"
+        options={{
+          sortAscending: false,
+          sortColumn: 1,
+        }}
+      />
+    );
+  }}
+/>
+```
 
 ## Props
 
