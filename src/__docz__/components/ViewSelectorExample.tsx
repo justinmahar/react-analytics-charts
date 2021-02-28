@@ -23,7 +23,7 @@ export function ViewSelectorExample(): JSX.Element {
           <p>
             <SignOutButton gapi={gapi} />
           </p>
-          <ViewSelector gapi={gapi} onChange={viewId => setViewId(viewId)} />
+          <ViewSelector gapi={gapi} onChange={(viewId) => setViewId(viewId)} />
         </div>
       )}
     </div>

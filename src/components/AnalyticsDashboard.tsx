@@ -1,13 +1,10 @@
-import {
-  GoogleAnalyticsEmbedAPI,
-  useAnalyticsApi,
-} from "react-use-analytics-api";
-import * as React from "react";
-import { AuthorizeButton } from "./AuthorizeButton";
-import { SessionsByDateChart } from "./charts/common/SessionsByDateChart";
-import { SignOutButton } from "./SignOutButton";
-import { ViewSelector } from "./ViewSelector";
-import { AuthorizeOptions } from "./AuthorizeButton";
+import { GoogleAnalyticsEmbedAPI, useAnalyticsApi } from 'react-use-analytics-api';
+import * as React from 'react';
+import { AuthorizeButton } from './AuthorizeButton';
+import { SessionsByDateChart } from './charts/common/SessionsByDateChart';
+import { SignOutButton } from './SignOutButton';
+import { ViewSelector } from './ViewSelector';
+import { AuthorizeOptions } from './AuthorizeButton';
 
 export interface AnalyticsDashboardProps {
   /** **Required.** [Authorize options](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for the button. Be sure to provide a `clientId` or a `serverAuth.access_token`. See [How To Get An OAuth Client ID From Google](https://justinmahar.github.io/react-analytics-charts/google-oauth-client-id) to get a Client ID. Read more about [access tokens](https://ga-dev-tools.appspot.com/embed-api/server-side-authorization/).*/
@@ -47,9 +44,7 @@ export interface AnalyticsDashboardProps {
  *
  * If you need more flexibility, you can create your own [custom dashboard](https://justinmahar.github.io/react-analytics-charts/custom-dashboards-standalone-charts) if you'd like.
  */
-export function AnalyticsDashboard(
-  props: AnalyticsDashboardProps
-): JSX.Element {
+export function AnalyticsDashboard(props: AnalyticsDashboardProps): JSX.Element {
   const [viewId, setViewId] = React.useState<string | undefined>(props.viewId);
   const { ready, gapi, authorized } = useAnalyticsApi();
   const showViewSelector = !props.hideViewSelector;
@@ -57,20 +52,13 @@ export function AnalyticsDashboard(
 
   let renderedCharts: JSX.Element = <></>;
   if (ready && gapi && viewId) {
-    renderedCharts = props.renderCharts ? (
-      props.renderCharts(gapi, viewId)
-    ) : (
-      <></>
-    );
+    renderedCharts = props.renderCharts ? props.renderCharts(gapi, viewId) : <></>;
   }
 
-  const analyticsAuthWidgetsClassName = "analytics-auth-widgets";
+  const analyticsAuthWidgetsClassName = 'analytics-auth-widgets';
   return (
     <div className="analytics-dashboard">
-      {!ready &&
-        (typeof props.loadingText === "string"
-          ? props.loadingText
-          : "Loading...")}
+      {!ready && (typeof props.loadingText === 'string' ? props.loadingText : 'Loading...')}
       {ready && (
         <>
           {authorized && !!props.chartsAppearFirst && renderedCharts}
@@ -88,19 +76,11 @@ export function AnalyticsDashboard(
           {authorized && (
             <>
               {showViewSelector && (
-                <ViewSelector
-                  gapi={gapi}
-                  onChange={(viewId) => setViewId(viewId)}
-                  idPrefix={props.dashId}
-                />
+                <ViewSelector gapi={gapi} onChange={(viewId) => setViewId(viewId)} idPrefix={props.dashId} />
               )}
               {showAuth && (
                 <div className={analyticsAuthWidgetsClassName}>
-                  <SignOutButton
-                    gapi={gapi}
-                    noReload={props.noReloadOnSignOut}
-                    text={props.signOutButtonText}
-                  />
+                  <SignOutButton gapi={gapi} noReload={props.noReloadOnSignOut} text={props.signOutButtonText} />
                 </div>
               )}
               {!props.chartsAppearFirst && renderedCharts}

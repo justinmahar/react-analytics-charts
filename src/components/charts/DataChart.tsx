@@ -1,10 +1,5 @@
-import {
-  Chart,
-  GoogleAnalyticsEmbedAPI,
-  Query,
-  useDataChart,
-} from "react-use-analytics-api";
-import * as React from "react";
+import { Chart, GoogleAnalyticsEmbedAPI, Query, useDataChart } from 'react-use-analytics-api';
+import * as React from 'react';
 
 export interface DataChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
@@ -29,21 +24,13 @@ export interface DataChartProps {
  *
  * This component wraps the [`useDataChart`](https://justinmahar.github.io/react-use-analytics-api/useDataChart) hook, which uses the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) to query the analytics data and render the chart into a container on the page.
  */
-export function DataChart(
-  props: DataChartProps & React.HTMLAttributes<HTMLDivElement>
-): JSX.Element {
+export function DataChart(props: DataChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   useDataChart(props.gapi, props.query, props.chart);
 
   const divProps: { [propName: string]: any } = { ...props };
   // Remove our own props
-  const propKeys = ["gapi", "query", "chart"];
+  const propKeys = ['gapi', 'query', 'chart'];
   propKeys.forEach((propKey: string) => delete divProps[propKey]);
 
-  return (
-    <div
-      {...divProps}
-      className="gapi-data-chart-container"
-      id={props.chart.container}
-    />
-  );
+  return <div {...divProps} className="gapi-data-chart-container" id={props.chart.container} />;
 }

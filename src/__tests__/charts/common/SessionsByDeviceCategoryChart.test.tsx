@@ -9,7 +9,7 @@ import { useAnalyticsApi } from 'react-use-analytics-api';
 
 function renderComponent(
   props: SessionsByDeviceCategoryChartProps,
-  children: React.ReactNode = undefined
+  children: React.ReactNode = undefined,
 ): RenderResult {
   return render(<SessionsByDeviceCategoryChart {...props}>{children}</SessionsByDeviceCategoryChart>);
 }

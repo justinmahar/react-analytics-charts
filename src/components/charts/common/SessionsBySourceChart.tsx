@@ -1,10 +1,6 @@
-import {
-  PieChartOptions,
-  GoogleAnalyticsEmbedAPI,
-  Query,
-} from "react-use-analytics-api";
-import * as React from "react";
-import { PieChart } from "../PieChart";
+import { PieChartOptions, GoogleAnalyticsEmbedAPI, Query } from 'react-use-analytics-api';
+import * as React from 'react';
+import { PieChart } from '../PieChart';
 
 export interface SessionsBySourceChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
@@ -31,13 +27,13 @@ export interface SessionsBySourceChartProps {
  * Refer to the [Charts Overview](https://justinmahar.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
 export function SessionsBySourceChart(
-  props: SessionsBySourceChartProps & React.HTMLAttributes<HTMLDivElement>
+  props: SessionsBySourceChartProps & React.HTMLAttributes<HTMLDivElement>,
 ): JSX.Element {
   const days: number = props.days ? Math.max(1, Math.abs(props.days)) : 28;
 
   const divProps: { [propName: string]: any } = { ...props };
   // Remove our own props
-  const propKeys = ["gapi", "viewId", "days", "container", "options", "query"];
+  const propKeys = ['gapi', 'viewId', 'days', 'container', 'options', 'query'];
   propKeys.forEach((propKey: string) => delete divProps[propKey]);
 
   return (
@@ -45,21 +41,17 @@ export function SessionsBySourceChart(
       {...divProps}
       gapi={props.gapi}
       query={{
-        metrics: "ga:sessions",
-        dimensions: "ga:source",
-        "start-date": `${days}daysAgo`,
-        "end-date": "today",
+        metrics: 'ga:sessions',
+        dimensions: 'ga:source',
+        'start-date': `${days}daysAgo`,
+        'end-date': 'today',
         ids: props.viewId,
         ...props.query,
       }}
-      container={
-        props.container
-          ? props.container
-          : `gapi-sessions-by-source-chart-${days}-days`
-      }
+      container={props.container ? props.container : `gapi-sessions-by-source-chart-${days}-days`}
       donut
       options={{
-        title: `Sessions By Source (${days} Day${days !== 1 ? "s" : ""})`,
+        title: `Sessions By Source (${days} Day${days !== 1 ? 's' : ''})`,
         ...props.options,
       }}
     />

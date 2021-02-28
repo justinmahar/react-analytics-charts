@@ -1,10 +1,6 @@
-import {
-  GoogleAnalyticsEmbedAPI,
-  LineChartOptions,
-  Query,
-} from "react-use-analytics-api";
-import * as React from "react";
-import { LineChart } from "../LineChart";
+import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-analytics-api';
+import * as React from 'react';
+import { LineChart } from '../LineChart';
 
 export type ActiveUserDays = [1, 7, 14, 28, 30];
 
@@ -34,22 +30,12 @@ export interface ActiveUsersChartProps {
  *
  * Refer to the [Charts Overview](https://justinmahar.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
-export function ActiveUsersChart(
-  props: ActiveUsersChartProps & React.HTMLAttributes<HTMLDivElement>
-): JSX.Element {
+export function ActiveUsersChart(props: ActiveUsersChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   const days: number = props.days ? Math.max(1, Math.abs(props.days)) : 28;
 
   const divProps: { [propName: string]: any } = { ...props };
   // Remove our own props
-  const propKeys = [
-    "gapi",
-    "viewId",
-    "days",
-    "container",
-    "activeUserDays",
-    "options",
-    "query",
-  ];
+  const propKeys = ['gapi', 'viewId', 'days', 'container', 'activeUserDays', 'options', 'query'];
   propKeys.forEach((propKey: string) => delete divProps[propKey]);
 
   return (
@@ -58,21 +44,15 @@ export function ActiveUsersChart(
       gapi={props.gapi}
       query={{
         metrics: `ga:${props.activeUserDays}dayUsers`,
-        dimensions: "ga:date",
-        "start-date": `${days}daysAgo`,
-        "end-date": "today",
+        dimensions: 'ga:date',
+        'start-date': `${days}daysAgo`,
+        'end-date': 'today',
         ids: props.viewId,
         ...props.query,
       }}
-      container={
-        props.container
-          ? props.container
-          : `gapi-${props.activeUserDays}-day-active-users-chart-${days}-days`
-      }
+      container={props.container ? props.container : `gapi-${props.activeUserDays}-day-active-users-chart-${days}-days`}
       options={{
-        title: `${props.activeUserDays}-Day Active Users (${days} Day${
-          days !== 1 ? "s" : ""
-        })`,
+        title: `${props.activeUserDays}-Day Active Users (${days} Day${days !== 1 ? 's' : ''})`,
         ...props.options,
       }}
     />

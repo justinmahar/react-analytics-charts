@@ -1,10 +1,6 @@
-import {
-  GoogleAnalyticsEmbedAPI,
-  LineChartOptions,
-  Query,
-} from "react-use-analytics-api";
-import * as React from "react";
-import { LineChart } from "../LineChart";
+import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-analytics-api';
+import * as React from 'react';
+import { LineChart } from '../LineChart';
 
 export interface SessionsByDateChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
@@ -35,30 +31,21 @@ export interface SessionsByDateChartProps {
  * Refer to the [Charts Overview](https://justinmahar.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
 export function SessionsByDateChart(
-  props: SessionsByDateChartProps & React.HTMLAttributes<HTMLDivElement>
+  props: SessionsByDateChartProps & React.HTMLAttributes<HTMLDivElement>,
 ): JSX.Element {
   const days: number = props.days ? Math.max(1, Math.abs(props.days)) : 28;
 
   const divProps: { [propName: string]: any } = { ...props };
   // Remove our own props
-  const propKeys = [
-    "gapi",
-    "viewId",
-    "days",
-    "container",
-    "showPageViews",
-    "showUsers",
-    "options",
-    "query",
-  ];
+  const propKeys = ['gapi', 'viewId', 'days', 'container', 'showPageViews', 'showUsers', 'options', 'query'];
   propKeys.forEach((propKey: string) => delete divProps[propKey]);
 
-  const metrics = ["ga:sessions"];
+  const metrics = ['ga:sessions'];
   if (props.showPageViews) {
-    metrics.push("ga:pageviews");
+    metrics.push('ga:pageviews');
   }
   if (props.showUsers) {
-    metrics.push("ga:users");
+    metrics.push('ga:users');
   }
 
   return (
@@ -66,20 +53,16 @@ export function SessionsByDateChart(
       {...divProps}
       gapi={props.gapi}
       query={{
-        metrics: metrics.join(","),
-        dimensions: "ga:date",
-        "start-date": `${days}daysAgo`,
-        "end-date": "today",
+        metrics: metrics.join(','),
+        dimensions: 'ga:date',
+        'start-date': `${days}daysAgo`,
+        'end-date': 'today',
         ids: props.viewId,
         ...props.query,
       }}
-      container={
-        props.container
-          ? props.container
-          : `gapi-sessions-by-date-chart-${days}-days`
-      }
+      container={props.container ? props.container : `gapi-sessions-by-date-chart-${days}-days`}
       options={{
-        title: `Sessions (${days} Day${days !== 1 ? "s" : ""})`,
+        title: `Sessions (${days} Day${days !== 1 ? 's' : ''})`,
         ...props.options,
       }}
     />

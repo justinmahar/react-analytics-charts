@@ -1,8 +1,5 @@
-import {
-  GoogleAnalyticsEmbedAPI,
-  useViewSelector,
-} from "react-use-analytics-api";
-import * as React from "react";
+import { GoogleAnalyticsEmbedAPI, useViewSelector } from 'react-use-analytics-api';
+import * as React from 'react';
 
 export interface ViewSelectorProps {
   /** **Required.** The ready [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
@@ -19,10 +16,9 @@ export interface ViewSelectorProps {
  * The ViewSelector component allows you to choose your account, property, and view via dropdown menus.
  */
 export function ViewSelector(props: ViewSelectorProps): JSX.Element {
-  const onChange =
-    typeof props.onChange === "function" ? props.onChange : () => undefined;
+  const onChange = typeof props.onChange === 'function' ? props.onChange : () => undefined;
   const viewSelectorId = `${
-    typeof props.idPrefix === "string" ? props.idPrefix + "-" : ""
+    typeof props.idPrefix === 'string' ? props.idPrefix + '-' : ''
   }gapi-view-selector-container`;
   useViewSelector(props.gapi, viewSelectorId, onChange);
   return <div id={viewSelectorId} className="gapi-view-selector-container" />;

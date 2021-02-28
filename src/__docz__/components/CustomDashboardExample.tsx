@@ -17,7 +17,7 @@ export function CustomDashboardExample(props): JSX.Element {
           {!authorized && <AuthorizeButton gapi={gapi} authOptions={props.authOptions} />}
           {authorized && (
             <div>
-              <ViewSelector gapi={gapi} onChange={viewId => setViewId(viewId)} />
+              <ViewSelector gapi={gapi} onChange={(viewId) => setViewId(viewId)} />
               <div>
                 <SessionsByDateChart gapi={gapi} viewId={viewId} />
                 <SessionsBySourceChart gapi={gapi} viewId={viewId} />

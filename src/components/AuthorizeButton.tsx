@@ -1,5 +1,5 @@
-import { GoogleAnalyticsEmbedAPI, useAuthorize } from "react-use-analytics-api";
-import * as React from "react";
+import { GoogleAnalyticsEmbedAPI, useAuthorize } from 'react-use-analytics-api';
+import * as React from 'react';
 
 export interface AuthorizeButtonProps {
   /** **Required.** The ready [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
@@ -30,7 +30,7 @@ export interface AuthorizeButtonProps {
 export function AuthorizeButton(props: AuthorizeButtonProps): JSX.Element {
   const authDiv = React.useRef<HTMLDivElement | null>(null);
   const embedApiAuthContainerId = `${
-    typeof props.idPrefix === "string" ? props.idPrefix + "-" : ""
+    typeof props.idPrefix === 'string' ? props.idPrefix + '-' : ''
   }gapi-authorize-container`;
   const authOptions: AuthorizeOptions = {
     container: embedApiAuthContainerId,
@@ -41,7 +41,7 @@ export function AuthorizeButton(props: AuthorizeButtonProps): JSX.Element {
 
   React.useEffect(() => {
     let aborted = false;
-    if (!aborted && typeof props.gapi !== "undefined" && !authorizeCalled) {
+    if (!aborted && typeof props.gapi !== 'undefined' && !authorizeCalled) {
       authorize();
       setAuthorizeCalled(true);
     }
@@ -53,32 +53,23 @@ export function AuthorizeButton(props: AuthorizeButtonProps): JSX.Element {
   const hasButton = authDiv.current && authDiv?.current?.children?.length > 0;
 
   const handleRefresh = (): void => {
-    if (
-      typeof window !== "undefined" &&
-      window.location &&
-      window.location.reload
-    ) {
+    if (typeof window !== 'undefined' && window.location && window.location.reload) {
       window.location.reload(false);
     }
   };
 
   return (
     <>
-      <div
-        ref={authDiv}
-        className="gapi-authorize-container"
-        id={embedApiAuthContainerId}
-      />
+      <div ref={authDiv} className="gapi-authorize-container" id={embedApiAuthContainerId} />
       {!props.hideRefreshButton && !hasButton && (
         <div className="analytics-refresh-button-container">
           <button onClick={handleRefresh}>
-            {typeof props.refreshButtonText === "string" &&
-              props.refreshButtonText}
-            {typeof props.refreshButtonText !== "string" && (
+            {typeof props.refreshButtonText === 'string' && props.refreshButtonText}
+            {typeof props.refreshButtonText !== 'string' && (
               <>
                 <span role="img" aria-label="chart">
                   📈
-                </span>{" "}
+                </span>{' '}
                 Refresh To Access Google Analytics
               </>
             )}

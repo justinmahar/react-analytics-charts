@@ -1,5 +1,5 @@
-import { GoogleAnalyticsEmbedAPI, useSignOut } from "react-use-analytics-api";
-import * as React from "react";
+import { GoogleAnalyticsEmbedAPI, useSignOut } from 'react-use-analytics-api';
+import * as React from 'react';
 
 export interface SignOutButtonProps {
   /** **Required.** The ready [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
@@ -20,9 +20,9 @@ export interface SignOutButtonProps {
 export function SignOutButton(props: SignOutButtonProps): JSX.Element {
   const signOut = useSignOut(props.gapi);
   const signOutHandler = (): void => {
-    if (typeof props.gapi !== "undefined") {
+    if (typeof props.gapi !== 'undefined') {
       signOut();
-      if (typeof window !== "undefined" && !props.noReload) {
+      if (typeof window !== 'undefined' && !props.noReload) {
         window.location.reload(false);
       }
     }
@@ -30,7 +30,7 @@ export function SignOutButton(props: SignOutButtonProps): JSX.Element {
 
   return (
     <button className="analytics-sign-out-button" onClick={signOutHandler}>
-      {props.text ? props.text : "Sign Out"}
+      {props.text ? props.text : 'Sign Out'}
     </button>
   );
 }

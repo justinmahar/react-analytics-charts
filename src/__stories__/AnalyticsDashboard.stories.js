@@ -249,7 +249,7 @@ export const ViewSelectorStory = () => {
             Selected view ID: <input type="text" value={viewId} onChange={() => undefined} />
           </div>
           <br />
-          <ViewSelector gapi={gapi} onChange={viewId => setViewId(viewId)} />
+          <ViewSelector gapi={gapi} onChange={(viewId) => setViewId(viewId)} />
         </div>
       )}
     </div>

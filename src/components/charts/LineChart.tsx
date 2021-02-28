@@ -1,10 +1,6 @@
-import {
-  GoogleAnalyticsEmbedAPI,
-  LineChartOptions,
-  Query,
-} from "react-use-analytics-api";
-import * as React from "react";
-import { DataChart } from "./DataChart";
+import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-analytics-api';
+import * as React from 'react';
+import { DataChart } from './DataChart';
 
 export interface LineChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
@@ -27,12 +23,10 @@ export interface LineChartProps {
  *
  * Refer to the [Charts Overview](https://justinmahar.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
-export function LineChart(
-  props: LineChartProps & React.HTMLAttributes<HTMLDivElement>
-): JSX.Element {
+export function LineChart(props: LineChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   const divProps: { [propName: string]: any } = { ...props };
   // Remove our own props
-  const propKeys = ["gapi", "query", "container", "options"];
+  const propKeys = ['gapi', 'query', 'container', 'options'];
   propKeys.forEach((propKey: string) => delete divProps[propKey]);
 
   return (
@@ -42,9 +36,9 @@ export function LineChart(
       query={props.query}
       chart={{
         container: props.container,
-        type: "LINE",
+        type: 'LINE',
         options: {
-          width: "100%",
+          width: '100%',
           ...props.options,
         },
       }}

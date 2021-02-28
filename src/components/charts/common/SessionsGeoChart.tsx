@@ -1,10 +1,6 @@
-import {
-  GeoChartOptions,
-  GoogleAnalyticsEmbedAPI,
-  Query,
-} from "react-use-analytics-api";
-import * as React from "react";
-import { GeoChart } from "../GeoChart";
+import { GeoChartOptions, GoogleAnalyticsEmbedAPI, Query } from 'react-use-analytics-api';
+import * as React from 'react';
+import { GeoChart } from '../GeoChart';
 
 export interface SessionsGeoChartProps {
   /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
@@ -32,27 +28,17 @@ export interface SessionsGeoChartProps {
  *
  * Refer to the [Charts Overview](https://justinmahar.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
-export function SessionsGeoChart(
-  props: SessionsGeoChartProps & React.HTMLAttributes<HTMLDivElement>
-): JSX.Element {
+export function SessionsGeoChart(props: SessionsGeoChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   const days: number = props.days ? Math.max(1, Math.abs(props.days)) : 28;
 
   const divProps: { [propName: string]: any } = { ...props };
   // Remove our own props
-  const propKeys = [
-    "gapi",
-    "viewId",
-    "days",
-    "container",
-    "showPageViews",
-    "options",
-    "query",
-  ];
+  const propKeys = ['gapi', 'viewId', 'days', 'container', 'showPageViews', 'options', 'query'];
   propKeys.forEach((propKey: string) => delete divProps[propKey]);
 
-  const metrics = ["ga:sessions"];
+  const metrics = ['ga:sessions'];
   if (props.showPageViews) {
-    metrics.push("ga:pageviews");
+    metrics.push('ga:pageviews');
   }
 
   return (
@@ -60,18 +46,14 @@ export function SessionsGeoChart(
       {...divProps}
       gapi={props.gapi}
       query={{
-        metrics: metrics.join(","),
-        dimensions: "ga:country",
-        "start-date": `${days}daysAgo`,
-        "end-date": "today",
+        metrics: metrics.join(','),
+        dimensions: 'ga:country',
+        'start-date': `${days}daysAgo`,
+        'end-date': 'today',
         ids: props.viewId,
         ...props.query,
       }}
-      container={
-        props.container
-          ? props.container
-          : `gapi-sessions-geo-chart-${days}-days`
-      }
+      container={props.container ? props.container : `gapi-sessions-geo-chart-${days}-days`}
       options={props.options}
     />
   );
