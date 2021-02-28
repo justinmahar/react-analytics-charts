@@ -4,10 +4,10 @@ menu: Common Charts
 route: /SessionsGeoChart
 ---
 
-import { Playground, Props } from 'docz';
-import clientId from '../../../__docz__/client-id-config';
-import { AnalyticsDashboard } from '../../AnalyticsDashboard'
-import { SessionsGeoChart } from './SessionsGeoChart';
+import { Playground, Props } from "docz";
+import clientId from "../../../__docz__/client-id-config";
+import { AnalyticsDashboard } from "../../AnalyticsDashboard";
+import { SessionsGeoChart } from "./SessionsGeoChart";
 
 <h1>SessionsGeoChart</h1>
 
@@ -22,7 +22,7 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 ## Usage
 
 ```jsx
-import { AnalyticsDashboard, SessionsGeoChart } from 'react-analytics-charts';
+import { AnalyticsDashboard, SessionsGeoChart } from "react-analytics-charts";
 ```
 
 <Playground>
@@ -30,30 +30,27 @@ import { AnalyticsDashboard, SessionsGeoChart } from 'react-analytics-charts';
     authOptions={{ clientId }}
     renderCharts={(gapi, viewId) => {
       return (
-        <SessionsGeoChart
-          gapi={gapi}
-          viewId={viewId}
-          days={28}
-          showPageViews
-        />
-      )
+        <SessionsGeoChart gapi={gapi} viewId={viewId} days={28} showPageViews />
+      );
     }}
   />
 </Playground>
-
-<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+<small>
+  Note: You can edit the source above. Your changes will be rendered
+  immediately.
+</small>
 
 ## Props
 
-| Prop | Type | Description |
-|------|------|-------------|
-| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) |
-| viewId | `string` | **Required.** View ID for the view the chart pertains to. See [ViewSelector](/ViewSelector) for more information. |
-| days | `number` &#124; `undefined` | Optional. Number of days the chart shows data for. Defaults to `28`. |
-| container | `string` &#124; `undefined` | Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) renders. One will be created if no value is provided. |
-| showPageViews | `boolean` &#124; `undefined` | Optional. Set to `true` to show the page view count on the chart. Defaults to `false`. |
-| options | [GeoChartOptions](/GeoChart#chart-options) | Optional. The options for this chart have been preconfigured, but you can add or override any [GeoChartOptions](/GeoChart#chart-options) you'd like here, such as the `width`, `region`, or `resolution`. |
-| query | [`Query`](/DataChart#query-prop) | Optional. The [query](/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](/DataChart#query-prop) you'd like here. |
+| Prop          | Type                                       | Description                                                                                                                                                                                               |
+| ------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| gapi          | `GoogleAnalyticsEmbedAPI`                  | **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/)                                                                               |
+| viewId        | `string`                                   | **Required.** View ID for the view the chart pertains to. See [ViewSelector](/ViewSelector) for more information.                                                                                         |
+| days          | `number` &#124; `undefined`                | Optional. Number of days the chart shows data for. Defaults to `28`.                                                                                                                                      |
+| container     | `string` &#124; `undefined`                | Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) renders. One will be created if no value is provided.       |
+| showPageViews | `boolean` &#124; `undefined`               | Optional. Set to `true` to show the page view count on the chart. Defaults to `false`.                                                                                                                    |
+| options       | [GeoChartOptions](/GeoChart#chart-options) | Optional. The options for this chart have been preconfigured, but you can add or override any [GeoChartOptions](/GeoChart#chart-options) you'd like here, such as the `width`, `region`, or `resolution`. |
+| query         | [`Query`](/DataChart#query-prop)           | Optional. The [query](/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](/DataChart#query-prop) you'd like here.                                   |
 
 This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
 
@@ -97,10 +94,10 @@ The following uses the [`europe` region alias](/GeoChart#region-aliases) to show
           days={28}
           showPageViews
           options={{
-            region: 'europe',
+            region: "europe",
           }}
         />
-      )
+      );
     }}
   />
 </Playground>
@@ -122,14 +119,14 @@ The following uses the `ga:region` [dimension](/DataChart#query-prop), the `US` 
           days={28}
           showPageViews
           query={{
-            dimensions: 'ga:region',
+            dimensions: "ga:region",
           }}
           options={{
-            region: 'US',
-            resolution: 'provinces',
+            region: "US",
+            resolution: "provinces",
           }}
         />
-      )
+      );
     }}
   />
 </Playground>

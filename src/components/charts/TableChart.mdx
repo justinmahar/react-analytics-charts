@@ -4,10 +4,10 @@ menu: Custom Charts
 route: /TableChart
 ---
 
-import { Playground, Props } from 'docz';
-import clientId from '../../__docz__/client-id-config';
-import { AnalyticsDashboard } from '../AnalyticsDashboard'
-import { TableChart } from './TableChart';
+import { Playground, Props } from "docz";
+import clientId from "../../__docz__/client-id-config";
+import { AnalyticsDashboard } from "../AnalyticsDashboard";
+import { TableChart } from "./TableChart";
 
 <h1>TableChart</h1>
 
@@ -15,7 +15,7 @@ import { TableChart } from './TableChart';
 
 A table shows sortable rows of analytics data under labeled columns.
 
-You can use this to create a custom table by providing your own data query (see [DataChart](/DataChart) for more info on queries) and, 
+You can use this to create a custom table by providing your own data query (see [DataChart](/DataChart) for more info on queries) and,
 optionally, [table options](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options) for the table.
 
 Refer to the [Charts Overview](/charts) for a list of all charts available.
@@ -23,7 +23,7 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 ## Usage
 
 ```jsx
-import { AnalyticsDashboard, TableChart } from 'react-analytics-charts';
+import { AnalyticsDashboard, TableChart } from "react-analytics-charts";
 ```
 
 <Playground>
@@ -35,10 +35,10 @@ import { AnalyticsDashboard, TableChart } from 'react-analytics-charts';
           gapi={gapi}
           query={{
             ids: viewId,
-            'start-date': '28daysAgo',
-            'end-date': 'today',
-            metrics: 'ga:pageviews',
-            dimensions: 'ga:pagePath',
+            "start-date": "28daysAgo",
+            "end-date": "today",
+            metrics: "ga:pageviews",
+            dimensions: "ga:pagePath",
           }}
           container="pageviews-per-path-chart"
           options={{
@@ -50,19 +50,20 @@ import { AnalyticsDashboard, TableChart } from 'react-analytics-charts';
     }}
   />
 </Playground>
-
-<br/>
-
-<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+<br />
+<small>
+  Note: You can edit the source above. Your changes will be rendered
+  immediately.
+</small>
 
 ## Props
 
-| Prop | Type | Description |
-|------|------|-------------|
-| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) |
-| container | `string` | **Required.** Provide an ID for the `div` that will contain the chart. |
-| query | [`Query`](/DataChart#query-prop)  | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart). |
-| options | [`TableChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [tables](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options). |
+| Prop      | Type                                                                                                            | Description                                                                                                                                                                                                        |
+| --------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| gapi      | `GoogleAnalyticsEmbedAPI`                                                                                       | **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/)                                                                                        |
+| container | `string`                                                                                                        | **Required.** Provide an ID for the `div` that will contain the chart.                                                                                                                                             |
+| query     | [`Query`](/DataChart#query-prop)                                                                                | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart).                                                                                  |
+| options   | [`TableChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [tables](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options). |
 
 This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
 
@@ -74,20 +75,20 @@ Refer to [DataChart Query Prop](/DataChart#query-prop) to build your own data `q
 
 ### Chart Options
 
-There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options) available for 
+There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/table#configuration-options) available for
 tables, allowing you to customize the appearance. Provide these via the `options` prop.
 
 Below are a few of the notable ones:
 
-| Option | Type | Description |
-|------|------|-------------|
-| width | `number` &#124; `string` | Sets the width of the visualization's container element. You can use standard HTML units (for example, '100px', '80em', '60'). If no units are specified the number is assumed to be pixels. If not specified, the browser will adjust the width automatically to fit the table, shrinking as much as possible in the process; if set smaller than the width required, the table will add a horizontal scroll bar. If set to '100%', the table will expand as much as possible into the container element. Default: automatic |
-| height | `number` &#124; `string` | Sets the height of the visualization's container element. You can use standard HTML units (for example, '100px', '80em', '60'). If no units are specified the number is assumed to be pixels. If not specified, the browser will adjust the height automatically to fit the table, shrinking as much as possible in the process; if set smaller than the height required, the table will add a vertical scroll bar (the header row is also frozen). If set to '100%', the table will expand as much as possible into the container element. Default: automatic |
-| alternatingRowStyle | `boolean` | Determines if alternating color style will be assigned to odd and even rows. Default: `true` |
-| sortAscending | `boolean` | The order in which the initial sort column is sorted. `true` for ascending, `false` for descending. Ignored if `sortColumn` is not specified. Default: `true` |
-| sortColumn | `string` | An index of a column in the data table, by which the table is initially sorted. The column will be marked with a small arrow indicating the sort order. Default: `-1` |
-| page | `string` | If and how to enable paging through the data. Choose one of the following string values: `'enable'` - The table will include page-forward and page-back buttons. Clicking on these buttons will perform the paging operation and change the displayed page. You might want to also set the `pageSize` option. `'event'` - The table will include page-forward and page-back buttons, but clicking them will trigger a 'page' event and will not change the displayed page. This option should be used when the code implements its own page turning logic. See the TableQueryWrapper example for an example of how to handle paging events manually. `'disable'` - Paging is not supported. Default: `'disable'` |
-| pageSize | `number` | The number of rows in each page, when paging is enabled with the `page` option. Default: `10` |
+| Option              | Type                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| width               | `number` &#124; `string` | Sets the width of the visualization's container element. You can use standard HTML units (for example, '100px', '80em', '60'). If no units are specified the number is assumed to be pixels. If not specified, the browser will adjust the width automatically to fit the table, shrinking as much as possible in the process; if set smaller than the width required, the table will add a horizontal scroll bar. If set to '100%', the table will expand as much as possible into the container element. Default: automatic                                                                                                                                                                                    |
+| height              | `number` &#124; `string` | Sets the height of the visualization's container element. You can use standard HTML units (for example, '100px', '80em', '60'). If no units are specified the number is assumed to be pixels. If not specified, the browser will adjust the height automatically to fit the table, shrinking as much as possible in the process; if set smaller than the height required, the table will add a vertical scroll bar (the header row is also frozen). If set to '100%', the table will expand as much as possible into the container element. Default: automatic                                                                                                                                                   |
+| alternatingRowStyle | `boolean`                | Determines if alternating color style will be assigned to odd and even rows. Default: `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| sortAscending       | `boolean`                | The order in which the initial sort column is sorted. `true` for ascending, `false` for descending. Ignored if `sortColumn` is not specified. Default: `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| sortColumn          | `string`                 | An index of a column in the data table, by which the table is initially sorted. The column will be marked with a small arrow indicating the sort order. Default: `-1`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| page                | `string`                 | If and how to enable paging through the data. Choose one of the following string values: `'enable'` - The table will include page-forward and page-back buttons. Clicking on these buttons will perform the paging operation and change the displayed page. You might want to also set the `pageSize` option. `'event'` - The table will include page-forward and page-back buttons, but clicking them will trigger a 'page' event and will not change the displayed page. This option should be used when the code implements its own page turning logic. See the TableQueryWrapper example for an example of how to handle paging events manually. `'disable'` - Paging is not supported. Default: `'disable'` |
+| pageSize            | `number`                 | The number of rows in each page, when paging is enabled with the `page` option. Default: `10`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 The containing element is rendered as a `div` and you can size and style it as you see fit using CSS.
 

@@ -1,7 +1,7 @@
 /// <reference types="react" />
-import { GoogleAnalyticsEmbedAPI } from 'react-use-analytics-api';
+import { GoogleAnalyticsEmbedAPI } from "react-use-analytics-api";
 export interface AuthorizeButtonProps {
-    /** **Required.** The ready [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
+    /** **Required.** The ready [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
     gapi?: GoogleAnalyticsEmbedAPI;
     /** **Required.** [Authorize options](https://developers.google.com/analytics/devguides/reporting/embed/v1/component-reference#auth-options) for the button. Be sure to provide a `clientId` or a `serverAuth.access_token`. */
     authOptions: AuthorizeOptions;
@@ -15,19 +15,19 @@ export interface AuthorizeButtonProps {
     refreshButtonText?: string;
 }
 /**
- * See documentation: [AuthorizeButton](https://devboldly.github.io/react-analytics-charts/AuthorizeButton)
+ * See documentation: [AuthorizeButton](https://justinmahar.github.io/react-analytics-charts/AuthorizeButton)
  *
  * Renders a Google Analytics sign-in button allowing the user to sign in with their Google account.
  *
  * After signing in, the `onSignIn` handler is called. This handler can be used to update the view once signed in. The handler is not called if already signed in.
  *
- * To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://devboldly.github.io/react-use-analytics-api/useAnalyticsApi) hook. A full example is available [here](https://devboldly.github.io/react-analytics-charts/AuthorizeButton#example).
+ * To check if the user is already authorized, you can use the [`useAnalyticsApi`](https://justinmahar.github.io/react-use-analytics-api/useAnalyticsApi) hook. A full example is available [here](https://justinmahar.github.io/react-analytics-charts/AuthorizeButton#example).
  *
- * The [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) will only render the sign-in button once per page load. A refresh button will be shown when the original button's container is disposed of by React. Clicking that button reloads the current page.
+ * The [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) will only render the sign-in button once per page load. A refresh button will be shown when the original button's container is disposed of by React. Clicking that button reloads the current page.
  */
 export declare function AuthorizeButton(props: AuthorizeButtonProps): JSX.Element;
 export interface AuthorizeOptions {
-    /** The client ID of your project in the [developers console](https://console.developers.google.com/project). See [How To Get An OAuth Client ID From Google](https://devboldly.github.io/react-analytics-charts/google-oauth-client-id) to get yours. */
+    /** The client ID of your project in the [developers console](https://console.developers.google.com/project). See [How To Get An OAuth Client ID From Google](https://justinmahar.github.io/react-analytics-charts/google-oauth-client-id) to get yours. */
     clientId?: string;
     /** The ID of an HTML element in the DOM that will host the sign-in button. You may also pass a reference to the element itself. */
     container?: string;

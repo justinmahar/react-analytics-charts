@@ -1,7 +1,7 @@
 /// <reference types="react" />
-import { GoogleAnalyticsEmbedAPI } from 'react-use-analytics-api';
+import { GoogleAnalyticsEmbedAPI } from "react-use-analytics-api";
 export interface ViewSelectorProps {
-    /** **Required.** The ready [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
+    /** **Required.** The ready [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
     gapi?: GoogleAnalyticsEmbedAPI;
     /** Optional. Handler that's called when the view selector is changed. Called with a single string arg, `viewId`, that is the view ID that was selected. */
     onChange?: (viewId: string) => void;
@@ -9,7 +9,7 @@ export interface ViewSelectorProps {
     idPrefix?: string;
 }
 /**
- * See documentation: [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector)
+ * See documentation: [ViewSelector](https://justinmahar.github.io/react-analytics-charts/ViewSelector)
  *
  * The ViewSelector component allows you to choose your account, property, and view via dropdown menus.
  */

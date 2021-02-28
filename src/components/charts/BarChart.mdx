@@ -4,10 +4,10 @@ menu: Custom Charts
 route: /BarChart
 ---
 
-import { Playground, Props } from 'docz';
-import clientId from '../../__docz__/client-id-config';
-import { AnalyticsDashboard } from '../AnalyticsDashboard'
-import { BarChart } from './BarChart';
+import { Playground, Props } from "docz";
+import clientId from "../../__docz__/client-id-config";
+import { AnalyticsDashboard } from "../AnalyticsDashboard";
+import { BarChart } from "./BarChart";
 
 <h1>BarChart</h1>
 
@@ -15,7 +15,7 @@ import { BarChart } from './BarChart';
 
 A bar chart shows data as horizontal bars.
 
-You can use this to create a custom chart by providing your own data query (see [DataChart](/DataChart) for more info on queries) and, 
+You can use this to create a custom chart by providing your own data query (see [DataChart](/DataChart) for more info on queries) and,
 optionally, [bar chart options](https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options) for the chart.
 
 Refer to the [Charts Overview](/charts) for a list of all charts available.
@@ -23,7 +23,7 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 ## Usage
 
 ```jsx
-import { AnalyticsDashboard, BarChart } from 'react-analytics-charts';
+import { AnalyticsDashboard, BarChart } from "react-analytics-charts";
 ```
 
 <Playground>
@@ -35,33 +35,34 @@ import { AnalyticsDashboard, BarChart } from 'react-analytics-charts';
           gapi={gapi}
           query={{
             ids: viewId,
-            'start-date': '30daysAgo',
-            'end-date': 'today',
-            metrics: 'ga:sessions,ga:users,ga:pageviews',
-            dimensions: 'ga:deviceCategory',
+            "start-date": "30daysAgo",
+            "end-date": "today",
+            metrics: "ga:sessions,ga:users,ga:pageviews",
+            dimensions: "ga:deviceCategory",
           }}
           container="traffic-by-device-category-chart"
           options={{
-            title: 'Traffic By Device Category (30 Days)',
+            title: "Traffic By Device Category (30 Days)",
           }}
         />
       );
     }}
   />
 </Playground>
-
-<br/>
-
-<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+<br />
+<small>
+  Note: You can edit the source above. Your changes will be rendered
+  immediately.
+</small>
 
 ## Props
 
-| Prop | Type | Description |
-|------|------|-------------|
-| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) |
-| container | `string` | **Required.** Provide an ID for the `div` that will contain the chart. |
-| query | [`Query`](/DataChart#query-prop)  | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart). |
-| options | [`BarChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [bar charts](https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options). |
+| Prop      | Type                                                                                                             | Description                                                                                                                                                                                                               |
+| --------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| gapi      | `GoogleAnalyticsEmbedAPI`                                                                                        | **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/)                                                                                               |
+| container | `string`                                                                                                         | **Required.** Provide an ID for the `div` that will contain the chart.                                                                                                                                                    |
+| query     | [`Query`](/DataChart#query-prop)                                                                                 | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart).                                                                                         |
+| options   | [`BarChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [bar charts](https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options). |
 
 This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
 
@@ -73,16 +74,16 @@ Refer to [DataChart Query Prop](/DataChart#query-prop) to build your own data `q
 
 ### Chart Options
 
-There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options) available for 
+There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options) available for
 bar charts, allowing you to customize the appearance. Provide these via the `options` prop.
 
 Below are a few of the notable ones:
 
-| Option | Type | Description |
-|------|------|-------------|
-| title | `string` | Text to display above the chart. |
-| width | `number` &#124; `string` | Width of the chart, in pixels. Also supports a percentage string. Default: `100%` |
-| height | `number` &#124; `string` | Height of the chart, in pixels. |
+| Option | Type                     | Description                                                                       |
+| ------ | ------------------------ | --------------------------------------------------------------------------------- |
+| title  | `string`                 | Text to display above the chart.                                                  |
+| width  | `number` &#124; `string` | Width of the chart, in pixels. Also supports a percentage string. Default: `100%` |
+| height | `number` &#124; `string` | Height of the chart, in pixels.                                                   |
 
 The containing element is rendered as a `div` and you can size and style it as you see fit using CSS.
 

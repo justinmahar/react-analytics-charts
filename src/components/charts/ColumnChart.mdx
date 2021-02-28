@@ -4,10 +4,10 @@ menu: Custom Charts
 route: /ColumnChart
 ---
 
-import { Playground, Props } from 'docz';
-import clientId from '../../__docz__/client-id-config';
-import { AnalyticsDashboard } from '../AnalyticsDashboard'
-import { ColumnChart } from './ColumnChart';
+import { Playground, Props } from "docz";
+import clientId from "../../__docz__/client-id-config";
+import { AnalyticsDashboard } from "../AnalyticsDashboard";
+import { ColumnChart } from "./ColumnChart";
 
 <h1>ColumnChart</h1>
 
@@ -15,7 +15,7 @@ import { ColumnChart } from './ColumnChart';
 
 A column chart shows data as vertical bars. Similar visual presentation to a [line chart](/LineChart).
 
-You can use this to create a custom chart by providing your own data query (see [DataChart](/DataChart) for more info on queries) and, 
+You can use this to create a custom chart by providing your own data query (see [DataChart](/DataChart) for more info on queries) and,
 optionally, [column chart options](https://developers.google.com/chart/interactive/docs/gallery/columnchart#configuration-options) for the chart.
 
 Refer to the [Charts Overview](/charts) for a list of all charts available.
@@ -23,7 +23,7 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 ## Usage
 
 ```jsx
-import { AnalyticsDashboard, ColumnChart } from 'react-analytics-charts';
+import { AnalyticsDashboard, ColumnChart } from "react-analytics-charts";
 ```
 
 <Playground>
@@ -35,10 +35,10 @@ import { AnalyticsDashboard, ColumnChart } from 'react-analytics-charts';
           gapi={gapi}
           query={{
             ids: viewId,
-            'start-date': '14daysAgo',
-            'end-date': 'today',
-            metrics: 'ga:sessions',
-            dimensions: 'ga:date',
+            "start-date": "14daysAgo",
+            "end-date": "today",
+            metrics: "ga:sessions",
+            dimensions: "ga:date",
           }}
           container="sessions-by-date-chart"
           options={{
@@ -49,19 +49,20 @@ import { AnalyticsDashboard, ColumnChart } from 'react-analytics-charts';
     }}
   />
 </Playground>
-
-<br/>
-
-<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+<br />
+<small>
+  Note: You can edit the source above. Your changes will be rendered
+  immediately.
+</small>
 
 ## Props
 
-| Prop | Type | Description |
-|------|------|-------------|
-| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) |
-| container | `string` | **Required.** Provide an ID for the `div` that will contain the chart. |
-| query | [`Query`](/DataChart#query-prop)  | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart). |
-| options | [`ColumnChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/columnchart#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [column charts](https://developers.google.com/chart/interactive/docs/gallery/columnchart#configuration-options). |
+| Prop      | Type                                                                                                                   | Description                                                                                                                                                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| gapi      | `GoogleAnalyticsEmbedAPI`                                                                                              | **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/)                                                                                                     |
+| container | `string`                                                                                                               | **Required.** Provide an ID for the `div` that will contain the chart.                                                                                                                                                          |
+| query     | [`Query`](/DataChart#query-prop)                                                                                       | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart).                                                                                               |
+| options   | [`ColumnChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/columnchart#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [column charts](https://developers.google.com/chart/interactive/docs/gallery/columnchart#configuration-options). |
 
 This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
 
@@ -73,16 +74,16 @@ Refer to [DataChart Query Prop](/DataChart#query-prop) to build your own data `q
 
 ### Chart Options
 
-There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/columnchart#configuration-options) available for 
+There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/columnchart#configuration-options) available for
 column charts, allowing you to customize the appearance. Provide these via the `options` prop.
 
 Below are a few of the notable ones:
 
-| Option | Type | Description |
-|------|------|-------------|
-| title | `string` | Text to display above the chart. |
-| width | `number` &#124; `string` | Width of the chart, in pixels. Also supports a percentage string. Default: `100%` |
-| height | `number` &#124; `string` | Height of the chart, in pixels. |
+| Option | Type                     | Description                                                                       |
+| ------ | ------------------------ | --------------------------------------------------------------------------------- |
+| title  | `string`                 | Text to display above the chart.                                                  |
+| width  | `number` &#124; `string` | Width of the chart, in pixels. Also supports a percentage string. Default: `100%` |
+| height | `number` &#124; `string` | Height of the chart, in pixels.                                                   |
 
 The containing element is rendered as a `div` and you can size and style it as you see fit using CSS.
 

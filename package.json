@@ -1,9 +1,9 @@
 {
   "name": "react-analytics-charts",
   "version": "1.2.11",
-  "author": "DevBoldly <devboldly@gmail.com>",
+  "author": "Justin Mahar <contact@justinmahar.com>",
   "description": "React components to easily embed Google Analytics charts on your React site. Uses the Google Analytics Embed API.",
-  "homepage": "https://devboldly.github.io/react-analytics-charts/",
+  "homepage": "https://justinmahar.github.io/react-analytics-charts/",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -28,10 +28,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devboldly/react-analytics-charts.git"
+    "url": "git+https://github.com/justinmahar/react-analytics-charts.git"
   },
   "bugs": {
-    "url": "https://github.com/devboldly/react-analytics-charts/issues"
+    "url": "https://github.com/justinmahar/react-analytics-charts/issues"
   },
   "keywords": [],
   "dependencies": {

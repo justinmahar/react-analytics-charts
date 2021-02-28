@@ -1,12 +1,25 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AnalyticsDashboard = void 0;
 var react_use_analytics_api_1 = require("react-use-analytics-api");
 var React = __importStar(require("react"));
 var AuthorizeButton_1 = require("./AuthorizeButton");
@@ -14,15 +27,15 @@ var SessionsByDateChart_1 = require("./charts/common/SessionsByDateChart");
 var SignOutButton_1 = require("./SignOutButton");
 var ViewSelector_1 = require("./ViewSelector");
 /**
- * See documentation: [AnalyticsDashboard](https://devboldly.github.io/react-analytics-charts/AnalyticsDashboard)
+ * See documentation: [AnalyticsDashboard](https://justinmahar.github.io/react-analytics-charts/AnalyticsDashboard)
  *
- * This component allows you to drop in an analytics dashboard that automatically handles loading the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/), [sign in](https://devboldly.github.io/react-analytics-charts/AuthorizeButton) and [sign out](https://devboldly.github.io/react-analytics-charts/SignOutButton), and [view selection](https://devboldly.github.io/react-analytics-charts/ViewSelector).
+ * This component allows you to drop in an analytics dashboard that automatically handles loading the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/), [sign in](https://justinmahar.github.io/react-analytics-charts/AuthorizeButton) and [sign out](https://justinmahar.github.io/react-analytics-charts/SignOutButton), and [view selection](https://justinmahar.github.io/react-analytics-charts/ViewSelector).
  *
- * All you need to do is provide your [Client ID](https://devboldly.github.io/react-analytics-charts/google-oauth-client-id) and a render prop that renders all the [charts](https://devboldly.github.io/react-analytics-charts/charts) you'd like to see.
+ * All you need to do is provide your [Client ID](https://justinmahar.github.io/react-analytics-charts/google-oauth-client-id) and a render prop that renders all the [charts](https://justinmahar.github.io/react-analytics-charts/charts) you'd like to see.
  *
- * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
+ * Refer to the [Charts Overview](https://justinmahar.github.io/react-analytics-charts/charts) for a list of all charts available.
  *
- * If you need more flexibility, you can create your own [custom dashboard](https://devboldly.github.io/react-analytics-charts/custom-dashboards-standalone-charts) if you'd like.
+ * If you need more flexibility, you can create your own [custom dashboard](https://justinmahar.github.io/react-analytics-charts/custom-dashboards-standalone-charts) if you'd like.
  */
 function AnalyticsDashboard(props) {
     var _a = React.useState(props.viewId), viewId = _a[0], setViewId = _a[1];
@@ -31,11 +44,14 @@ function AnalyticsDashboard(props) {
     var showAuth = !props.hideAuth;
     var renderedCharts = React.createElement(React.Fragment, null);
     if (ready && gapi && viewId) {
-        renderedCharts = props.renderCharts ? props.renderCharts(gapi, viewId) : React.createElement(React.Fragment, null);
+        renderedCharts = props.renderCharts ? (props.renderCharts(gapi, viewId)) : (React.createElement(React.Fragment, null));
     }
-    var analyticsAuthWidgetsClassName = 'analytics-auth-widgets';
+    var analyticsAuthWidgetsClassName = "analytics-auth-widgets";
     return (React.createElement("div", { className: "analytics-dashboard" },
-        !ready && (typeof props.loadingText === 'string' ? props.loadingText : 'Loading...'),
+        !ready &&
+            (typeof props.loadingText === "string"
+                ? props.loadingText
+                : "Loading..."),
         ready && (React.createElement(React.Fragment, null,
             authorized && !!props.chartsAppearFirst && renderedCharts,
             !authorized && showAuth && (React.createElement("div", { className: analyticsAuthWidgetsClassName },

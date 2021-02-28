@@ -4,10 +4,10 @@ menu: Common Charts
 route: /OrganicSearchesChart
 ---
 
-import { Playground, Props } from 'docz';
-import clientId from '../../../__docz__/client-id-config';
-import { AnalyticsDashboard } from '../../AnalyticsDashboard'
-import { OrganicSearchesChart } from './OrganicSearchesChart';
+import { Playground, Props } from "docz";
+import clientId from "../../../__docz__/client-id-config";
+import { AnalyticsDashboard } from "../../AnalyticsDashboard";
+import { OrganicSearchesChart } from "./OrganicSearchesChart";
 
 <h1>OrganicSearchesChart</h1>
 
@@ -22,7 +22,10 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 ## Usage
 
 ```jsx
-import { AnalyticsDashboard, OrganicSearchesChart } from 'react-analytics-charts';
+import {
+  AnalyticsDashboard,
+  OrganicSearchesChart,
+} from "react-analytics-charts";
 ```
 
 <Playground>
@@ -33,19 +36,21 @@ import { AnalyticsDashboard, OrganicSearchesChart } from 'react-analytics-charts
     }}
   />
 </Playground>
-
-<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+<small>
+  Note: You can edit the source above. Your changes will be rendered
+  immediately.
+</small>
 
 ## Props
 
-| Prop | Type | Description |
-|------|------|-------------|
-| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) |
-| viewId | `string` | **Required.** View ID for the view the chart pertains to. See [ViewSelector](/ViewSelector) for more information. |
-| days | `number` &#124; `undefined` | Optional. Number of days the chart shows data for. Defaults to `28`. |
-| container | `string` &#124; `undefined` | Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) renders. One will be created if no value is provided. |
-| options | [LineChartOptions](/LineChart#chart-options) | Optional. The options for this chart have been preconfigured, but you can add or override any [LineChartOptions](/LineChart#chart-options) you'd like here, such as the `width` or `title`. |
-| query | [`Query`](/DataChart#query-prop) | Optional. The [query](/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](/DataChart#query-prop) you'd like here. |
+| Prop      | Type                                         | Description                                                                                                                                                                                         |
+| --------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| gapi      | `GoogleAnalyticsEmbedAPI`                    | **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/)                                                                         |
+| viewId    | `string`                                     | **Required.** View ID for the view the chart pertains to. See [ViewSelector](/ViewSelector) for more information.                                                                                   |
+| days      | `number` &#124; `undefined`                  | Optional. Number of days the chart shows data for. Defaults to `28`.                                                                                                                                |
+| container | `string` &#124; `undefined`                  | Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) renders. One will be created if no value is provided. |
+| options   | [LineChartOptions](/LineChart#chart-options) | Optional. The options for this chart have been preconfigured, but you can add or override any [LineChartOptions](/LineChart#chart-options) you'd like here, such as the `width` or `title`.         |
+| query     | [`Query`](/DataChart#query-prop)             | Optional. The [query](/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](/DataChart#query-prop) you'd like here.                             |
 
 This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
 

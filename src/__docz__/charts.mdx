@@ -4,20 +4,20 @@ route: /charts
 # menu: MenuName
 ---
 
-import BarChartPng from '../__docz__/images/BarChart.png';
-import ColumnChartPng from '../__docz__/images/ColumnChart.png';
-import GeoChartPng from '../__docz__/images/GeoChart.png';
-import LineChartPng from '../__docz__/images/LineChart.png';
-import PieChartPng from '../__docz__/images/PieChart.png';
-import TableChartPng from '../__docz__/images/TableChart.png';
+import BarChartPng from "../__docz__/images/BarChart.png";
+import ColumnChartPng from "../__docz__/images/ColumnChart.png";
+import GeoChartPng from "../__docz__/images/GeoChart.png";
+import LineChartPng from "../__docz__/images/LineChart.png";
+import PieChartPng from "../__docz__/images/PieChart.png";
+import TableChartPng from "../__docz__/images/TableChart.png";
 
 # Charts Overview
 
-For your convenience, you can choose from 10+ commonly used drop-in charts, or create your own data queries for [bar charts](/BarChart), 
+For your convenience, you can choose from 10+ commonly used drop-in charts, or create your own data queries for [bar charts](/BarChart),
 [column charts](/ColumnChart), [geo charts](/GeoChart), [line charts](/LineChart), [pie charts](/PieChart), and [tables](/TableChart).
 
-To use a chart, render it with an [AnalyticsDashboard](/AnalyticsDashboard), which handles loading 
-the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/), 
+To use a chart, render it with an [AnalyticsDashboard](/AnalyticsDashboard), which handles loading
+the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/),
 [sign in](/AuthorizeButton) and [sign out](/SignOutButton), and [view selection](/ViewSelector). You can also embed [standalone charts](/custom-dashboards-standalone-charts#standalone-charts).
 
 ## Common Charts
@@ -50,37 +50,37 @@ You can build your own charts if you want. Just choose from the following chart 
 - [ColumnChart](/ColumnChart) - A column chart shows data as vertical bars.
 
   <img src={ColumnChartPng} />
-  
+
 - [GeoChart](/GeoChart) - A geo chart shows data on a map of the world.
 
   <img src={GeoChartPng} />
-  
+
 - [LineChart](/LineChart) - A line chart shows data as points connected by lines.
 
   <img src={LineChartPng} />
 
-- [PieChart](https://devboldly.github.io/react-analytics-charts/PieChart) - A pie chart shows data as slices of pie (or donut).
+- [PieChart](https://justinmahar.github.io/react-analytics-charts/PieChart) - A pie chart shows data as slices of pie (or donut).
 
   <img src={PieChartPng} />
-  
+
 - [TableChart](/TableChart) - A table with rows of data under sortable labeled columns.
 
   <img src={TableChartPng} />
-  
-Just provide the chosen chart type with the [data query](/DataChart#query-prop) and optional chart options. 
+
+Just provide the chosen chart type with the [data query](/DataChart#query-prop) and optional chart options.
 
 See each chart type for a demo/example and usage information.
 
 ### DataChart
 
-A [DataChart](/DataChart) is the base chart used by all of the above charts. It requires a 
-query and chart configuration, and uses the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) to inject 
+A [DataChart](/DataChart) is the base chart used by all of the above charts. It requires a
+query and chart configuration, and uses the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) to inject
 the rendered chart into a container on the page.
 
-Each of the custom chart types above wraps [DataChart](/DataChart) and handles configuring the 
+Each of the custom chart types above wraps [DataChart](/DataChart) and handles configuring the
 chart prop of [DataChart](/DataChart) for you.
 
 You probably won't need to use a DataChart directly since all chart types are available as their
-own components above, but you will definitely want to refer to the Query Prop section of 
-the [DataChart documentation](/DataChart#query-prop) for creating queries for any custom 
+own components above, but you will definitely want to refer to the Query Prop section of
+the [DataChart documentation](/DataChart#query-prop) for creating queries for any custom
 charts you want to build.

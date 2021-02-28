@@ -4,10 +4,10 @@ menu: Custom Charts
 route: /GeoChart
 ---
 
-import { Playground, Props } from 'docz';
-import clientId from '../../__docz__/client-id-config';
-import { AnalyticsDashboard } from '../AnalyticsDashboard'
-import { GeoChart } from './GeoChart';
+import { Playground, Props } from "docz";
+import clientId from "../../__docz__/client-id-config";
+import { AnalyticsDashboard } from "../AnalyticsDashboard";
+import { GeoChart } from "./GeoChart";
 
 <h1>GeoChart</h1>
 
@@ -15,7 +15,7 @@ import { GeoChart } from './GeoChart';
 
 A geo chart shows data on a geographical map. You can specify either the entire world or a specific region.
 
-You can use this to create a custom chart by providing your own data query (see [DataChart](/DataChart) for more info on queries) and, 
+You can use this to create a custom chart by providing your own data query (see [DataChart](/DataChart) for more info on queries) and,
 optionally, [geo chart options](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options) for the chart.
 
 Refer to the [Charts Overview](/charts) for a list of all charts available.
@@ -23,7 +23,7 @@ Refer to the [Charts Overview](/charts) for a list of all charts available.
 ## Usage
 
 ```jsx
-import { AnalyticsDashboard, GeoChart } from 'react-analytics-charts';
+import { AnalyticsDashboard, GeoChart } from "react-analytics-charts";
 ```
 
 <Playground>
@@ -34,10 +34,10 @@ import { AnalyticsDashboard, GeoChart } from 'react-analytics-charts';
         <GeoChart
           gapi={gapi}
           query={{
-            metrics: 'ga:sessions,ga:pageviews',
-            dimensions: 'ga:country',
-            'start-date': `28daysAgo`,
-            'end-date': 'today',
+            metrics: "ga:sessions,ga:pageviews",
+            dimensions: "ga:country",
+            "start-date": `28daysAgo`,
+            "end-date": "today",
             ids: viewId,
           }}
           container="traffic-geo-chart"
@@ -46,19 +46,20 @@ import { AnalyticsDashboard, GeoChart } from 'react-analytics-charts';
     }}
   />
 </Playground>
-
-<br/>
-
-<small>Note: You can edit the source above. Your changes will be rendered immediately.</small>
+<br />
+<small>
+  Note: You can edit the source above. Your changes will be rendered
+  immediately.
+</small>
 
 ## Props
 
-| Prop | Type | Description |
-|------|------|-------------|
-| gapi | `GoogleAnalyticsEmbedAPI` | **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) |
-| container | `string` | **Required.** Provide an ID for the `div` that will contain the chart. |
-| query | [`Query`](/DataChart#query-prop)  | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart). |
-| options | [`GeoChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [geo charts](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options). |
+| Prop      | Type                                                                                                             | Description                                                                                                                                                                                                               |
+| --------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| gapi      | `GoogleAnalyticsEmbedAPI`                                                                                        | **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/)                                                                                               |
+| container | `string`                                                                                                         | **Required.** Provide an ID for the `div` that will contain the chart.                                                                                                                                                    |
+| query     | [`Query`](/DataChart#query-prop)                                                                                 | **Required.** The [`Query`](/DataChart#query-prop) for the Analytics data. See the Query Prop section of [DataChart](/DataChart).                                                                                         |
+| options   | [`GeoChartOptions`](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options) | Optional. Options for the chart. To determine what to use here, refer to the Configuration Options section for [geo charts](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options). |
 
 This component also supports **all `div` props**, such as `className`, `style`, and `onClick`.
 
@@ -70,18 +71,18 @@ Refer to [DataChart Query Prop](/DataChart#query-prop) to build your own data `q
 
 ### Chart Options
 
-There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options) available for 
+There are numerous [chart options](https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options) available for
 geo charts, allowing you to customize the appearance. Provide these via the `options` prop.
 
 Below are a few of the notable ones:
 
-| Option | Type | Description |
-|------|------|-------------|
-| region | `string` | The area to display on the geochart. (Surrounding areas will be displayed as well.)<br/>Can be one of the following: <ul><li>`world` - A geochart of the entire world.</li><li>A continent or a sub-continent, specified by its [3-digit code](https://en.wikipedia.org/wiki/UN_M49), e.g., `011` for Western Africa, or a [region alias](#region-aliases) such as `europe`.</li><li>A country, specified by its [ISO 3166-1 alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), e.g., `AU` for Australia.</li><li>A state in the United States, specified by its [ISO 3166-2:US](https://en.wikipedia.org/wiki/ISO_3166-2:US) code, e.g., `US-AL` for Alabama. Note that the resolution option must be set to either `provinces` or `metros`.</li></ul> Default: `world` |
-| resolution | `string` | The resolution of the geochart borders.<br/>Choose one of the following values: <ul><li>`countries` - Supported for all regions, except for US state regions.</li><li>`provinces` - Supported only for country regions and US state regions. Not supported for all countries; please test a country to see whether this option is supported.</li><li>`metros` - Supported for the US country region and US state regions only.</li></ul> Default: `countries` |
-| width | `number` &#124; `string` | Width of the visualization, in pixels. The default width is `556` pixels, unless the height option is specified and keepAspectRatio is set to true - in which case the width is calculated accordingly. |
-| height | `number` &#124; `string` | Height of the chart, in pixels. |
-| keepAspectRatio | `boolean` | If `true`, the geochart will be drawn at the largest size that can fit inside the chart area at its natural aspect ratio. If only one of the `width` and `height` options is specified, the other one will be calculated according to the aspect ratio. If `false`, the geochart will be stretched to the exact size of the chart as specified by the `width` and `height` options. Default `true`. |
+| Option          | Type                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| region          | `string`                 | The area to display on the geochart. (Surrounding areas will be displayed as well.)<br/>Can be one of the following: <ul><li>`world` - A geochart of the entire world.</li><li>A continent or a sub-continent, specified by its [3-digit code](https://en.wikipedia.org/wiki/UN_M49), e.g., `011` for Western Africa, or a [region alias](#region-aliases) such as `europe`.</li><li>A country, specified by its [ISO 3166-1 alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), e.g., `AU` for Australia.</li><li>A state in the United States, specified by its [ISO 3166-2:US](https://en.wikipedia.org/wiki/ISO_3166-2:US) code, e.g., `US-AL` for Alabama. Note that the resolution option must be set to either `provinces` or `metros`.</li></ul> Default: `world` |
+| resolution      | `string`                 | The resolution of the geochart borders.<br/>Choose one of the following values: <ul><li>`countries` - Supported for all regions, except for US state regions.</li><li>`provinces` - Supported only for country regions and US state regions. Not supported for all countries; please test a country to see whether this option is supported.</li><li>`metros` - Supported for the US country region and US state regions only.</li></ul> Default: `countries`                                                                                                                                                                                                                                                                                                                          |
+| width           | `number` &#124; `string` | Width of the visualization, in pixels. The default width is `556` pixels, unless the height option is specified and keepAspectRatio is set to true - in which case the width is calculated accordingly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| height          | `number` &#124; `string` | Height of the chart, in pixels.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| keepAspectRatio | `boolean`                | If `true`, the geochart will be drawn at the largest size that can fit inside the chart area at its natural aspect ratio. If only one of the `width` and `height` options is specified, the other one will be calculated according to the aspect ratio. If `false`, the geochart will be stretched to the exact size of the chart as specified by the `width` and `height` options. Default `true`.                                                                                                                                                                                                                                                                                                                                                                                    |
 
 The containing element is rendered as a `div` and you can size and style it as you see fit using CSS.
 
@@ -99,43 +100,43 @@ The `region` prop can take a variety of values, allowing you to chart different 
 
 ##### Region Aliases
 
-Aliases are available for all [UN M49](https://en.wikipedia.org/wiki/UN_M49) region codes. You can use an alias to make things a little more human readable. 
+Aliases are available for all [UN M49](https://en.wikipedia.org/wiki/UN_M49) region codes. You can use an alias to make things a little more human readable.
 
 Some codes are not supported by Google, but feel free to try them in case they've been added.
 
-| Alias | Code | Area | Supported |
-|-------|------|------|-----------|
-| `world` | `001` | World | ✔️ (`world` only) |
-| `africa` | `002` | Africa | ✔️ |
-| `northern-africa` | `015` | Northern Africa | ✔️ |
-| `sub-saharan-africa` | `202` | Sub-Saharan Africa | ❌ |
-| `eastern-africa` | `014` | Eastern Africa | ✔️ |
-| `middle-africa` | `017` | Middle Africa | ✔️ |
-| `southern-africa` | `018` | Southern Africa | ✔️ |
-| `western-africa` | `011` | Western Africa | ✔️ |
-| `americas` | `019` | Americas | ✔️ |
-| `latin-america-caribbean` | `419` | Latin America and the Caribbean | ❌ |
-| `caribbean` | `029` | Caribbean | ✔️ |
-| `central-america` | `013` | Central America | ✔️ |
-| `south-america` | `005` | South America | ✔️ |
-| `north-america` | `003` | North America | ❌ |
-| `northern-america` | `021` | Northern America | ✔️ |
-| `asia` | `142` | Asia | ✔️ |
-| `central-asia` | `143` | Central Asia | ✔️ |
-| `eastern-asia` | `030` | Eastern Asia | ✔️ |
-| `south-eastern-asia` | `035` | South-eastern Asia | ✔️ |
-| `southern-asia` | `034` | Southern Asia | ✔️ |
-| `western-asia` | `145` | Western Asia | ✔️ |
-| `europe` | `150` | Europe | ✔️ |
-| `eastern-europe-northern-asia` | `151` | Eastern Europe (including Northern Asia) | ✔️ |
-| `northern-europe` | `154` | Northern Europe | ✔️ |
-| `southern-europe` | `039` | Southern Europe | ✔️ |
-| `western-europe` | `155` | Western Europe | ✔️ |
-| `oceania` | `009` | Oceania | ✔️ |
-| `australia-and-new-zealand` | `053` | Australia and New Zealand | ✔️ |
-| `melanesia` | `054` | Melanesia | ✔️ |
-| `micronesia` | `057` | Micronesia | ✔️ |
-| `polynesia` | `061` | Polynesia | ✔️ |
+| Alias                          | Code  | Area                                     | Supported         |
+| ------------------------------ | ----- | ---------------------------------------- | ----------------- |
+| `world`                        | `001` | World                                    | ✔️ (`world` only) |
+| `africa`                       | `002` | Africa                                   | ✔️                |
+| `northern-africa`              | `015` | Northern Africa                          | ✔️                |
+| `sub-saharan-africa`           | `202` | Sub-Saharan Africa                       | ❌                |
+| `eastern-africa`               | `014` | Eastern Africa                           | ✔️                |
+| `middle-africa`                | `017` | Middle Africa                            | ✔️                |
+| `southern-africa`              | `018` | Southern Africa                          | ✔️                |
+| `western-africa`               | `011` | Western Africa                           | ✔️                |
+| `americas`                     | `019` | Americas                                 | ✔️                |
+| `latin-america-caribbean`      | `419` | Latin America and the Caribbean          | ❌                |
+| `caribbean`                    | `029` | Caribbean                                | ✔️                |
+| `central-america`              | `013` | Central America                          | ✔️                |
+| `south-america`                | `005` | South America                            | ✔️                |
+| `north-america`                | `003` | North America                            | ❌                |
+| `northern-america`             | `021` | Northern America                         | ✔️                |
+| `asia`                         | `142` | Asia                                     | ✔️                |
+| `central-asia`                 | `143` | Central Asia                             | ✔️                |
+| `eastern-asia`                 | `030` | Eastern Asia                             | ✔️                |
+| `south-eastern-asia`           | `035` | South-eastern Asia                       | ✔️                |
+| `southern-asia`                | `034` | Southern Asia                            | ✔️                |
+| `western-asia`                 | `145` | Western Asia                             | ✔️                |
+| `europe`                       | `150` | Europe                                   | ✔️                |
+| `eastern-europe-northern-asia` | `151` | Eastern Europe (including Northern Asia) | ✔️                |
+| `northern-europe`              | `154` | Northern Europe                          | ✔️                |
+| `southern-europe`              | `039` | Southern Europe                          | ✔️                |
+| `western-europe`               | `155` | Western Europe                           | ✔️                |
+| `oceania`                      | `009` | Oceania                                  | ✔️                |
+| `australia-and-new-zealand`    | `053` | Australia and New Zealand                | ✔️                |
+| `melanesia`                    | `054` | Melanesia                                | ✔️                |
+| `micronesia`                   | `057` | Micronesia                               | ✔️                |
+| `polynesia`                    | `061` | Polynesia                                | ✔️                |
 
 ## Europe Example
 
@@ -150,16 +151,16 @@ The following uses the `europe` alias for [UN M49 code](https://en.wikipedia.org
         <GeoChart
           gapi={gapi}
           query={{
-            metrics: 'ga:sessions,ga:pageviews',
-            dimensions: 'ga:country',
-            'start-date': `28daysAgo`,
-            'end-date': 'today',
+            metrics: "ga:sessions,ga:pageviews",
+            dimensions: "ga:country",
+            "start-date": `28daysAgo`,
+            "end-date": "today",
             ids: viewId,
           }}
           container="europe-traffic-geo-chart"
           options={{
-            region: 'europe',
-            resolution: 'countries',
+            region: "europe",
+            resolution: "countries",
           }}
         />
       );
@@ -180,16 +181,16 @@ The following uses the `ga:region` [dimension](/DataChart#query-prop), the `US` 
         <GeoChart
           gapi={gapi}
           query={{
-            metrics: 'ga:sessions,ga:pageviews',
-            dimensions: 'ga:region',
-            'start-date': `28daysAgo`,
-            'end-date': 'today',
+            metrics: "ga:sessions,ga:pageviews",
+            dimensions: "ga:region",
+            "start-date": `28daysAgo`,
+            "end-date": "today",
             ids: viewId,
           }}
           container="usa-traffic-geo-chart"
           options={{
-            region: 'US',
-            resolution: 'provinces',
+            region: "US",
+            resolution: "provinces",
           }}
         />
       );

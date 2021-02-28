@@ -1,8 +1,8 @@
-import { GoogleAnalyticsEmbedAPI, useSignOut } from 'react-use-analytics-api';
-import * as React from 'react';
+import { GoogleAnalyticsEmbedAPI, useSignOut } from "react-use-analytics-api";
+import * as React from "react";
 
 export interface SignOutButtonProps {
-  /** **Required.** The ready [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
+  /** **Required.** The ready [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). **Analytics must be ready.** You can pass an undefined gapi until it's fully ready. */
   gapi?: GoogleAnalyticsEmbedAPI;
   /** Optional. The text for the sign-out button. */
   text?: string;
@@ -11,18 +11,18 @@ export interface SignOutButtonProps {
 }
 
 /**
- * See documentation: [SignOutButton](https://devboldly.github.io/react-analytics-charts/SignOutButton)
+ * See documentation: [SignOutButton](https://justinmahar.github.io/react-analytics-charts/SignOutButton)
  *
- * A button that signs the user out of Google Analytics via the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/). Reloads the page after signing out.
+ * A button that signs the user out of Google Analytics via the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/). Reloads the page after signing out.
  *
- * See [AuthorizeButton](https://devboldly.github.io/react-analytics-charts/AuthorizeButton) for a full example of the authorization flow.
+ * See [AuthorizeButton](https://justinmahar.github.io/react-analytics-charts/AuthorizeButton) for a full example of the authorization flow.
  */
 export function SignOutButton(props: SignOutButtonProps): JSX.Element {
   const signOut = useSignOut(props.gapi);
   const signOutHandler = (): void => {
-    if (typeof props.gapi !== 'undefined') {
+    if (typeof props.gapi !== "undefined") {
       signOut();
-      if (typeof window !== 'undefined' && !props.noReload) {
+      if (typeof window !== "undefined" && !props.noReload) {
         window.location.reload(false);
       }
     }
@@ -30,7 +30,7 @@ export function SignOutButton(props: SignOutButtonProps): JSX.Element {
 
   return (
     <button className="analytics-sign-out-button" onClick={signOutHandler}>
-      {props.text ? props.text : 'Sign Out'}
+      {props.text ? props.text : "Sign Out"}
     </button>
   );
 }

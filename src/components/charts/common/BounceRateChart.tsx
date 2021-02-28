@@ -1,26 +1,30 @@
-import { GoogleAnalyticsEmbedAPI, LineChartOptions, Query } from 'react-use-analytics-api';
-import * as React from 'react';
-import { LineChart } from '../LineChart';
+import {
+  GoogleAnalyticsEmbedAPI,
+  LineChartOptions,
+  Query,
+} from "react-use-analytics-api";
+import * as React from "react";
+import { LineChart } from "../LineChart";
 
 export interface BounceRateChartProps {
-  /** **Required.** The ready and authorized [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) */
+  /** **Required.** The ready and authorized [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) */
   gapi?: GoogleAnalyticsEmbedAPI;
-  /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://devboldly.github.io/react-analytics-charts/ViewSelector) for more information. */
+  /** **Required.** View ID for the view the chart pertains to. See [ViewSelector](https://justinmahar.github.io/react-analytics-charts/ViewSelector) for more information. */
   viewId: string;
   /** Optional. Number of days the chart shows data for. Defaults to `28`. */
   days?: number;
-  /** Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://devboldly.github.io/react-use-analytics-api/) renders. One will be created if no value is provided. */
+  /** Optional. HTML element ID for the container to which the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/) renders. One will be created if no value is provided. */
   container?: string;
-  /** Optional. The options for this chart have been preconfigured, but you can add or override any [LineChartOptions](https://devboldly.github.io/react-analytics-charts/LineChart#chart-options) you'd like here, such as the `width` or `title`. */
+  /** Optional. The options for this chart have been preconfigured, but you can add or override any [LineChartOptions](https://justinmahar.github.io/react-analytics-charts/LineChart#chart-options) you'd like here, such as the `width` or `title`. */
   options?: LineChartOptions;
-  /** Optional. The [query](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](https://devboldly.github.io/react-analytics-charts/DataChart#query-prop) you'd like here. */
+  /** Optional. The [query](https://justinmahar.github.io/react-analytics-charts/DataChart#query-prop) for this chart has been preconfigured, but you can override any [query properties](https://justinmahar.github.io/react-analytics-charts/DataChart#query-prop) you'd like here. */
   query?: Query;
 }
 
 /**
- * See documentation: [BounceRateChart](https://devboldly.github.io/react-analytics-charts/BounceRateChart)
+ * See documentation: [BounceRateChart](https://justinmahar.github.io/react-analytics-charts/BounceRateChart)
  *
- * This [LineChart](https://devboldly.github.io/react-analytics-charts/LineChart) charts the bounce rate percentage for each date, until today.
+ * This [LineChart](https://justinmahar.github.io/react-analytics-charts/LineChart) charts the bounce rate percentage for each date, until today.
  *
  * A "bounce" occurs when a visitor arrives at your site and promptly leaves without interacting any further.
  *
@@ -28,14 +32,16 @@ export interface BounceRateChartProps {
  *
  * Useful for seeing how well a site grabs people's attention and "hooks" them into staying.
  *
- * Refer to the [Charts Overview](https://devboldly.github.io/react-analytics-charts/charts) for a list of all charts available.
+ * Refer to the [Charts Overview](https://justinmahar.github.io/react-analytics-charts/charts) for a list of all charts available.
  */
-export function BounceRateChart(props: BounceRateChartProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element {
+export function BounceRateChart(
+  props: BounceRateChartProps & React.HTMLAttributes<HTMLDivElement>
+): JSX.Element {
   const days: number = props.days ? Math.max(1, Math.abs(props.days)) : 28;
 
   const divProps: { [propName: string]: any } = { ...props };
   // Remove our own props
-  const propKeys = ['gapi', 'viewId', 'days', 'container', 'options', 'query'];
+  const propKeys = ["gapi", "viewId", "days", "container", "options", "query"];
   propKeys.forEach((propKey: string) => delete divProps[propKey]);
 
   return (
@@ -43,16 +49,20 @@ export function BounceRateChart(props: BounceRateChartProps & React.HTMLAttribut
       {...divProps}
       gapi={props.gapi}
       query={{
-        metrics: 'ga:bounceRate',
-        dimensions: 'ga:date',
-        'start-date': `${days}daysAgo`,
-        'end-date': 'today',
+        metrics: "ga:bounceRate",
+        dimensions: "ga:date",
+        "start-date": `${days}daysAgo`,
+        "end-date": "today",
         ids: props.viewId,
         ...props.query,
       }}
-      container={props.container ? props.container : `gapi-bounce-rate-chart-${days}-days`}
+      container={
+        props.container
+          ? props.container
+          : `gapi-bounce-rate-chart-${days}-days`
+      }
       options={{
-        title: `Bounce Rate % (${days} Day${days !== 1 ? 's' : ''})`,
+        title: `Bounce Rate % (${days} Day${days !== 1 ? "s" : ""})`,
         ...props.options,
       }}
     />
