@@ -39,8 +39,8 @@
     "react-use-analytics-api": "^1.4.15"
   },
   "peerDependencies": {
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
