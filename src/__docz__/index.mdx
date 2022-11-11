@@ -6,14 +6,18 @@ route: /
 # NOTE: Menu ordering is configured in doczrc.js
 ---
 
-import { SvgIcon } from "../gatsby-theme-docz/tools/SvgIcon";
+import { SvgIcon } from '../gatsby-theme-docz/tools/SvgIcon';
 import githubSvg from '../__docz__/images/github.svg';
 import dashPng from '../__docz__/images/dash.png';
 
-<div style={{
-	display: 'flex',
-	alignItems: 'center',
-}}>
+# ⛔️ DEPRECATED
+
+<div
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+  }}
+>
   <div>
     <h1>React Analytics Charts</h1>
   </div>
@@ -24,19 +28,21 @@ import dashPng from '../__docz__/images/dash.png';
   </div>
 </div>
 
+## ⛔️ DEPRECATION NOTICE: Google Analytics 4 is replacing Universal Analytics, making this library obsolete. After July 1, 2023 all standard Universal Analytics properties will stop processing new hits. [Read more here](https://support.google.com/analytics/answer/10759417?utm_campaign=2022-q4-gbl-all-gafree&utm_source=google-growth&utm_medium=email&utm_content=ga-sunset-msa-reminder-read).
+
 **React components to easily embed Google Analytics charts on your React site. Uses the <a href="https://justinmahar.github.io/react-use-analytics-api/">Google Analytics Embed API</a>.**
 
 <img src={dashPng} />
 
 👁️ **[Full Example](/AnalyticsDashboard#example)**
 
-*For API hooks, check out: [React Use Analytics API](https://justinmahar.github.io/react-use-analytics-api/)*
+_For API hooks, check out: [React Use Analytics API](https://justinmahar.github.io/react-use-analytics-api/)_
 
 ## Overview
 
 Easily embed Google Analytics charts on your React site using this component library, which leverages the [Google Analytics Embed API](https://justinmahar.github.io/react-use-analytics-api/).
 
-Choose from [10+ commonly used drop-in chart components](/charts#common-charts), or build your own [custom charts](/charts#custom-charts) and render them as [bar charts](/BarChart), 
+Choose from [10+ commonly used drop-in chart components](/charts#common-charts), or build your own [custom charts](/charts#custom-charts) and render them as [bar charts](/BarChart),
 [column charts](/ColumnChart), [geo charts](/GeoChart), [line charts](/LineChart), [pie charts](/PieChart), and [tables](/TableChart).
 
 See the [AnalyticsDashboard](/AnalyticsDashboard) documentation for a **[full example](/AnalyticsDashboard#example)**, or reference any of the available [charts](/charts) for individual examples.
@@ -84,21 +90,12 @@ import { SessionsByDateChart, SessionsGeoChart } from 'react-analytics-charts';
 
 ```jsx
 <AnalyticsDashboard
-  authOptions={{ clientId: "123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com" }}
+  authOptions={{ clientId: '123456789012-abc123def456ghi789jkl012mno345p.apps.googleusercontent.com' }}
   renderCharts={(gapi, viewId) => {
     return (
       <div>
-        <SessionsByDateChart
-          gapi={gapi}
-          viewId={viewId}
-          showPageViews
-          showUsers
-        />
-        <SessionsGeoChart 
-          gapi={gapi} 
-          viewId={viewId} 
-          showPageViews 
-        />
+        <SessionsByDateChart gapi={gapi} viewId={viewId} showPageViews showUsers />
+        <SessionsGeoChart gapi={gapi} viewId={viewId} showPageViews />
         ... More charts here ...
       </div>
     );

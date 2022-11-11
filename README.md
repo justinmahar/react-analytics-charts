@@ -1,3 +1,5 @@
+# ⛔️ DEPRECATED
+
 <h2 align="center">
   <a href="https://github.com/justinmahar/react-analytics-charts">React Analytics Charts</a>
 </h2>
@@ -15,6 +17,8 @@
     <img src="https://github.com/justinmahar/react-analytics-charts/workflows/Deploy/badge.svg" alt="Deploy Status"/>
   </a>
 </p>
+
+## ⛔️ DEPRECATION NOTICE: Google Analytics 4 is replacing Universal Analytics, making this library obsolete. After July 1, 2023 all standard Universal Analytics properties will stop processing new hits. [Read more here](https://support.google.com/analytics/answer/10759417?utm_campaign=2022-q4-gbl-all-gafree&utm_source=google-growth&utm_medium=email&utm_content=ga-sunset-msa-reminder-read).
 
 ## Documentation
 
